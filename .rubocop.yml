@@ -1,0 +1,157 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+
+AllCops:
+  NewCops: disable
+  Exclude:
+    - ‘db/schema.rb’
+    - ‘db/migrate/*’
+    - ‘db/seeds.rb’
+    - ‘doc/*/’
+    - ‘config/*/’
+    - ‘bin/*’
+    - ‘vendor/*/’
+    - ‘node_modules/*/’
+    - ‘tmp/*/’
+
+Rails/ActiveRecordAliases:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Rails/TimeZone:
+  Enabled: false
+
+Rails/Date:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Rails/OutputSafety:
+  Enabled: false
+
+Rails/InverseOf:
+  Enabled: false
+
+Rails/HelperInstanceVariable:
+  Enabled: false
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
+Rails/Present:
+  Enabled: false
+
+Metrics/BlockLength:
+  Max: 121
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/ModuleLength:
+  Max: 200
+
+Metrics/ParameterLists:
+  Max: 7
+
+Style/Documentation:
+  Enabled: false
+
+Style/DateTime:
+  Enabled: false
+
+Style/MethodDefParentheses:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false
+
+Performance/Count:
+  Enabled: false
+
+Style/SoleNestedConditional:
+  Enabled: false
+
+Style/OptionalBooleanParameter:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/NumericLiteralPrefix:
+  Exclude:
+    - 'spec/**/*'
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/MissingRespondToMissing:
+  Enabled: false
+
+Style/ClassVars:
+  Enabled: false
+
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+
+Performance/StringReplacement:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 205
+
+Metrics/AbcSize:
+  Max: 60
+
+Metrics/ClassLength:
+  Max: 400
+
+Metrics/CyclomaticComplexity:
+  Max: 13
+  
+Metrics/MethodLength:
+  Max: 70
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Max: 14
+  
+Naming/PredicateName:
+  Enabled: false
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
