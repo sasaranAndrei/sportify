@@ -17,9 +17,12 @@ gem 'webpacker', '~> 5.0'
 
 # STYLING
 gem 'bootstrap', '~> 5.1.3'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 gem 'haml', '~> 5.2', '>= 5.2.2'
 gem 'sass-rails', '>= 6'
 
+# add: chartkick, font-awsome-rails, rubocop, dotenv, bullet, letter_opener
+# add?: redis, faker,
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
