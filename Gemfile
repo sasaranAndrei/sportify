@@ -11,10 +11,15 @@ gem 'jbuilder', '~> 2.7'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.6'
-gem 'sass-rails', '>= 6'
+gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.0'
+
+# STYLING
+gem 'bootstrap', '~> 5.1.3'
 gem 'haml', '~> 5.2', '>= 5.2.2'
+gem 'sass-rails', '>= 6'
+
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
