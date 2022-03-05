@@ -19,6 +19,7 @@ gem 'webpacker', '~> 5.0'
 gem 'bootstrap', '~> 5.1.3'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 gem 'haml', '~> 5.2', '>= 5.2.2'
+gem 'haml-rails', '~> 2.0', '>= 2.0.1'
 gem 'sass-rails', '>= 6'
 
 # AUTHENTICATION
