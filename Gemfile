@@ -21,14 +21,17 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 gem 'haml', '~> 5.2', '>= 5.2.2'
 gem 'sass-rails', '>= 6'
 
-# add: chartkick, font-awsome-rails, rubocop, dotenv, bullet, letter_opener
-# add?: redis, faker,
+# add: letter_opener
+# add?: rspec, redis, faker, chartkick, dotenv
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'rubocop', '~> 1.25', '>= 1.25.1'
 end
 
 group :development do
+  gem 'bullet', '~> 7.0', '>= 7.0.1'
+  gem 'letter_opener', '~> 1.7'
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'spring'
