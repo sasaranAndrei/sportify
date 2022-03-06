@@ -20,7 +20,7 @@ module Sportify
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    
+
     # Pay configuration
     # maybe has to change to host: 'https://sportify-football.herokuapp.com'
     config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
