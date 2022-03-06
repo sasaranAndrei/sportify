@@ -1,10 +1,7 @@
-%h1.title-class Bachelor's Degree - Sasaran Andrei 30645
-
-= button_to 'Button', '#', class: 'btn btn-warning', method: 'get'
-
-= link_to fa_icon('camera-retro'), '#'
-
+%h1 Bachelor's Degree - Sasaran Andrei 30645
+%br
 - if current_user
-  = current_user.email
-  %h3 BUY SPORTIFY COINS!
-  = link_to fa_icon('shopping-cart'), checkout_path
+  %h3 Hello!
+  %br
+  = link_to fa_icon('shopping-cart 4x'), checkout_path
+  BUY SPORTIFY COINS!
