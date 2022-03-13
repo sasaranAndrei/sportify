@@ -28,6 +28,20 @@
     %i (we need your current password to confirm your changes)
     %br/
     = f.password_field :current_password, autocomplete: "current-password"
+  .col-md-6
+  = fields_for :player do |ff|
+    .field
+      = ff.label :name
+      %br/
+      = ff.text_field :name, autofocus: true, autocomplete: "name"
+    .field
+      = ff.label :nickname
+      %br/
+      = ff.text_field :nickname, autofocus: true, autocomplete: "nickname"
+    .field
+      = ff.label :name
+      %br/
+      = ff.text_field :name, autofocus: true, autocomplete: "name"
   .actions
     = f.submit "Update"
 %h3 Cancel my account

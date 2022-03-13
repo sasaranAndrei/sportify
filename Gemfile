@@ -32,6 +32,8 @@ gem 'braintree', '>= 4.4', '< 5.0'
 gem 'paddle_pay', '~> 0.1'
 gem 'receipts', '~> 1.1'
 
+# OTHER
+
 # add?: rspec, redis, faker, chartkick, dotenv
 
 group :development, :test do

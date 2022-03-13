@@ -12,5 +12,8 @@ Rails.application.routes.draw do
   get 'checkout', to: 'checkouts#show'
   get 'billing', to: 'billing#show'
 
-  devise_for :users
+  devise_for :users, path: '', path_names: {
+    sign_in: 'login',
+    sign_out: 'logout'
+  }
 end
