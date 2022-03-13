@@ -16,7 +16,7 @@ class CheckoutsController < ApplicationController
     current_user.set_payment_processor :stripe
 
     @checkout_session = current_user.payment_processor.checkout(
-      api_key: Stipe.api_key,
+      api_key: Stripe.api_key,
       mode: 'payment',
       success_url: success_checkout_url,
       cancel_url: cancel_checkout_url,
