@@ -1,4 +1,6 @@
 # frozen_string_literal: true
-
-environment = Rails.env.to_sym
-Stripe.api_key = Rails.application.credentials.dig(environment, :stripe, :private_key)
+if !Rails.env.production?
+  Stripe.api_key = Rails.application.credentials.dig(environment, :stripe, :private_key)
+else
+  Stripe.api_key = ENV['STRIPE_API_KEY']
+end
