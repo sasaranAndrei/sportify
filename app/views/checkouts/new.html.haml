@@ -1,0 +1,4 @@
+= form_tag(checkout_path, method: :get) do
+  Please introduce the amount of Sportify Coins you would like to purchase:
+  = number_field_tag :order_amount
+  = submit_tag 'Go to Checkout'

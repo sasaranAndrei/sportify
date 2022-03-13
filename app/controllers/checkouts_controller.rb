@@ -2,6 +2,10 @@
 
 class CheckoutsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_order_amount, only: :show
+
+  def new
+  end
 
   def show
     # TODO: move to a constant - model file
@@ -14,9 +18,15 @@ class CheckoutsController < ApplicationController
       line_items: [
         { 
           price: sportify_coin_stripe_id,
-          quantity: 2
+          quantity: @order_amount
         }
       ]
     )
   end
+
+  private
+
+    def set_order_amount
+      @order_amount = params[:order_amount] || 1
+    end
 end

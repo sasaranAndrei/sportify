@@ -1,3 +1,8 @@
 %h1 Checkout - Shopping cart page
 
+= "Your order: #{@order_amount} Sporty COINS"
+%br
+If you would like to change the order amount, click
+= link_to 'here', sportify_coins_shop_path
+%br
 = render partial: 'pay/stripe/checkout_button', locals: { session: @checkout_session, title: 'Checkout' }
