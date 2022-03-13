@@ -4,7 +4,9 @@ class CheckoutsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_order_amount, only: :show
 
-  def new; end
+  def new
+    puts Stripe.api_key
+  end
 
   def show
     # TODO: move to a constant - model file
@@ -41,7 +43,5 @@ class CheckoutsController < ApplicationController
 
     def set_order_amount
       @order_amount = params[:order_amount] || 2
-
-      puts Stripe.api_key
     end
 end
