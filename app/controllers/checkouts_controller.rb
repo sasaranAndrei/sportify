@@ -4,10 +4,7 @@ class CheckoutsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_order_amount, only: :show
 
-  def new
-    puts "In new"
-    puts Stripe.api_key
-  end
+  def new; end
 
   def show
     # TODO: move to a constant - model file
@@ -16,7 +13,6 @@ class CheckoutsController < ApplicationController
     current_user.set_payment_processor :stripe
 
     @checkout_session = current_user.payment_processor.checkout(
-      api_key: Stripe.api_key,
       mode: 'payment',
       success_url: success_checkout_url,
       cancel_url: cancel_checkout_url,
