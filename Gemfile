@@ -25,6 +25,13 @@ gem 'sass-rails', '>= 6'
 # AUTHENTICATION
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
+# PAYMENT
+gem 'pay', '~> 3.0'
+gem 'stripe', '>= 2.8', '< 6.0'
+gem 'braintree', '>= 4.4', '< 5.0'
+gem 'paddle_pay', '~> 0.1'
+gem 'receipts', '~> 1.1'
+
 # add?: rspec, redis, faker, chartkick, dotenv
 
 group :development, :test do
