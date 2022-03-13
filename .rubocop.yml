@@ -128,6 +128,8 @@ Layout/LineLength:
 
 Metrics/AbcSize:
   Max: 60
+  Exclude:
+    - 'db/migrate/20220306085746_create_pay_tables.pay.rb'
 
 Metrics/ClassLength:
   Max: 400
