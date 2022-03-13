@@ -11,9 +11,6 @@ class User < ApplicationRecord
   # PAY
   pay_customer
 
-  after_save :after_save_method
-  after_create :after_create_method
-
   def add_tokens(added_tokens)
     update(tokens: tokens + added_tokens)
   end

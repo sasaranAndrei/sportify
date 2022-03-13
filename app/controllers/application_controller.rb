@@ -8,5 +8,6 @@ class ApplicationController < ActionController::Base
 
     def configure_sanitized_params
       devise_parameter_sanitizer.permit(:sign_up, keys: [player_attributes: [:name, :nickname, :birth_date, :phone_number]])
+      devise_parameter_sanitizer.permit(:account_update, keys: [player_attributes: [:id, :name, :nickname, :phone_number]])
     end
 end

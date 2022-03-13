@@ -5,7 +5,7 @@
   .field
     = f.label :email
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: resource.email
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     %div
       Currently waiting confirmation for: #{resource.unconfirmed_email}
@@ -29,19 +29,19 @@
     %br/
     = f.password_field :current_password, autocomplete: "current-password"
   .col-md-6
-  = fields_for :player do |ff|
+  = f.fields_for :player do |ff|
     .field
       = ff.label :name
       %br/
-      = ff.text_field :name, autofocus: true, autocomplete: "name"
+      = ff.text_field :name, autofocus: true, autocomplete: "name", placeholder: resource.player.name
     .field
       = ff.label :nickname
       %br/
-      = ff.text_field :nickname, autofocus: true, autocomplete: "nickname"
+      = ff.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: resource.player.nickname
     .field
-      = ff.label :name
+      = ff.label :phone_number
       %br/
-      = ff.text_field :name, autofocus: true, autocomplete: "name"
+      = ff.text_field :phone_number, autofocus: true, autocomplete: "phone number", placeholder: resource.player.phone_number
   .actions
     = f.submit "Update"
 %h3 Cancel my account
