@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_13_121027) do
+ActiveRecord::Schema.define(version: 2022_03_13_132409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,29 +89,6 @@ ActiveRecord::Schema.define(version: 2022_03_13_121027) do
     t.string "processor"
     t.string "event_type"
     t.jsonb "event"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "products", force: :cascade do |t|
-    t.string "purchasable_type", null: false
-    t.bigint "purchasable_id", null: false
-    t.integer "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["purchasable_type", "purchasable_id"], name: "index_products_on_purchasable"
-  end
-
-  create_table "trophies", force: :cascade do |t|
-    t.string "model"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "tshirts", force: :cascade do |t|
-    t.string "model"
-    t.string "color"
-    t.string "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
