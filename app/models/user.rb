@@ -7,4 +7,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   pay_customer
+
+  def add_tokens(added_tokens)
+    update(tokens: tokens + added_tokens)
+  end
 end
