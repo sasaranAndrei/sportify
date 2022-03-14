@@ -1,0 +1,25 @@
+%h1 Listing arenas
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Location
+      %th Phone number
+      %th
+      %th
+      %th
+
+  %tbody
+    - @arenas.each do |arena|
+      %tr
+        %td= arena.title
+        %td= arena.location
+        %td= arena.phone_number
+        %td= link_to 'Show', arena
+        %td= link_to 'Edit', edit_arena_path(arena)
+        %td= link_to 'Destroy', arena, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Arena', new_arena_path

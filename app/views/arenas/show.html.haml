@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @arena.title
+%p
+  %b Location:
+  = @arena.location
+%p
+  %b Phone number:
+  = @arena.phone_number
+
+= link_to 'Edit', edit_arena_path(@arena)
+\|
+= link_to 'Back', arenas_path
