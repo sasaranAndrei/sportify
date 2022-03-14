@@ -2,7 +2,9 @@
 
 Rails.application.routes.draw do
   root 'pages#home'
-
+  
+  resources :sports
+  
   resource :checkout do
     get 'success'
     get 'cancel'
