@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Arena:
+  = @field.arena
+%p
+  %b Sport:
+  = @field.sport
+%p
+  %b Label:
+  = @field.label
+%p
+  %b Min players:
+  = @field.min_players
+%p
+  %b Max players:
+  = @field.max_players
+
+= link_to 'Edit', edit_field_path(@field)
+\|
+= link_to 'Back', fields_path

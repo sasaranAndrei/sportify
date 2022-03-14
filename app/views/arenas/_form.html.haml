@@ -1,0 +1,19 @@
+= form_for @arena do |f|
+  - if @arena.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@arena.errors.count, "error")} prohibited this arena from being saved:"
+      %ul
+        - @arena.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :location
+    = f.text_field :location
+  .field
+    = f.label :phone_number
+    = f.text_field :phone_number
+  .actions
+    = f.submit 'Save'

@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_13_203227) do
+ActiveRecord::Schema.define(version: 2022_03_14_153608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "arenas", force: :cascade do |t|
+    t.string "title"
+    t.string "location"
+    t.string "phone_number"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "fields", force: :cascade do |t|
+    t.bigint "arena_id", null: false
+    t.bigint "sport_id", null: false
+    t.string "label"
+    t.integer "min_players"
+    t.integer "max_players"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["arena_id"], name: "index_fields_on_arena_id"
+    t.index ["sport_id"], name: "index_fields_on_sport_id"
+  end
 
   create_table "pay_charges", force: :cascade do |t|
     t.bigint "customer_id", null: false
@@ -104,6 +124,12 @@ ActiveRecord::Schema.define(version: 2022_03_13_203227) do
     t.index ["user_id"], name: "index_players_on_user_id"
   end
 
+  create_table "sports", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -117,6 +143,8 @@ ActiveRecord::Schema.define(version: 2022_03_13_203227) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "fields", "arenas"
+  add_foreign_key "fields", "sports"
   add_foreign_key "pay_charges", "pay_customers", column: "customer_id"
   add_foreign_key "pay_charges", "pay_subscriptions", column: "subscription_id"
   add_foreign_key "pay_payment_methods", "pay_customers", column: "customer_id"

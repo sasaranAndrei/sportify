@@ -1,0 +1,29 @@
+%h1 Listing fields
+
+%table
+  %thead
+    %tr
+      %th Arena
+      %th Sport
+      %th Label
+      %th Min players
+      %th Max players
+      %th
+      %th
+      %th
+
+  %tbody
+    - @fields.each do |field|
+      %tr
+        %td= field.arena
+        %td= field.sport
+        %td= field.label
+        %td= field.min_players
+        %td= field.max_players
+        %td= link_to 'Show', field
+        %td= link_to 'Edit', edit_field_path(field)
+        %td= link_to 'Destroy', field, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Field', new_field_path
