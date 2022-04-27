@@ -23,3 +23,13 @@
 %br
 
 = link_to 'New Arena', new_arena_path
+
+= content_tag :div, nil, data: {controller: "maps"} do
+  .btn.btn-primary Say Hello
+
+.c-map{"data-lat" => "46.77008",
+  "data-lon" => "23.59733",
+  "data-action" => "mapsLoaded@document->maps#renderMap",
+  "data-controller" => "maps",
+  "data-target" => "coordinates"
+}
