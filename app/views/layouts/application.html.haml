@@ -9,6 +9,7 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %script{:src => "https://js.stripe.com/v3/"}
+    %script{:async => "", :src => "https://maps.googleapis.com/maps/api/js?key=#{ 'AIzaSyCAgn5QaoWzvfh0hJPiY39IRznbxwYzLhI' }&callback=initMap"}
   %body
     %p.notice= notice
     %p.alert= alert
