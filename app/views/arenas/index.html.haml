@@ -24,14 +24,37 @@
 
 = link_to 'New Arena', new_arena_path
 
-= content_tag :div, nil, data: {controller: "maps"} do
-  .btn.btn-primary Say Hello
+%body
+  #map{:style => "width: 500px; height: 400px;"}
+  :javascript
+    var locations = [
+      ['Bondi Beach', -33.890542, 151.274856, 4],
+      ['Coogee Beach', -33.923036, 151.259052, 5],
+      ['Cronulla Beach', -34.028249, 151.157507, 3],
+      ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+      ['Maroubra Beach', -33.950198, 151.259302, 1]
+    ];
+    
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: new google.maps.LatLng(-33.92, 151.25),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    
+    var infowindow = new google.maps.InfoWindow();
 
--# .c-map{"data-lat" => "46.77008",
--#   "data-lon" => "23.59733",
--#   "data-action" => "mapsLoaded@document->maps#renderMap",
--#   "data-controller" => "maps",
--#   "data-target" => "coordinates"
--# }
-
-= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&center=#{46.77008},#{23.59733}&key=#{Rails.credentials[:google_maps_api_key]}", alt: "Map"
+    var marker, i;
+    
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+      
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
