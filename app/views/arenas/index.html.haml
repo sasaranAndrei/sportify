@@ -27,9 +27,11 @@
 = content_tag :div, nil, data: {controller: "maps"} do
   .btn.btn-primary Say Hello
 
-.c-map{"data-lat" => "46.77008",
-  "data-lon" => "23.59733",
-  "data-action" => "mapsLoaded@document->maps#renderMap",
-  "data-controller" => "maps",
-  "data-target" => "coordinates"
-}
+-# .c-map{"data-lat" => "46.77008",
+-#   "data-lon" => "23.59733",
+-#   "data-action" => "mapsLoaded@document->maps#renderMap",
+-#   "data-controller" => "maps",
+-#   "data-target" => "coordinates"
+-# }
+
+= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&center=#{46.77008},#{23.59733}&key=#{Rails.credentials[:google_maps_api_key]}", alt: "Map"
