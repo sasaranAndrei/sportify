@@ -13,8 +13,3 @@ import "arenas"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-window.fireMapsLoadedEvent = function () {
-  const event = new Event("mapsLoaded")
-  document.dispatchEvent(event)
-}
