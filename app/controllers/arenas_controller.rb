@@ -65,6 +65,6 @@ class ArenasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def arena_params
-      params.require(:arena).permit(:title, :location, :phone_number)
+      params.require(:arena).permit(:title, :location, :phone_number, :latitude, :longitude)
     end
 end

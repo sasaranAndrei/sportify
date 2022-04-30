@@ -9,6 +9,8 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %script{:src => "https://js.stripe.com/v3/"}
+    %script{:type => 'text/javascript',:src => "https://maps.googleapis.com/maps/api/js?key=#{ Rails.application.credentials[:google_maps_api_key] }"} 
+    -# %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=#{ Rails.application.credentials[:google_maps_api_key] }&callback=fireMapsLoadedEvent&v=weekly"}
   %body
     %p.notice= notice
     %p.alert= alert
