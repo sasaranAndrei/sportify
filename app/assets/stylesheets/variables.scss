@@ -1,0 +1,23 @@
+$sportify-font: 'IBM Plex Sans Arabic';
+$primary-color: #15BA46;
+$secondary-color: black;
+$background-color: #9ccd9c;
+$big-panel-background-color: #7ECE7E;
+$small-panel-background-color: #7ECE7ECA;
+
+.background {
+  background-color: $background-color;
+}
+
+.primary {
+  color: $primary-color;
+}
+
+.secondary {
+  color: $secondary-color;
+}
+
+.primary-background {
+  background-color: $primary-color;
+  color: white;
+}

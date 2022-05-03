@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_29_155646) do
+ActiveRecord::Schema.define(version: 2022_05_03_182008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,6 +126,26 @@ ActiveRecord::Schema.define(version: 2022_04_29_155646) do
     t.index ["user_id"], name: "index_players_on_user_id"
   end
 
+  create_table "reservation_players", force: :cascade do |t|
+    t.bigint "reservation_id", null: false
+    t.bigint "player_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["player_id"], name: "index_reservation_players_on_player_id"
+    t.index ["reservation_id"], name: "index_reservation_players_on_reservation_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.date "booking_date"
+    t.integer "booking_hour"
+    t.bigint "owner_player_id", null: false
+    t.bigint "field_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["field_id"], name: "index_reservations_on_field_id"
+    t.index ["f"], name: "index_reservations_on_owner_player_id"
+  end
+
   create_table "sports", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -152,4 +172,8 @@ ActiveRecord::Schema.define(version: 2022_04_29_155646) do
   add_foreign_key "pay_payment_methods", "pay_customers", column: "customer_id"
   add_foreign_key "pay_subscriptions", "pay_customers", column: "customer_id"
   add_foreign_key "players", "users"
+  add_foreign_key "reservation_players", "players"
+  add_foreign_key "reservation_players", "reservations"
+  add_foreign_key "reservations", "fields"
+  add_foreign_key "reservations", "players", column: "owner_player_id"
 end
