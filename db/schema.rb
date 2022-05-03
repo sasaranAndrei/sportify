@@ -143,7 +143,7 @@ ActiveRecord::Schema.define(version: 2022_05_03_182008) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["field_id"], name: "index_reservations_on_field_id"
-    t.index ["f"], name: "index_reservations_on_owner_player_id"
+    t.index ["owner_player_id"], name: "index_reservations_on_owner_player_id"
   end
 
   create_table "sports", force: :cascade do |t|
