@@ -7,7 +7,7 @@ class ReservationPlayer < ApplicationRecord
   private
 
     def owner_absence_from_guests_list
-      if player == reservation.owner_player
+      if player == reservation.owner_player # TechQuestion: cum e mai ok? player_id == reservation.owner_player_id
         errors.add(:reservation_owner, "must join. He can't be present in the Guests list too") 
       end
     end
