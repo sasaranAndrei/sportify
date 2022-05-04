@@ -15,7 +15,7 @@
 }
 
 .sportify-navbar {
-  position: fixed;
+  position: absolute;
   width: 96%;
   top: -1vh;
   left: 0;
@@ -23,6 +23,7 @@
   margin: 3vh;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 
   .panel {
     display: flex;
@@ -33,4 +34,23 @@
 
 .sportify-radius-panel {
   border-radius: 5vh;
+}
+
+.sportify-page {
+  position: absolute;
+  top: 220px;
+  bottom: 100px;
+  overflow: auto;
+  width: 100%;
+}
+
+.sportify-footer {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  overflow: hidden;
+}
+
+.sportify-big-panel {
+  
 }

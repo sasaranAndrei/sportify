@@ -1,29 +1,31 @@
-%h1 Listing arenas
+.sportify-page
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Location
-      %th Phone number
-      %th
-      %th
-      %th
+  %h1 Listing arenas
 
-  %tbody
-    - @arenas.each do |arena|
+  %table
+    %thead
       %tr
-        %td= arena.title
-        %td= arena.location
-        %td= arena.phone_number
-        %td= link_to 'Show', arena
-        %td= link_to 'Edit', edit_arena_path(arena)
-        %td= link_to 'Destroy', arena, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Title
+        %th Location
+        %th Phone number
+        %th
+        %th
+        %th
 
-%br
+    %tbody
+      - @arenas.each do |arena|
+        %tr
+          %td= arena.title
+          %td= arena.location
+          %td= arena.phone_number
+          %td= link_to 'Show', arena
+          %td= link_to 'Edit', edit_arena_path(arena)
+          %td= link_to 'Destroy', arena, method: :delete, data: { confirm: 'Are you sure?' }
 
-= link_to 'New Arena', new_arena_path
+  %br
 
-%body
-  .map-container
-    #map
+  = link_to 'New Arena', new_arena_path
+
+  %body
+    .map-container
+      #map
