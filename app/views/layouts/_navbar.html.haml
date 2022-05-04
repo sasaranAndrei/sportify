@@ -1,16 +1,14 @@
 %nav.navbar.navbar-expand-sm.sportify-navbar.primary-background.sportify-radius-panel
   .panel
-    -# = link_to 'Arenas', arenas_path, class: 'btn fs-2 sportify-font'
     = link_to fa_icon('map', text: 'Arenas'), arenas_path, class: 'btn fs-2 sportify-font'
     - if current_user
-      = link_to 'My reservations', reservation_path(1), class: 'btn fs-2 sportify-font'
+      = link_to fa_icon('calendar', text: 'My reservations'), reservation_path(1), class: 'btn fs-2 sportify-font'
   = link_to 'Sportify', root_path, class: 'navbar-brand btn fs-1 sportify-font'
   .panel
     - if current_user
       - if current_user.admin?
-        = link_to 'Admin Dashboard', '#', class: 'btn fs-2 sportify-font' # todo after ActiveAdmin
-      = link_to 'My Account', edit_user_registration_path(current_user), class: 'btn fs-2 sportify-font'
-      Sporty COINS: 
-      = current_user.tokens
+        = link_to fa_icon('lock', text: 'Admin Dashboard'), '#', class: 'btn fs-2 sportify-font' # todo after ActiveAdmin
+      = link_to fa_icon('address-card', text: 'My Account'), edit_user_registration_path(current_user), class: 'btn fs-2 sportify-font'
+      = link_to fa_icon('shopping-cart', text: "#{current_user.tokens} SCoins"), sportify_coins_shop_path, class: 'btn fs-2 sportify-font'
     - else
       = link_to fa_icon('user-plus', text: 'Sign Up'), new_user_registration_path, class: 'btn fs-2 sportify-font'
