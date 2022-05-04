@@ -10,10 +10,27 @@
 // OTHER
 @import "variables";
 
-* {
-  padding: 2px;
-}
-
 .sportify-font {
   font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.sportify-navbar {
+  position: fixed;
+  width: 96%;
+  top: -1vh;
+  left: 0;
+  padding: 4vh;
+  margin: 3vh;
+  display: flex;
+  justify-content: space-between;
+
+  .panel {
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+  }
+}
+
+.sportify-radius-panel {
+  border-radius: 5vh;
 }

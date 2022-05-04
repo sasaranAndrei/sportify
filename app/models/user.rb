@@ -14,4 +14,8 @@ class User < ApplicationRecord
   def add_tokens(added_tokens)
     update(tokens: tokens + added_tokens)
   end
+
+  def admin?
+    email == 'admin@sportify.com'
+  end
 end
