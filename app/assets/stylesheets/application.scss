@@ -1,6 +1,7 @@
 // DEPENDENCIES
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@700&display=swap');
 
 // CONTROLLERS
 @import "pages";
@@ -8,3 +9,11 @@
 
 // OTHER
 @import "variables";
+
+* {
+  padding: 2px;
+}
+
+.sportify-font {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+}

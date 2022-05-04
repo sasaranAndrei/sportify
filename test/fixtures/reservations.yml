@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  booking_date: 2022-05-02
+  booking_hour: 1
+  player: one
+  field: one
+
+two:
+  booking_date: 2022-05-02
+  booking_hour: 1
+  player: two
+  field: two
