@@ -2,7 +2,9 @@
   .sportify-panel.sportify-small-panel.sportify-radius
     = form_tag('/reservations/new', method: :get) do
       = hidden_field_tag 'arena_id'
-      = button_tag fa_icon('plus', text: 'Create a Reservation'), type: 'submit', id: 'arenas-create-reservation-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+      = button_tag fa_icon('plus', text: 'Create a Reservation'), type: 'submit', onClick: 'checkIfArenaSelected()', id: 'arenas-create-reservation-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+      -# = button_tag fa_icon('plus', text: 'Create a Reservation'),  onClick: 'checkIfArenaSelected()', id: 'arenas-create-reservation-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+      -# %p{ id: 'arenas-create-reservation-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4' }= button_tag fa_icon('plus', text: 'Create a Reservation'),  onClick: 'checkIfArenaSelected()'
     %br
     %br
 

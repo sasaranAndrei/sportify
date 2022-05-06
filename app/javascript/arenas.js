@@ -88,4 +88,3 @@ function shakeElement(element) {
   }                                                                                                          
   $(element).animate({ left: 0 }, interval);
 }
-

@@ -1,6 +1,5 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[ show edit update destroy ]
-  before_action :set_arena, only: %i[ new ]
 
   # GET /reservations or /reservations.json
   def index
@@ -13,6 +12,9 @@ class ReservationsController < ApplicationController
 
   # GET /reservations/new
   def new
+    return redirect_to arenas_path, notice: 'Please select an Arena before create a Reservation' if params[:arena_id].blank?
+
+    @arena = Arena.find(params[:arena_id])
     @reservation = Reservation.new
   end
 
@@ -74,10 +76,6 @@ class ReservationsController < ApplicationController
     def reservation_params
       # params.fetch(:reservation, {})
       params.require(:reservation).permit(:booking_date, :booking_hour, :owner_player_id, :arena_id, :field_id)
-    end
-    
-    def set_arena
-      @arena = Arena.find(params[:arena_id].presence || 1) # TODO: handle this
     end
 
     def merge_params
