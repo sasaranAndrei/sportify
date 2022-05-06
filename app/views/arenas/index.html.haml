@@ -1,5 +1,11 @@
 .sportify-page
-  .sportify-panel.sportify-small-panel.sportify-radius-panel
+  .sportify-panel.sportify-small-panel.sportify-radius
+    = form_tag('/reservations/new', method: :get) do
+      = hidden_field_tag 'arena_id'
+      = button_tag fa_icon('plus', text: 'Create a Reservation'), type: 'submit', id: 'arenas-create-reservation-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+    %br
+    %br
+
     %h1 Listing arenas
 
     %table
@@ -18,17 +24,19 @@
             %td= arena.title
             %td= arena.location
             %td= arena.phone_number
-            %td= link_to 'Show', arena
-            %td= link_to 'Edit', edit_arena_path(arena)
-            %td= link_to 'Destroy', arena, method: :delete, data: { confirm: 'Are you sure?' }
+            %td
+            %td
+            %td
+            -# %td= link_to 'Show', arena
+            -# %td= link_to 'Edit', edit_arena_path(arena)
+            -# %td= link_to 'Destroy', arena, method: :delete, data: { confirm: 'Are you sure?' }
 
     %br
 
-    = link_to 'New Arena', new_arena_path
+    -# = link_to 'New Arena', new_arena_path
 
 
-  .sportify-panel.sportify-big-panel.sportify-radius-panel
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit dolores provident rerum amet veniam deserunt cupiditate numquam iste cum tempore accusamus quidem voluptatem impedit similique vel, eum esse dicta perferendis.
+  .sportify-panel.sportify-big-panel.sportify-radius
+    -# Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit dolores provident rerum amet veniam deserunt cupiditate numquam iste cum tempore accusamus quidem voluptatem impedit similique vel, eum esse dicta perferendis.
     %body
       #map
-      .other-stuff 

@@ -6,6 +6,9 @@
 // CONTROLLERS
 @import "pages";
 @import "arenas";
+@import "fields";
+@import "sports";
+@import "reservations";
 
 // OTHER
 @import "variables";
@@ -32,7 +35,7 @@
   }
 }
 
-.sportify-radius-panel {
+.sportify-radius {
   border-radius: 5vh;
 }
 
@@ -44,6 +47,7 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .sportify-footer {
@@ -68,4 +72,11 @@
 .sportify-small-panel {
   background-color: $small-panel-background-color;
   width: 30%;
+}
+
+.sportify-primary-button {
+  background-color: $primary-color;
+  color: black;
+  padding: 2vh;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
 }

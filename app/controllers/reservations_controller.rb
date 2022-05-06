@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[ show edit update destroy ]
+  before_action :set_arena, only: %i[ new ]
 
   # GET /reservations or /reservations.json
   def index
@@ -21,11 +22,17 @@ class ReservationsController < ApplicationController
 
   # POST /reservations or /reservations.json
   def create
-    @reservation = Reservation.new(reservation_params)
+    @reservation = Reservation.new(
+      reservation_params.merge(params.permit(
+        :owner_player_id,
+        :field_id
+        )
+      )
+    )
 
     respond_to do |format|
       if @reservation.save
-        format.html { redirect_to reservation_url(@reservation), notice: "Reservation was successfully created." }
+        format.html { redirect_to reservation_url(@reservation), notice: 'Reservation was successfully created.' }
         format.json { render :show, status: :created, location: @reservation }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -62,9 +69,20 @@ class ReservationsController < ApplicationController
     def set_reservation
       @reservation = Reservation.find(params[:id])
     end
-
+    
     # Only allow a list of trusted parameters through.
     def reservation_params
-      params.fetch(:reservation, {})
+      # params.fetch(:reservation, {})
+      params.require(:reservation).permit(:booking_date, :booking_hour, :owner_player_id, :arena_id, :field_id)
     end
-end
+    
+    def set_arena
+      @arena = Arena.find(params[:arena_id].presence || 1) # TODO: handle this
+    end
+
+    def merge_params
+      reservation_params.merge({
+        # owner_player_id: params[:owner_player_id],
+      })
+    end
+  end
