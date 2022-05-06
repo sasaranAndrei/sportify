@@ -1,31 +1,34 @@
 .sportify-page
+  .sportify-panel.sportify-small-panel.sportify-radius-panel
 
-  %h1 Listing arenas
+    %h1 Listing arenas
 
-  %table
-    %thead
-      %tr
-        %th Title
-        %th Location
-        %th Phone number
-        %th
-        %th
-        %th
-
-    %tbody
-      - @arenas.each do |arena|
+    %table
+      %thead
         %tr
-          %td= arena.title
-          %td= arena.location
-          %td= arena.phone_number
-          %td= link_to 'Show', arena
-          %td= link_to 'Edit', edit_arena_path(arena)
-          %td= link_to 'Destroy', arena, method: :delete, data: { confirm: 'Are you sure?' }
+          %th Title
+          %th Location
+          %th Phone number
+          %th
+          %th
+          %th
 
-  %br
+      %tbody
+        - @arenas.each do |arena|
+          %tr
+            %td= arena.title
+            %td= arena.location
+            %td= arena.phone_number
+            %td= link_to 'Show', arena
+            %td= link_to 'Edit', edit_arena_path(arena)
+            %td= link_to 'Destroy', arena, method: :delete, data: { confirm: 'Are you sure?' }
 
-  = link_to 'New Arena', new_arena_path
+    %br
 
-  %body
-    .map-container
+    = link_to 'New Arena', new_arena_path
+  .sportify-panel.sportify-big-panel.sportify-radius-panel
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit dolores provident rerum amet veniam deserunt cupiditate numquam iste cum tempore accusamus quidem voluptatem impedit similique vel, eum esse dicta perferendis.
+    %body
       #map
+      .other-stuff 
+

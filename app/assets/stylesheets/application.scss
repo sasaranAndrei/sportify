@@ -42,6 +42,8 @@
   bottom: 100px;
   overflow: auto;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .sportify-footer {
@@ -51,6 +53,18 @@
   overflow: hidden;
 }
 
+.sportify-panel {
+  margin: 2vh;
+  border-color: $primary-color;
+  padding: 3vh;
+}
+
 .sportify-big-panel {
-  
+  background-color: $big-panel-background-color;
+  width: 60%;
+}
+
+.sportify-small-panel {
+  background-color: $small-panel-background-color;
+  width: 30%;
 }
