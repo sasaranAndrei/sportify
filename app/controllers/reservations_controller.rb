@@ -1,9 +1,18 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[ show edit update destroy ]
 
-  # GET /reservations or /reservations.json
+  # if owner_player => my reservations else => available reservations (marketplace)
   def index
-    @reservations = Reservation.all
+    if params[:owner_player_id].blank?
+      @reservations = Reservation.all
+      # @reservations = Reservation.all # la un moment dat AvailableReservationsService.call // cv din ReservationManager
+    else
+      owner_player = Player.find(params[:owner_player_id])
+      
+      @reservations = owner_player.all_reservations
+      @upcoming_reservations = @reservations.upcoming
+      @past_reservations = @reservations.past
+    end
   end
 
   # GET /reservations/1 or /reservations/1.json
