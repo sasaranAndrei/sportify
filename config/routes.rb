@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'players/stats'
+  get 'player/stats'
   resources :reservations
   root 'pages#home'
   

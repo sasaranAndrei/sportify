@@ -2,41 +2,26 @@
   .sportify-panel.sportify-small-panel.sportify-radius
     = form_tag('/reservations/new', method: :get) do
       = hidden_field_tag 'arena_id'
-      = button_tag fa_icon('plus', text: 'Create a Reservation'), type: 'submit', onClick: 'checkIfArenaSelected()', id: 'arenas-create-reservation-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
-      -# = button_tag fa_icon('plus', text: 'Create a Reservation'),  onClick: 'checkIfArenaSelected()', id: 'arenas-create-reservation-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
-      -# %p{ id: 'arenas-create-reservation-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4' }= button_tag fa_icon('plus', text: 'Create a Reservation'),  onClick: 'checkIfArenaSelected()'
+      = button_tag fa_icon('plus', text: 'Create a Reservation'), type: 'submit', id: 'arenas-create-reservation-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
     %br
     %br
 
-    %h1 Listing arenas
+    %h1.sportify-font Arenas
+    %br
 
-    %table
-      %thead
-        %tr
-          %th Title
-          %th Location
-          %th Phone number
-          %th
-          %th
-          %th
-
-      %tbody
-        - @arenas.each do |arena|
+    .table-responsive
+      %table.table.table-success.table-striped
+        %thead
           %tr
-            %td= arena.title
-            %td= arena.location
-            %td= arena.phone_number
-            %td
-            %td
-            %td
-            -# %td= link_to 'Show', arena
-            -# %td= link_to 'Edit', edit_arena_path(arena)
-            -# %td= link_to 'Destroy', arena, method: :delete, data: { confirm: 'Are you sure?' }
-
-    %br
-
-    -# = link_to 'New Arena', new_arena_path
-
+            %th Title
+            %th Location
+            %th 
+        %tbody
+          - @arenas.each do |arena|
+            %tr
+              %td= arena.title 
+              %td= arena.location
+              %td= link_to fa_icon('eye'), arena_path(arena), class: 'btn sportify-small-button sportify-radius fs-5'
 
   .sportify-panel.sportify-big-panel.sportify-radius
     -# Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit dolores provident rerum amet veniam deserunt cupiditate numquam iste cum tempore accusamus quidem voluptatem impedit similique vel, eum esse dicta perferendis.

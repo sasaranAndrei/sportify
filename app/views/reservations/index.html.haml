@@ -1,6 +1,11 @@
 .sportify-page
   .sportify-panel.sportify-small-panel.sportify-radius
-    %h1 Upcoming Reservations
+    = link_to fa_icon('location-arrow', text: 'Arenas'), arenas_path, id: 'arenas-create-reservation-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+    %br
+    %br
+    %br
+
+    %h1.sportify-font Upcoming Reservations
     %br
 
     .table-responsive
@@ -20,7 +25,14 @@
               %td= link_to fa_icon('eye'), reservation_path(reservation), class: 'btn sportify-small-button sportify-radius fs-5'
 
   .sportify-panel.sportify-big-panel.sportify-radius
-    %h1 Past Reservations
+    .buttons-container
+      = link_to fa_icon('button', text: 'TODO: another button'), players_stats_path(current_user.player), id: '', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+      %span
+      = link_to fa_icon('address-card', text: 'My Stats'), players_stats_path(current_user.player), id: 'player-stats-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+    %br
+    %br
+
+    %h1.sportify-font Past Reservations
     %br
     
     .table-responsive

@@ -9,6 +9,7 @@
 @import "fields";
 @import "sports";
 @import "reservations";
+@import "players";
 
 // OTHER
 @import "variables";
@@ -136,6 +137,11 @@
 .sportify-big-panel {
   background-color: $big-panel-background-color;
   width: 60%;
+
+  .buttons-container {  
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .sportify-small-panel {

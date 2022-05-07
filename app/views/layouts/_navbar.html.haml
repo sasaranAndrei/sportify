@@ -8,7 +8,7 @@
     - if current_user
       - if current_user.admin?
         = link_to fa_icon('lock', text: 'Admin Dashboard'), '#', class: 'btn fs-2 sportify-font' # todo after ActiveAdmin
-      = link_to fa_icon('address-card', text: 'My Account'), edit_user_registration_path(current_user), class: 'btn fs-2 sportify-font'
+      = link_to fa_icon('user', text: 'My Account'), edit_user_registration_path(current_user), class: 'btn fs-2 sportify-font'
       = link_to fa_icon('shopping-cart', text: "#{current_user.tokens} SCoins"), sportify_coins_shop_path, class: 'btn fs-2 sportify-font'
     - else
       = link_to fa_icon('user-plus', text: 'Sign Up'), new_user_registration_path, class: 'btn fs-2 sportify-font'
