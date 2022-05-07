@@ -6,5 +6,23 @@
         - @reservation.errors.full_messages.each do |message|
           %li= message
 
+  .fields
+    = hidden_field_tag :owner_player_id, current_user.player.id
+    
+    %h3 Select a field
+    // asta onChange => schimba oraru din partea stanga
+    = select_tag :field_id, options_from_collection_for_select(@arena.fields, 'id', 'label'), onChange: 'fieldSelectedChanged(this)'
+    
+    .form-group
+      = f.label :booking_date
+      = f.date_field :booking_date, class: 'form-control'
+    %br
+    .form-group
+      = f.label :booking_hour
+      // in loc de [1,2,3,4] o sa vina options_from_select(ReservationManager)
+      = f.select :booking_hour, mocked_hours, class: 'form-control'
+    %br
+
+  %br
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', id: 'create-reservation-button', class: 'btn sportify-primary-button sportify-radius fs-4'

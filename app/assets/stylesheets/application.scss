@@ -6,11 +6,78 @@
 // CONTROLLERS
 @import "pages";
 @import "arenas";
+@import "fields";
+@import "sports";
+@import "reservations";
 
 // OTHER
 @import "variables";
 
 .sportify-font {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.sportify-navbar {
+  position: absolute;
+  width: 96%;
+  top: -1vh;
+  left: 0;
+  padding: 4vh;
+  margin: 3vh;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+
+  .panel {
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+  }
+}
+
+.sportify-radius {
+  border-radius: 5vh;
+}
+
+.sportify-page {
+  position: absolute;
+  top: 220px;
+  bottom: 100px;
+  overflow: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.sportify-footer {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  overflow: hidden;
+}
+
+.sportify-panel {
+  margin: 2vh;
+  border-color: $primary-color;
+  padding: 3vh;
+  height: fit-content;
+}
+
+.sportify-big-panel {
+  background-color: $big-panel-background-color;
+  width: 60%;
+}
+
+.sportify-small-panel {
+  background-color: $small-panel-background-color;
+  width: 30%;
+}
+
+.sportify-primary-button {
+  background-color: $primary-color;
+  color: black;
+  padding: 2vh;
   font-family: 'IBM Plex Sans Arabic', sans-serif;
 }
 

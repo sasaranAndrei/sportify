@@ -15,6 +15,7 @@ import "controllers"
 
 // PROJECT FILES
 import "arenas"
+import "reservations"
 
 Rails.start()
 Turbolinks.start()

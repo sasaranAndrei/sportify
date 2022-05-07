@@ -4,9 +4,11 @@ var selectedArenaTitle = -1; // no arena selected yet
 
 window.onload = function() {
   url = window.location.href;
-  console.log(url);
+  arenas_path = '/arenas';
+  url_substring_path = url.substring(url.length - arenas_path.length);
 
-  if (url.includes('arena')) {
+  // console.log(url_substring_path);
+  if (url_substring_path == arenas_path) {
     initGoogleMaps();
   }
 }
@@ -57,8 +59,32 @@ function drawMap(arenas) {
         infowindow.setContent(locations[i][0]);
         infowindow.open(map, marker);
         selectedArenaTitle = locations[i][3];
-        console.log('Select : ' + selectedArenaTitle);
+        
+        noticeReservationButton(selectedArenaTitle);
       }
     })(marker, i));
-  }  
+  }
+}
+
+function noticeReservationButton(selectedArenaTitle) {
+  var createReservationButton = document.getElementById('arenas-create-reservation-button');
+  shakeElement(createReservationButton);
+  
+  let arenaHiddenField = document.getElementById('arena_id');
+  arenaHiddenField.value = selectedArenaTitle;
+}
+
+function shakeElement(element) {
+  var interval = 100;
+  var distance = 10;
+  var times = 4;
+
+  $(element).css('position', 'relative');
+
+  for (var iter = 0; iter < (times + 1) ; iter++) {
+      $(element).animate({
+          left: ((iter % 2 == 0 ? distance : distance * -1))
+      }, interval);
+  }                                                                                                          
+  $(element).animate({ left: 0 }, interval);
 }

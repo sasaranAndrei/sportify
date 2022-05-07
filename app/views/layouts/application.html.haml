@@ -13,7 +13,7 @@
     // STRIPE
     %script{:src => "https://js.stripe.com/v3/"}
     // GOOGLE MAPS. ENABLE => API COST!
-    -# %script{:type => 'text/javascript',:src => "https://maps.googleapis.com/maps/api/js?key=#{ Rails.application.credentials[:google_maps_api_key] }"} 
+    %script{:type => 'text/javascript',:src => "https://maps.googleapis.com/maps/api/js?key=#{ Rails.application.credentials[:google_maps_api_key] }"} 
   %body.background
     = render partial: 'layouts/navbar'
     %p.notice= notice

@@ -1,8 +1,8 @@
-%nav.navbar.navbar-expand-sm.sportify-navbar.primary-background.sportify-radius-panel
+%nav.navbar.navbar-expand-sm.sportify-navbar.primary-background.sportify-radius
   .panel
     = link_to fa_icon('map', text: 'Arenas'), arenas_path, class: 'btn fs-2 sportify-font'
     - if current_user
-      = link_to fa_icon('calendar', text: 'My reservations'), reservation_path(1), class: 'btn fs-2 sportify-font'
+      = link_to fa_icon('calendar', text: 'My reservations'), reservations_path(current_user), class: 'btn fs-2 sportify-font'
   = link_to 'Sportify', root_path, class: 'navbar-brand btn fs-1 sportify-font'
   .panel
     - if current_user

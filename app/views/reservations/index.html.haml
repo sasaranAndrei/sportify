@@ -1,19 +1,26 @@
-%h1 Listing reservations
+.sportify-page
+  .sportify-panel.sportify-small-panel.sportify-radius
+    %h1 Upcoming Reservations
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed officiis exercitationem ex magnam corporis magni quis nostrum assumenda quo, eaque, reiciendis minima veritatis tempora quasi repudiandae dolore corrupti voluptatibus maxime.
+  .sportify-panel.sportify-big-panel.sportify-radius
+    %h1 Past Reservations
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed officiis exercitationem ex magnam corporis magni quis nostrum assumenda quo, eaque, reiciendis minima veritatis tempora quasi repudiandae dolore corrupti voluptatibus maxime.
+  -# %h1 Listing reservations
 
-%table
-  %thead
-    %tr
-      %th
-      %th
-      %th
+  -# %table
+  -#   %thead
+  -#     %tr
+  -#       %th
+  -#       %th
+  -#       %th
 
-  %tbody
-    - @reservations.each do |reservation|
-      %tr
-        %td= link_to 'Show', reservation
-        %td= link_to 'Edit', edit_reservation_path(reservation)
-        %td= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' }
+  -#   %tbody
+  -#     - @reservations.each do |reservation|
+  -#       %tr
+  -#         %td= link_to 'Show', reservation
+  -#         %td= link_to 'Edit', edit_reservation_path(reservation)
+  -#         %td= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' }
 
-%br
+  -# %br
 
-= link_to 'New Reservation', new_reservation_path
+  -# = link_to 'New Reservation', new_reservation_path
