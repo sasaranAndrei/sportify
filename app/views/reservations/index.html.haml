@@ -1,10 +1,47 @@
 .sportify-page
   .sportify-panel.sportify-small-panel.sportify-radius
     %h1 Upcoming Reservations
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed officiis exercitationem ex magnam corporis magni quis nostrum assumenda quo, eaque, reiciendis minima veritatis tempora quasi repudiandae dolore corrupti voluptatibus maxime.
+    %br
+
+    .table-responsive
+      %table.table.table-success.table-striped
+        %thead
+          %tr
+            %th Type
+            %th Date
+            %th Place
+            %th 
+        %tbody
+          - @upcoming_reservations.each do |reservation|
+            %tr
+              %td= reservation.owner_player_id == current_user.player.id ? 'Own' : 'Guest' # TechQuestion TODO: refactor this 
+              %td= reservation.date
+              %td= reservation.place
+              %td= link_to fa_icon('eye'), reservation_path(reservation), class: 'btn sportify-small-button sportify-radius fs-5'
+
   .sportify-panel.sportify-big-panel.sportify-radius
     %h1 Past Reservations
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed officiis exercitationem ex magnam corporis magni quis nostrum assumenda quo, eaque, reiciendis minima veritatis tempora quasi repudiandae dolore corrupti voluptatibus maxime.
+    %br
+    
+    .table-responsive
+      %table.table.table-success.table-striped
+        %thead
+          %tr
+            %th Type
+            %th Date
+            %th Place
+            %th Other
+            %th info
+            %th 
+        %tbody
+          - @past_reservations.each do |reservation|
+            %tr
+              %td= reservation.owner_player_id == current_user.player.id ? 'Own' : 'Guest' # TechQuestion TODO: refactor this 
+              %td= reservation.date
+              %td= reservation.place
+              %td
+              %td
+              %td= link_to fa_icon('eye'), reservation_path(reservation), class: 'btn sportify-small-button sportify-radius fs-5'
   -# %h1 Listing reservations
 
   -# %table

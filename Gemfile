@@ -33,6 +33,7 @@ gem 'paddle_pay', '~> 0.1'
 gem 'receipts', '~> 1.1'
 
 # OTHER
+gem 'active_record_union'
 
 # add?: rspec, redis, faker, chartkick, dotenv
 
