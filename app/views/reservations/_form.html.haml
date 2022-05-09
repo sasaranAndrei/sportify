@@ -11,6 +11,7 @@
     
     %h3 Select a field
     // asta onChange => schimba oraru din partea stanga
+    // maybe use Stimulus for this
     = select_tag :field_id, options_from_collection_for_select(@arena.fields, 'id', 'label'), onChange: 'fieldSelectedChanged(this)'
     
     .form-group

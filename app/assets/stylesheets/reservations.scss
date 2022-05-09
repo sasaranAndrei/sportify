@@ -1,3 +1,10 @@
+$own-reservation-background-color: #15BA46;
+$guest-reservation-background-color: #FFFF9B;
+
 #create-reservation-button {
   width: 100%;
+}
+
+.participate-reservation-highlight {
+  background-color: #FFFF9B !important;
 }

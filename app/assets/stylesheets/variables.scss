@@ -4,6 +4,7 @@ $secondary-color: black;
 $background-color: #9ccd9c;
 $big-panel-background-color: #7ECE7E;
 $small-panel-background-color: #7ECE7ECA;
+$error-notice-background-color: rgb(255, 105, 105);
 
 .background {
   background-color: $background-color;
@@ -20,4 +21,8 @@ $small-panel-background-color: #7ECE7ECA;
 .primary-background {
   background-color: $primary-color;
   color: black;
+}
+
+.error-notice-background {
+  background-color: $error-notice-background-color !important;
 }

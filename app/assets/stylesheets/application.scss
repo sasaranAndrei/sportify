@@ -3,6 +3,9 @@
 @import "font-awesome";
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@700&display=swap');
 
+// OTHER
+@import "variables";
+
 // CONTROLLERS
 @import "pages";
 @import "arenas";
@@ -10,9 +13,6 @@
 @import "sports";
 @import "reservations";
 @import "players";
-
-// OTHER
-@import "variables";
 
 .sportify-font {
   font-family: 'IBM Plex Sans Arabic', sans-serif;

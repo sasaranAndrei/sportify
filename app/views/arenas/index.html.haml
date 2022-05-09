@@ -4,7 +4,7 @@
       = hidden_field_tag 'arena_id'
       = button_tag fa_icon('plus', text: 'Create a Reservation'), type: 'submit', id: 'arenas-create-reservation-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
     %br
-      = link_to fa_icon('chevron-right', text: 'Join a Game'), '#', id: 'arenas-create-reservation-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+      = link_to fa_icon('chevron-right', text: 'Join a Game'), reservations_path, id: 'arenas-create-reservation-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
     %br
 
     %h1.sportify-font Arenas

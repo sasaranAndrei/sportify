@@ -3,6 +3,7 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.all
+    # @reservations = Reservation.upcoming.order(booking_date: :asc, booking_hour: :asc)
     # @reservations = Reservation.all # la un moment dat AvailableReservationsService.call // cv din ReservationManager
   end
 
@@ -15,6 +16,7 @@ class ReservationsController < ApplicationController
     return redirect_to arenas_path, notice: 'Please select an Arena before create a Reservation' if params[:arena_id].blank?
 
     @arena = Arena.find(params[:arena_id])
+    # @scheduler = ArenaSchedulerService.call(arena: @arena, start_date: Date.today)
     @reservation = Reservation.new
   end
 
