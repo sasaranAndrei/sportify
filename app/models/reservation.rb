@@ -7,6 +7,7 @@ class Reservation < ApplicationRecord
 
   scope :upcoming, -> { where('booking_date >= ?', Date.today) }
   scope :past, -> { where('booking_date < ?', Date.today) }
+  scope :ordered, ->(direction) { order(booking_date: direction, booking_hour: direction) }
 
   def date
     "#{booking_date.strftime('%d/%m/%Y')} #{booking_hour}:00"

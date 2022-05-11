@@ -9,15 +9,17 @@
             %th Date
             %th Place
             %th Join
-            %th
         %tbody
-          - @reservations.each do |reservation|
+          - @recent_reservations.each do |reservation|
             %tr
               %td= reservation.date
               %td= reservation.place
-              // MODIFY THIS
-              %td= link_to fa_icon('chevron-right'), reservation_path(reservation), class: "btn sportify-small-button sportify-radius fs-5 #{highlight_reservation_class(reservation, current_user.player)}"
               %td= link_to fa_icon('eye'), reservation_path(reservation), class: "btn sportify-small-button sportify-radius fs-5 #{highlight_reservation_class(reservation, current_user.player)}"
+          - @upcoming_reservations.each do |reservation|
+            %tr
+              %td= reservation.date
+              %td= reservation.place
+              %td= link_to fa_icon(reservation.participate?(current_player) ? 'eye' : 'arrow-right'), reservation_path(reservation), class: "btn sportify-small-button sportify-radius fs-5 #{highlight_reservation_class(reservation, current_user.player)}"      
   .sportify-panel.sportify-small-panel.sportify-radius
     %h1.sportify-font Details
     %br

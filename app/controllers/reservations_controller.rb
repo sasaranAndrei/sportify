@@ -2,8 +2,9 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[ show edit update destroy ]
 
   def index
-    @reservations = Reservation.all
-    # @reservations = Reservation.upcoming.order(booking_date: :asc, booking_hour: :asc)
+    # @reservations = Reservation.all
+    @recent_reservations = Reservation.past.ordered(:asc).last(5)
+    @upcoming_reservations = Reservation.upcoming.ordered(:asc)
     # @reservations = Reservation.all # la un moment dat AvailableReservationsService.call // cv din ReservationManager
   end
 
