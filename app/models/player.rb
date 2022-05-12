@@ -6,6 +6,8 @@ class Player < ApplicationRecord
   has_many :own_reservations, class_name: 'Reservation', foreign_key: 'owner_player_id'
   has_many :reservation_players
   has_many :guest_reservations, class_name: 'Reservation', through: :reservation_players, source: :reservation
+  has_many :join_requests
+  has_many :join_request_reservations, class_name: 'Reservation', through: :join_requests, source: :reservation
 
   def all_reservations
     # TechQuestion

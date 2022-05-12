@@ -4,6 +4,8 @@ class Reservation < ApplicationRecord
 
   has_many :reservation_players
   has_many :guest_players, class_name: 'Player', through: :reservation_players, source: :player
+  has_many :join_requests
+  has_many :join_request_players, class_name: 'Player', through: :join_requests, source: :player
 
   scope :upcoming, -> { where('booking_date >= ?', Date.today) }
   scope :past, -> { where('booking_date < ?', Date.today) }

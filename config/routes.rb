@@ -1,16 +1,21 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :join_requests
   root 'pages#home'
   
   # BUSINESS LOGIC
   resources :sports
   resources :arenas
   resources :fields
-  resources :reservations
+  resources :reservations do
+    get :join_requests, on: :member
+  end
+
   resources :players do
     get :stats, on: :member
     get :reservations, on: :member
+    get 'reservations/join_requests', on: :member
   end
 
   # PAY

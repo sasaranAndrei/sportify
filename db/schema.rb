@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_04_130804) do
+ActiveRecord::Schema.define(version: 2022_05_12_110930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 2022_05_04_130804) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["arena_id"], name: "index_fields_on_arena_id"
     t.index ["sport_id"], name: "index_fields_on_sport_id"
+  end
+
+  create_table "join_requests", force: :cascade do |t|
+    t.bigint "player_id", null: false
+    t.bigint "reservation_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["player_id"], name: "index_join_requests_on_player_id"
+    t.index ["reservation_id"], name: "index_join_requests_on_reservation_id"
   end
 
   create_table "pay_charges", force: :cascade do |t|
@@ -167,6 +176,8 @@ ActiveRecord::Schema.define(version: 2022_05_04_130804) do
 
   add_foreign_key "fields", "arenas"
   add_foreign_key "fields", "sports"
+  add_foreign_key "join_requests", "players"
+  add_foreign_key "join_requests", "reservations"
   add_foreign_key "pay_charges", "pay_customers", column: "customer_id"
   add_foreign_key "pay_charges", "pay_subscriptions", column: "subscription_id"
   add_foreign_key "pay_payment_methods", "pay_customers", column: "customer_id"

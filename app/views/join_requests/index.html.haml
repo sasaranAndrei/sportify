@@ -1,0 +1,23 @@
+%h1 Listing join_requests
+
+%table
+  %thead
+    %tr
+      %th Player
+      %th Reservation
+      %th
+      %th
+      %th
+
+  %tbody
+    - @join_requests.each do |join_request|
+      %tr
+        %td= join_request.player
+        %td= join_request.reservation
+        %td= link_to 'Show', join_request
+        %td= link_to 'Edit', edit_join_request_path(join_request)
+        %td= link_to 'Destroy', join_request, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Join request', new_join_request_path

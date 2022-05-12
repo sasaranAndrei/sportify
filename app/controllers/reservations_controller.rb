@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
 
   # GET /reservations/new
   def new
-    return redirect_to arenas_path, notice: 'Please select an Arena before create a Reservation' if params[:arena_id].blank?
+    return redirect_to arenas_path, notice: 'Please select an Arena before create a Reservation' if params[:arena_id].blank? # TODO: move this to method
 
     @arena = Arena.find(params[:arena_id])
     # @scheduler = ArenaSchedulerService.call(arena: @arena, start_date: Date.today)
@@ -67,6 +67,10 @@ class ReservationsController < ApplicationController
       format.html { redirect_to reservations_url, notice: "Reservation was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def join_requests
+    
   end
 
   private
