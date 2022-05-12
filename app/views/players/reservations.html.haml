@@ -1,0 +1,56 @@
+.sportify-page
+  .sportify-panel.sportify-small-panel.sportify-radius
+    = link_to fa_icon('location-arrow', text: 'Arenas'), arenas_path, id: 'arenas-create-reservation-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+    %br
+    %br
+    %br
+
+    %h1.sportify-font Upcoming Reservations
+    %br
+
+    .table-responsive
+      %table.table.table-success.table-striped
+        %thead
+          %tr
+            %th Type
+            %th Date
+            %th Place
+            %th 
+        %tbody
+          - @upcoming_reservations.each do |reservation|
+            %tr
+              %td= reservation.owner_player_id == current_user.player.id ? 'Own' : 'Guest' # TechQuestion TODO: refactor this 
+              %td= reservation.date
+              %td= reservation.place
+              %td= link_to fa_icon('eye'), reservation_path(reservation), class: 'btn sportify-small-button sportify-radius fs-5'
+
+  .sportify-panel.sportify-big-panel.sportify-radius
+    .buttons-container
+      = link_to fa_icon('button', text: 'TODO: another button'), stats_player_path(current_user.player), id: '', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+      %span
+      = link_to fa_icon('address-card', text: 'My Stats'), stats_player_path(current_user.player), id: 'player-stats-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+    %br
+    %br
+
+    %h1.sportify-font Past Reservations
+    %br
+
+    .table-responsive
+      %table.table.table-success.table-striped
+        %thead
+          %tr
+            %th Type
+            %th Date
+            %th Place
+            %th Other
+            %th info
+            %th
+        %tbody
+          - @past_reservations.each do |reservation|
+            %tr
+              %td= reservation.owner_player_id == current_user.player.id ? 'Own' : 'Guest' # TechQuestion TODO: refactor this 
+              %td= reservation.date
+              %td= reservation.place
+              %td
+              %td
+              %td= link_to fa_icon('eye'), reservation_path(reservation), class: 'btn sportify-small-button sportify-radius fs-5'

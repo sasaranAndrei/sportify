@@ -1,18 +1,11 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[ show edit update destroy ]
 
-  # if owner_player => my reservations else => available reservations (marketplace)
   def index
-    if params[:owner_player_id].blank?
-      @reservations = Reservation.all
-      # @reservations = Reservation.all # la un moment dat AvailableReservationsService.call // cv din ReservationManager
-    else
-      owner_player = Player.find(params[:owner_player_id])
-      
-      @reservations = owner_player.all_reservations
-      @upcoming_reservations = @reservations.upcoming
-      @past_reservations = @reservations.past
-    end
+    # @reservations = Reservation.all
+    @recent_reservations = Reservation.past.ordered(:asc).last(5)
+    @upcoming_reservations = Reservation.upcoming.ordered(:asc)
+    # @reservations = Reservation.all # la un moment dat AvailableReservationsService.call // cv din ReservationManager
   end
 
   # GET /reservations/1 or /reservations/1.json
@@ -24,6 +17,7 @@ class ReservationsController < ApplicationController
     return redirect_to arenas_path, notice: 'Please select an Arena before create a Reservation' if params[:arena_id].blank?
 
     @arena = Arena.find(params[:arena_id])
+    # @scheduler = ArenaSchedulerService.call(arena: @arena, start_date: Date.today)
     @reservation = Reservation.new
   end
 
@@ -76,20 +70,11 @@ class ReservationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_reservation
       @reservation = Reservation.find(params[:id])
     end
     
-    # Only allow a list of trusted parameters through.
     def reservation_params
-      # params.fetch(:reservation, {})
       params.require(:reservation).permit(:booking_date, :booking_hour, :owner_player_id, :arena_id, :field_id)
-    end
-
-    def merge_params
-      reservation_params.merge({
-        # owner_player_id: params[:owner_player_id],
-      })
     end
   end
