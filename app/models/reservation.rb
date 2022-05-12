@@ -11,6 +11,12 @@ class Reservation < ApplicationRecord
   scope :past, -> { where('booking_date < ?', Date.today) }
   scope :ordered, ->(direction) { order(booking_date: direction, booking_hour: direction) }
 
+  def all_players
+    # TODO: TechQuestion? - Come up with other idea
+    owner_player = Player.where(id: owner_player_id) # yes, I know it's only an object
+    guest_players.union(owner_player)
+  end
+
   def date
     "#{booking_date.strftime('%d/%m/%Y')} #{booking_hour}:00"
   end
@@ -27,5 +33,13 @@ class Reservation < ApplicationRecord
     datetime = booking_date.to_time.change(hour: booking_hour)
   
     datetime < Time.now
+  end
+
+  def status
+    "#{all_players.count} / #{field.max_players} players"
+  end
+
+  def free_slots
+    field.max_players - all_players.count
   end
 end

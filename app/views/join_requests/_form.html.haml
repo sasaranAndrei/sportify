@@ -6,7 +6,6 @@
         - @join_request.errors.full_messages.each do |message|
           %li= message
   
-  %h3.sportify-font Player Details
   .form-group 
     = f.label :name, class: 'sportify-label'
     .form-control{ disabled: true }= @owner_player.name
