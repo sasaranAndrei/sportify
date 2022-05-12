@@ -13,9 +13,16 @@
 @import "sports";
 @import "reservations";
 @import "players";
+@import "join_requests";
 
 .sportify-font {
   font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.sportify-label {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: larger;
+
 }
 
 .sportify-navbar {

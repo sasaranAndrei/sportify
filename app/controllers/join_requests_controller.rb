@@ -1,6 +1,7 @@
 class JoinRequestsController < ApplicationController
   before_action :set_join_request, only: %i[ show edit update destroy ]
   before_action :set_reservation, only: %i[ new ]
+  before_action :set_owner_player, only: %i[ new ]
   before_action :find_join_request, only: %i[ new ]
 
   # GET /join_requests or /join_requests.json
@@ -75,6 +76,10 @@ class JoinRequestsController < ApplicationController
 
     def set_reservation
       @reservation = Reservation.find(params[:reservation_id])
+    end
+
+    def set_owner_player
+      @owner_player = Player.find(params[:player_id])
     end
 
     def find_join_request

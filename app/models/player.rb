@@ -27,4 +27,8 @@ class Player < ApplicationRecord
     # la fel ca alea de mai sus
     # Reservation.where(reservation_players: { player_id: id }).or(Reservation.where(owner_player_id: id))
   end
+
+  def age
+    ((Time.zone.now - birth_date.to_time) / 1.year.seconds).floor
+  end
 end

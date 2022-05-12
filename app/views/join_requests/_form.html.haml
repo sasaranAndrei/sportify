@@ -5,12 +5,21 @@
       %ul
         - @join_request.errors.full_messages.each do |message|
           %li= message
-
-  .field
-    = f.label :player
-    = f.text_field :player
-  .field
-    = f.label :reservation
-    = f.text_field :reservation
+  
+  %h3.sportify-font Player Details
+  .form-group 
+    = f.label :name, class: 'sportify-label'
+    .form-control{ disabled: true }= @owner_player.name
+  .form-group 
+    = f.label :nickname, class: 'sportify-label'
+    .form-control{ disabled: true }= @owner_player.name
+  .form-group 
+    = f.label :age, class: 'sportify-label'
+    .form-control{ disabled: true }= @owner_player.age
+  .form-group 
+    = f.label :phone_number, class: 'sportify-label'
+    .form-control{ disabled: true }= @owner_player.phone_number
+  
+  %br
   .actions
-    = f.submit 'Save'
+    = button_tag fa_icon('plus', text: 'Ask to Join'), type: 'submit', id: 'join-requests-ask-to-join-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
