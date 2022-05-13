@@ -5,7 +5,19 @@ class Reservation < ApplicationRecord
   has_many :reservation_players
   has_many :guest_players, class_name: 'Player', through: :reservation_players, source: :player
   has_many :join_requests
-  has_many :join_request_players, class_name: 'Player', through: :join_requests, source: :player
+  has_many :join_request_players, class_name: 'Player', through: :join_requests, source: :player do
+    def awaiting
+      where('join_requests.approved is NULL')
+    end
+    
+    def confirmed
+      where('join_requests.approved = ?', true)
+    end
+    
+    def declined
+      where('join_requests.approved = ?', false)
+    end
+  end
 
   scope :upcoming, -> { where('booking_date >= ?', Date.today) }
   scope :past, -> { where('booking_date < ?', Date.today) }
@@ -29,13 +41,17 @@ class Reservation < ApplicationRecord
     player == owner_player || guest_players.include?(player)
   end
 
+  def awaiting_response?(player)
+    join_request_players.awaiting.include?(player)
+  end
+
   def has_passed?
     datetime = booking_date.to_time.change(hour: booking_hour)
   
     datetime < Time.now
   end
 
-  def status
+  def slots_status
     "#{all_players.count} / #{field.max_players} players"
   end
 

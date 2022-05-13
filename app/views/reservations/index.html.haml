@@ -22,7 +22,12 @@
               - if reservation.participate?(current_player)
                 %td= link_to fa_icon('eye'), reservation_path(reservation), class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'      
               - else
-                %td= link_to fa_icon('arrow-right'), new_join_request_path(reservation_id: reservation.id, player_id: current_player.id), class: 'btn sportify-small-button sportify-radius fs-5'
+                - if reservation.awaiting_response?(current_player)
+                  // TechQuestion? - Cum sa fac aici?
+                  - join_request = JoinRequest.find_by(reservation_id: reservation.id, player_id: current_player.id)
+                  %td= link_to fa_icon('arrow-right'), join_request_path(join_request), class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
+                - else
+                  %td= link_to fa_icon('arrow-right'), new_join_request_path(reservation_id: reservation.id, player_id: current_player.id), class: 'btn sportify-small-button sportify-radius fs-5'
   .sportify-panel.sportify-small-panel.sportify-radius
     %h1.sportify-font Details
     %br
