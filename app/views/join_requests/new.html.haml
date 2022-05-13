@@ -1,8 +1,28 @@
 .sportify-page
   .sportify-panel.sportify-small-panel.sportify-radius
     %h1.sportify-font Owner Player Details
-    = render 'form'
-  .sportify-panel.sportify-big-panel.sportify-radius
+    = form_for @join_request do |f|
+      - if @join_request.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@join_request.errors.count, "error")} prohibited this join_request from being saved:"
+          %ul
+            - @join_request.errors.full_messages.each do |message|
+              %li= message
+      
+      .form-group 
+        = f.label :name, class: 'sportify-label'
+        .form-control{ disabled: true }= @owner_player.name
+      .form-group 
+        = f.label :nickname, class: 'sportify-label'
+        .form-control{ disabled: true }= @owner_player.name
+      .form-group 
+        = f.label :age, class: 'sportify-label'
+        .form-control{ disabled: true }= @owner_player.age
+      .form-group 
+        = f.label :phone_number, class: 'sportify-label'
+        .form-control{ disabled: true }= @owner_player.phone_number
+
+  .sportify-panel.sportify-small-panel.sportify-radius
     %h1.sportify-font Reservation Details
     .form-group 
       = label_tag :place, 'Place', class: 'sportify-label'
@@ -16,3 +36,10 @@
     .form-group 
       = label_tag :phone_number, 'Arena Phone Number', class: 'sportify-label'
       .form-control{ disabled: true }= @reservation.field.arena.phone_number
+  
+  .sportify-panel.sportify-small-panel.sportify-radius
+    %h1.sportify-font Actions
+    = button_tag fa_icon('plus', text: 'Ask to Join'), type: 'submit', id: 'join-requests-ask-to-join-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+    %br
+    %br
+    = link_to fa_icon('rotate-left', text: 'Back to GamesFeed'), reservations_path, id: 'join-requests-ask-to-join-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'

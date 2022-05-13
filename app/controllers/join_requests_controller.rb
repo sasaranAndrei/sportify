@@ -23,6 +23,8 @@ class JoinRequestsController < ApplicationController
 
   # GET /join_requests/1/edit
   def edit
+    @owner_player = @join_request.player
+    @reservation = @join_request.reservation
   end
 
   # POST /join_requests or /join_requests.json
