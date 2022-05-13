@@ -1,7 +1,6 @@
 class JoinRequestsController < ApplicationController
-  before_action :set_join_request, only: %i[ show edit update destroy ]
-  before_action :set_reservation, only: %i[ new ]
-  before_action :set_owner_player, only: %i[ new ]
+  before_action :set_join_request, only: %i[ show edit update destroy approve decline ]
+  before_action :set_reservation_info, only: %i[ new create ]
   before_action :find_join_request, only: %i[ new ]
 
   # GET /join_requests or /join_requests.json
@@ -23,8 +22,8 @@ class JoinRequestsController < ApplicationController
 
   # GET /join_requests/1/edit
   def edit
-    @owner_player = @join_request.player
     @reservation = @join_request.reservation
+    @owner_player = @reservation.owner_player
   end
 
   # POST /join_requests or /join_requests.json
@@ -32,7 +31,7 @@ class JoinRequestsController < ApplicationController
     @join_request = JoinRequest.new(join_request_params)
 
     if @join_request.save
-      redirect_to join_request_path(@join_request), notice: "Join request was successfully created." 
+      redirect_to edit_join_request_path(@join_request), notice: "Join request was successfully created." 
     else
       render :new, status: :unprocessable_entity
     end
@@ -51,14 +50,23 @@ class JoinRequestsController < ApplicationController
     end
   end
 
+  def approve
+    @join_request.update(approved: true)
+
+    redirect_to join_requests_player_path(current_user.player) # TODO: check why current_player is not visible
+  end
+
+  def decline
+    @join_request.update(approved: false)
+
+    redirect_to join_requests_player_path(current_user.player) # TODO: check why current_player is not visible
+  end
+
   # DELETE /join_requests/1 or /join_requests/1.json
   def destroy
     @join_request.destroy
 
-    respond_to do |format|
-      format.html { redirect_to join_requests_url, notice: "Join request was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to reservations_player_path(current_user.player), notice: 'You will be penalized for what you did!'
   end
 
   private
@@ -72,12 +80,9 @@ class JoinRequestsController < ApplicationController
       params.require(:join_request).permit(:player_id, :reservation_id)
     end
 
-    def set_reservation
-      @reservation = Reservation.find(params[:reservation_id])
-    end
-
-    def set_owner_player
-      @owner_player = Player.find(params[:player_id])
+    def set_reservation_info
+      @reservation = Reservation.find(params[:reservation_id] || params[:join_request][:reservation_id]) # TODO: refactor this. its too dangerous. # TechQuestion
+      @owner_player = @reservation.owner_player
     end
 
     def find_join_request

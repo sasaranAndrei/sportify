@@ -1,0 +1,53 @@
+.sportify-page
+  .sportify-panel.sportify-big-panel.sportify-radius
+    %h1.sportify-font Approve Join Requests
+    %br
+
+    .table-responsive
+      %table.table.table-success.table-striped
+        %thead
+          %tr
+            %th Player
+            %th Nickname
+            %th Rating
+            %th Reservation
+            %th Free Slots
+            %th Status
+            %th 
+        %tbody
+          - @guest_join_requests.each do |join_request|
+            %tr
+              %td= join_request.player.name
+              %td= join_request.player.nickname
+              %td= join_request.player.rating
+              %td= link_to fa_icon('eye'), reservation_path(join_request.reservation), class: 'btn sportify-small-button sportify-radius fs-5'
+              %td= join_request.reservation.free_slots
+              %td= join_request.status
+              - if join_request.approved?
+                %td= link_to fa_icon('times'), [:decline, join_request], method: :put, class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
+              - else
+                %td= link_to fa_icon('check'), [:approve, join_request], method: :put, class: 'btn sportify-small-button sportify-radius fs-5'
+
+  .sportify-panel.sportify-small-panel.sportify-radius
+    %h1.sportify-font Awaiting Join Requests
+    %br
+
+    .table-responsive
+      %table.table.table-success.table-striped
+        %thead
+          %tr
+            %th Date
+            %th Place
+            %th Free Slots
+            %th Status
+            %th Edit
+            -# Sa pun si asta sa poata da de aici decline?
+            -# %th 
+        %tbody
+          - @own_join_requests.each do |join_request|
+            %tr
+              %td= join_request.reservation.date
+              %td= join_request.reservation.place
+              %td= join_request.reservation.free_slots
+              %td= join_request.status
+              %td= link_to fa_icon('pencil'), edit_join_request_path(join_request), class: 'btn sportify-small-button sportify-radius fs-5'

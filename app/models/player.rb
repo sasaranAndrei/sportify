@@ -28,7 +28,18 @@ class Player < ApplicationRecord
     # Reservation.where(reservation_players: { player_id: id }).or(Reservation.where(owner_player_id: id))
   end
 
+  def guest_join_requests
+    # own_reservations.map(&:join_requests) # asta nu creca e ok 
+    JoinRequest.where(reservation_id: own_reservations.pluck(:id))
+  end
+
   def age
     ((Time.zone.now - birth_date.to_time) / 1.year.seconds).floor
+  end
+
+  def rating
+    # viitor feature
+    # deocamdata hardcodat ca toti is baieti de treaba
+    '100/100'
   end
 end
