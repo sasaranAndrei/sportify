@@ -4,10 +4,30 @@ class Reservation < ApplicationRecord
 
   has_many :reservation_players
   has_many :guest_players, class_name: 'Player', through: :reservation_players, source: :player
+  has_many :join_requests
+  has_many :join_request_players, class_name: 'Player', through: :join_requests, source: :player do
+    def awaiting
+      where('join_requests.approved is NULL')
+    end
+    
+    def confirmed
+      where('join_requests.approved = ?', true)
+    end
+    
+    def declined
+      where('join_requests.approved = ?', false)
+    end
+  end
 
   scope :upcoming, -> { where('booking_date >= ?', Date.today) }
   scope :past, -> { where('booking_date < ?', Date.today) }
   scope :ordered, ->(direction) { order(booking_date: direction, booking_hour: direction) }
+
+  def all_players
+    # TODO: TechQuestion? - Come up with other idea
+    owner_player = Player.where(id: owner_player_id) # yes, I know it's only an object
+    guest_players.union(owner_player)
+  end
 
   def date
     "#{booking_date.strftime('%d/%m/%Y')} #{booking_hour}:00"
@@ -21,9 +41,21 @@ class Reservation < ApplicationRecord
     player == owner_player || guest_players.include?(player)
   end
 
+  def awaiting_response?(player)
+    join_request_players.awaiting.include?(player)
+  end
+
   def has_passed?
     datetime = booking_date.to_time.change(hour: booking_hour)
   
     datetime < Time.now
+  end
+
+  def slots_status
+    "#{all_players.count} / #{field.max_players} players"
+  end
+
+  def free_slots
+    field.max_players - all_players.count
   end
 end

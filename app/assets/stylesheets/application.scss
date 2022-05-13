@@ -13,9 +13,16 @@
 @import "sports";
 @import "reservations";
 @import "players";
+@import "join_requests";
 
 .sportify-font {
   font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.sportify-label {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: larger;
+
 }
 
 .sportify-navbar {
@@ -147,4 +154,9 @@
 .sportify-small-panel {
   background-color: $small-panel-background-color;
   width: 30%;
+}
+
+// change ids of JS-unused buttons with this
+.sportify-wide-button {
+  width: 100%;
 }

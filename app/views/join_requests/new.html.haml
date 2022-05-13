@@ -1,0 +1,48 @@
+= form_for @join_request do |f|
+  = f.hidden_field :player_id, value: @owner_player.id
+  = f.hidden_field :reservation_id, value: @reservation.id
+
+  .sportify-page
+    .sportify-panel.sportify-small-panel.sportify-radius
+      %h1.sportify-font Owner Player Details
+      - if @join_request.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@join_request.errors.count, "error")} prohibited this join_request from being saved:"
+          %ul
+            - @join_request.errors.full_messages.each do |message|
+              %li= message
+      
+      .form-group 
+        = f.label :name, class: 'sportify-label'
+        .form-control{ disabled: true }= @owner_player.name
+      .form-group 
+        = f.label :nickname, class: 'sportify-label'
+        .form-control{ disabled: true }= @owner_player.name
+      .form-group 
+        = f.label :age, class: 'sportify-label'
+        .form-control{ disabled: true }= @owner_player.age
+      .form-group 
+        = f.label :phone_number, class: 'sportify-label'
+        .form-control{ disabled: true }= @owner_player.phone_number
+
+    .sportify-panel.sportify-small-panel.sportify-radius
+      %h1.sportify-font Reservation Details
+      .form-group 
+        = label_tag :place, 'Place', class: 'sportify-label'
+        .form-control{ disabled: true }= @reservation.place
+      .form-group 
+        = label_tag :status, 'Slots Status', class: 'sportify-label'
+        .form-control{ disabled: true }= @reservation.slots_status
+      .form-group 
+        = label_tag :free_slots, 'Free Slots', class: 'sportify-label'
+        .form-control{ disabled: true }= "#{@reservation.free_slots} slots"
+      .form-group 
+        = label_tag :phone_number, 'Arena Phone Number', class: 'sportify-label'
+        .form-control{ disabled: true }= @reservation.field.arena.phone_number
+    
+    .sportify-panel.sportify-small-panel.sportify-radius
+      %h1.sportify-font Actions
+      = button_tag fa_icon('plus', text: 'Ask to Join'), type: 'submit', id: 'join-requests-ask-to-join-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+      %br
+      %br
+      = link_to fa_icon('rotate-left', text: 'Back to GamesFeed'), reservations_path, id: 'join-requests-ask-to-join-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
