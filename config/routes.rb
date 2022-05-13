@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :join_requests
   root 'pages#home'
   
   # BUSINESS LOGIC
@@ -11,13 +10,18 @@ Rails.application.routes.draw do
   resources :reservations do
     get :join_requests, on: :member
   end
+  
+  resources :join_requests do
+    put :approve, on: :member
+    put :decline, on: :member
+  end
 
   resources :players do
     get :stats, on: :member
     get :reservations, on: :member
-    get 'reservations/join_requests', on: :member
+    get :join_requests, on: :member
   end
-
+  
   # PAY
   get 'sportify_coins_shop', to: 'checkouts#new'
   get 'checkout', to: 'checkouts#show'

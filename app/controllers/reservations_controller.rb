@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: %i[ show edit update destroy ]
+  before_action :set_reservation, only: %i[ show edit update destroy join_request ]
 
   def index
     # @reservations = Reservation.all
@@ -10,6 +10,7 @@ class ReservationsController < ApplicationController
 
   # GET /reservations/1 or /reservations/1.json
   def show
+    @owner_player = @reservation.owner_player
   end
 
   # GET /reservations/new
@@ -61,16 +62,16 @@ class ReservationsController < ApplicationController
 
   # DELETE /reservations/1 or /reservations/1.json
   def destroy
-    @reservation.destroy
+    byebug # don;t do this only if you know what you are doing
+    # TODO: also delete ReservationPlayer objects
+    # TODO: find a way to notify players (trough SMS - improvement dupa ce i gata licenta)
+    # @reservation.destroy
 
-    respond_to do |format|
-      format.html { redirect_to reservations_url, notice: "Reservation was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_back(fallback_location: reservations_player_path(current_player), notice: 'You will regret this!')
   end
 
   def join_requests
-    
+    # can use @reservation
   end
 
   private

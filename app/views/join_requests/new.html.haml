@@ -1,5 +1,6 @@
 = form_for @join_request do |f|
-  = f.hidden_field :player_id, value: @owner_player.id
+  -# - byebug
+  = f.hidden_field :player_id, value: current_player.id
   = f.hidden_field :reservation_id, value: @reservation.id
 
   .sportify-page
@@ -27,6 +28,9 @@
 
     .sportify-panel.sportify-small-panel.sportify-radius
       %h1.sportify-font Reservation Details
+      .form-group 
+        = label_tag :date, 'Date', class: 'sportify-label'
+        .form-control{ disabled: true }= @reservation.date
       .form-group 
         = label_tag :place, 'Place', class: 'sportify-label'
         .form-control{ disabled: true }= @reservation.place

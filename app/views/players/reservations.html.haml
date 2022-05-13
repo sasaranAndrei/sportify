@@ -1,7 +1,7 @@
 .sportify-page
   .sportify-panel.sportify-small-panel.sportify-radius
     -# = link_to fa_icon('location-arrow', text: 'Arenas'), arenas_path, id: 'arenas-create-reservation-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
-    = link_to fa_icon('user-plus', text: 'Join Requests'), reservations_join_requests_player_path(current_user.player), id: 'my-reservations-join-requests-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+    = link_to fa_icon('user-plus', text: 'Join Requests'), join_requests_player_path(current_user.player), id: 'my-reservations-join-requests-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
     %br
     %br
     %br
@@ -27,7 +27,8 @@
 
   .sportify-panel.sportify-big-panel.sportify-radius
     .buttons-container
-      = link_to fa_icon('location-arrow', text: 'Arenas'), arenas_path, id: 'my-reservations-arenas-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+      -# = link_to fa_icon('location-arrow', text: 'Arenas'), arenas_path, id: 'my-reservations-arenas-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+      = link_to fa_icon('group', text: 'GamesFeed'), reservations_path, id: 'my-reservations-gamesfeed-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
       %span
       = link_to fa_icon('address-card', text: 'My Stats'), stats_player_path(current_user.player), id: 'my-reservations-player-stats-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
     %br
