@@ -52,12 +52,16 @@ class JoinRequestsController < ApplicationController
 
   def approve
     @join_request.update(approved: true)
-
+    # TechQuestion - how to remove dependency with ReservatinoPlayer
+    ReservationPlayer.create!(reservation_id: @join_request.reservation_id, player_id: @join_request.player_id)
+    
     redirect_to join_requests_player_path(current_user.player) # TODO: check why current_player is not visible
   end
-
+  
   def decline
     @join_request.update(approved: false)
+    # TechQuestion - how to remove dependency with ReservatinoPlayer
+    ReservationPlayer.find_by((reservation_id: @join_request.reservation_id, player_id: @join_request.player_id)&.destroy
 
     redirect_to join_requests_player_path(current_user.player) # TODO: check why current_player is not visible
   end
