@@ -20,7 +20,7 @@
               %td= reservation.date
               %td= reservation.place
               - if reservation.participate?(current_player)
-                %td= link_to fa_icon('eye'), reservation_path(reservation), class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'      
+                %td= link_to fa_icon('eye'), reservation_path(reservation), class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
               - else
                 - if reservation.awaiting_response?(current_player)
                   // TechQuestion? - Cum sa fac aici?

@@ -31,14 +31,10 @@ class JoinRequestsController < ApplicationController
   def create
     @join_request = JoinRequest.new(join_request_params)
 
-    respond_to do |format|
-      if @join_request.save
-        format.html { redirect_to join_request_url(@join_request), notice: "Join request was successfully created." }
-        format.json { render :show, status: :created, location: @join_request }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @join_request.errors, status: :unprocessable_entity }
-      end
+    if @join_request.save
+      redirect_to join_request_path(@join_request), notice: "Join request was successfully created." 
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
