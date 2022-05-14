@@ -90,7 +90,11 @@ class ReservationsController < ApplicationController
   def accept_invitation
     current_player = current_user.player
 
-    ReservationPlayer.find_or_create_by!(reservation_id: @reservation.id, player_id: current_player.id) # add joined_by: ReservationPlayer::INVITATION
+    ReservationPlayer.find_or_create_by!(
+      reservation_id: @reservation.id,
+      player_id: current_player.id,
+      joined_by: ReservationPlayer::INVITATION
+    )
   
     redirect_to reservation_path(@reservation), notice: 'Successfully Join by Invitation!'
   end
