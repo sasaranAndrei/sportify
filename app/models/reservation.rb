@@ -58,4 +58,26 @@ class Reservation < ApplicationRecord
   def free_slots
     field.max_players - all_players.count
   end
+
+  def invitation_link
+    "#{Rails.application.routes.url_helpers.reservation_url(self)}?invitation_token=#{invitation_token}"
+  end
+
+  def generate_invitation_token!
+    self.invitation_token = generate_token!
+    self.save!
+  end
+
+  def valid_invitation_token?(token)
+    self.invitation_token == token
+  end
+
+  private
+    
+    def generate_token!
+      loop do
+        token = SecureRandom.hex(10)
+        break token unless Reservation.where(invitation_token: token).exists?
+      end
+    end
 end

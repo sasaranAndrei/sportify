@@ -4,6 +4,13 @@ class ReservationPlayer < ApplicationRecord
 
   validate :owner_absence_from_guests_list
 
+  JOIN_REQUEST = 'Join Request'
+  INVITATION = 'Invitation'
+
+  # def self.joining_options
+    # [JOIN_REQUEST, INVITATION]
+  # end
+
   private
 
     def owner_absence_from_guests_list
