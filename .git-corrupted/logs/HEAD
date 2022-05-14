@@ -1,0 +1,163 @@
+0000000000000000000000000000000000000000 f2c5cb384e550716aff54db9fde17c3013e20d9f Andrei Sasaran <sasaranandreipaul@gmail.com> 1646470377 +0200	clone: from https://github.com/sasaranAndrei/sportify.git
+f2c5cb384e550716aff54db9fde17c3013e20d9f b6dc1a1d3d84a3139245f9360fb5568c993340cb Andrei Sasaran <sasaranandreipaul@gmail.com> 1646490565 +0200	commit: Add Bootstrap
+b6dc1a1d3d84a3139245f9360fb5568c993340cb 703be2e4d4dd31d35c7c01a0cc9dfd7bf2a5b079 Andrei Sasaran <sasaranandreipaul@gmail.com> 1646491107 +0200	commit: Add fa_icons
+703be2e4d4dd31d35c7c01a0cc9dfd7bf2a5b079 a15ce3dc1c1740195493368e685a29ab568428d1 Andrei Sasaran <sasaranandreipaul@gmail.com> 1646492381 +0200	commit: Add more Gems
+a15ce3dc1c1740195493368e685a29ab568428d1 a15ce3dc1c1740195493368e685a29ab568428d1 Andrei Sasaran <sasaranandreipaul@gmail.com> 1646501120 +0200	checkout: moving from main to feature/1/add-devise
+a15ce3dc1c1740195493368e685a29ab568428d1 62d2a85c0ff9952ab8dfbe4886df70cc0b1caaa0 Andrei Sasaran <sasaranandreipaul@gmail.com> 1646502686 +0200	commit: Add Devise basic usage
+62d2a85c0ff9952ab8dfbe4886df70cc0b1caaa0 26ade832297a9db1680ed5392646d529bfa7ac95 Andrei Sasaran <sasaranandreipaul@gmail.com> 1646503910 +0200	commit: Repair haml stuff
+26ade832297a9db1680ed5392646d529bfa7ac95 26ade832297a9db1680ed5392646d529bfa7ac95 Andrei Sasaran <sasaranandreipaul@gmail.com> 1646503920 +0200	reset: moving to HEAD
+26ade832297a9db1680ed5392646d529bfa7ac95 aaf12a62afcee0c6ce65bca551e1ad377c16a981 Andrei Sasaran <sasaranandreipaul@gmail.com> 1646504390 +0200	commit: Convert all erb files to haml
+aaf12a62afcee0c6ce65bca551e1ad377c16a981 a15ce3dc1c1740195493368e685a29ab568428d1 Andrei Sasaran <sasaranandreipaul@gmail.com> 1646504691 +0200	checkout: moving from feature/1/add-devise to main
+a15ce3dc1c1740195493368e685a29ab568428d1 0d0c3deae83b01ce497a14239b1edcc0c85adc8d Andrei Sasaran <sasaranandreipaul@gmail.com> 1646504718 +0200	pull: Fast-forward
+0d0c3deae83b01ce497a14239b1edcc0c85adc8d 0d0c3deae83b01ce497a14239b1edcc0c85adc8d Andrei Sasaran <sasaranandreipaul@gmail.com> 1646505606 +0200	checkout: moving from main to feature/2/add-payment
+0d0c3deae83b01ce497a14239b1edcc0c85adc8d c1f3131bf984f21ec729e6450066a7635d0e59fe Andrei Sasaran <sasaranandreipaul@gmail.com> 1646575401 +0200	commit: Add DEV credentials
+c1f3131bf984f21ec729e6450066a7635d0e59fe 5c481bf466c66d86af912eb5b5e94cb6e0285d4d Andrei Sasaran <sasaranandreipaul@gmail.com> 1646586014 +0200	commit: Add Pay & Stripe method
+5c481bf466c66d86af912eb5b5e94cb6e0285d4d 498df646829e8e8c520378e7ff6fb600a425e8e5 Andrei Sasaran <sasaranandreipaul@gmail.com> 1646586262 +0200	commit: Add basic display for 06.03 DEMO
+498df646829e8e8c520378e7ff6fb600a425e8e5 0d0c3deae83b01ce497a14239b1edcc0c85adc8d Andrei Sasaran <sasaranandreipaul@gmail.com> 1647166880 +0200	checkout: moving from feature/2/add-payment to main
+0d0c3deae83b01ce497a14239b1edcc0c85adc8d dc62d05778710879bc14f526a5e7cd686e2ff246 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647166884 +0200	pull: Fast-forward
+dc62d05778710879bc14f526a5e7cd686e2ff246 3d8071247a36cbcb639601f719a352fee36f8553 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647169690 +0200	pull: Fast-forward
+3d8071247a36cbcb639601f719a352fee36f8553 3d8071247a36cbcb639601f719a352fee36f8553 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647169767 +0200	checkout: moving from main to feature/3/basic-token
+3d8071247a36cbcb639601f719a352fee36f8553 cc14e4fb56489d38af2b1ca76b7301553fbde527 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647170753 +0200	commit: Add tokens to User model
+cc14e4fb56489d38af2b1ca76b7301553fbde527 651743f78697e7faf1b3cbe3a00a4b2bd20cd8ae Andrei Sasaran <sasaranandreipaul@gmail.com> 1647173516 +0200	commit: Add Purchasable models
+651743f78697e7faf1b3cbe3a00a4b2bd20cd8ae 0000000000000000000000000000000000000000 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647173541 +0200	Branch: renamed refs/heads/feature/3/basic-token to refs/heads/feature/3-7/basic-token-purchasable
+0000000000000000000000000000000000000000 651743f78697e7faf1b3cbe3a00a4b2bd20cd8ae Andrei Sasaran <sasaranandreipaul@gmail.com> 1647173541 +0200	Branch: renamed refs/heads/feature/3/basic-token to refs/heads/feature/3-7/basic-token-purchasable
+651743f78697e7faf1b3cbe3a00a4b2bd20cd8ae cc14e4fb56489d38af2b1ca76b7301553fbde527 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647177526 +0200	reset: moving to cc14e4f
+cc14e4fb56489d38af2b1ca76b7301553fbde527 191e6d8e587345a5e3892b63edab1b20c538c7f0 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647177840 +0200	commit: Add unwanted tables
+191e6d8e587345a5e3892b63edab1b20c538c7f0 03bf316f648ce2c1b01c633166cb46954317e581 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647177972 +0200	commit: Fix schema
+03bf316f648ce2c1b01c633166cb46954317e581 f692842a52635f5f3b308a97562c09177e734366 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647179493 +0200	commit: Add ability to select quantity
+f692842a52635f5f3b308a97562c09177e734366 ea8ae32606bcf81a185163ab94ec04c701ddc8c4 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647182163 +0200	commit: Rubocop
+ea8ae32606bcf81a185163ab94ec04c701ddc8c4 0000000000000000000000000000000000000000 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647182179 +0200	Branch: renamed refs/heads/feature/3-7/basic-token-purchasable to refs/heads/feature/3/basic-deposit-token
+0000000000000000000000000000000000000000 ea8ae32606bcf81a185163ab94ec04c701ddc8c4 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647182179 +0200	Branch: renamed refs/heads/feature/3-7/basic-token-purchasable to refs/heads/feature/3/basic-deposit-token
+ea8ae32606bcf81a185163ab94ec04c701ddc8c4 3d8071247a36cbcb639601f719a352fee36f8553 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647182262 +0200	checkout: moving from feature/3/basic-deposit-token to main
+3d8071247a36cbcb639601f719a352fee36f8553 a67ab1b018d7d38dfba70eaaeb473265888b80ea Andrei Sasaran <sasaranandreipaul@gmail.com> 1647182264 +0200	pull: Fast-forward
+a67ab1b018d7d38dfba70eaaeb473265888b80ea a7c0ec027ba4c949645c42213c970c86057e76cc Andrei Sasaran <sasaranandreipaul@gmail.com> 1647182782 +0200	commit: Update Stripe TEST MODE credentials for Production
+a7c0ec027ba4c949645c42213c970c86057e76cc 1817452840a1dfe85843f05ee67c1f5571e8e396 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647183266 +0200	commit: Configure Stripe 4 Heroku
+1817452840a1dfe85843f05ee67c1f5571e8e396 b6149cfcf16130b643e458803c13d3db145541d4 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647184236 +0200	commit: Try debugging
+b6149cfcf16130b643e458803c13d3db145541d4 2ad2a8477d5b2f303a7378952ad7dac141a3a59f Andrei Sasaran <sasaranandreipaul@gmail.com> 1647184495 +0200	commit: Try debugging
+2ad2a8477d5b2f303a7378952ad7dac141a3a59f 0d255ea4ce5468b6db0f039c359937fae37e5f58 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647184658 +0200	commit: Try debugging
+0d255ea4ce5468b6db0f039c359937fae37e5f58 3c99415671641de1a1475d4854d6d7d15514dc3f Andrei Sasaran <sasaranandreipaul@gmail.com> 1647184786 +0200	commit: Try debugging
+3c99415671641de1a1475d4854d6d7d15514dc3f 58a1f588c8a0b4c04fab4e7dace79dd9083ce4d3 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647184964 +0200	commit: Try debugging
+58a1f588c8a0b4c04fab4e7dace79dd9083ce4d3 0e77b4d124620eb07bb7518597cb045b66b698a9 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647185506 +0200	commit: Try debugging
+0e77b4d124620eb07bb7518597cb045b66b698a9 52230162d081fc69f1877ef262ccbac637a6b540 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647185565 +0200	commit: Try debugging
+52230162d081fc69f1877ef262ccbac637a6b540 9a7e822b84da5b111b00fcce8635b55d1ee1b3f0 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647185681 +0200	commit: Try debugging
+9a7e822b84da5b111b00fcce8635b55d1ee1b3f0 10b193b9b6b3208b2553907e516b2f59cbb160c0 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647185995 +0200	commit: Remove test messages
+10b193b9b6b3208b2553907e516b2f59cbb160c0 10b193b9b6b3208b2553907e516b2f59cbb160c0 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647186228 +0200	checkout: moving from main to feature/4/user-model
+10b193b9b6b3208b2553907e516b2f59cbb160c0 0000000000000000000000000000000000000000 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647186239 +0200	Branch: renamed refs/heads/feature/4/user-model to refs/heads/feature/4/player-model
+0000000000000000000000000000000000000000 10b193b9b6b3208b2553907e516b2f59cbb160c0 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647186239 +0200	Branch: renamed refs/heads/feature/4/user-model to refs/heads/feature/4/player-model
+10b193b9b6b3208b2553907e516b2f59cbb160c0 f6d3a99f0c99fdea5431de395fc572b1c44fc4a9 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647200893 +0200	commit: Add Player model & link with User on CREATE
+f6d3a99f0c99fdea5431de395fc572b1c44fc4a9 aa4f9dea3c2831bb9ea83570ea951f1d048ed137 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647203442 +0200	commit: Edit & Update User-Player
+aa4f9dea3c2831bb9ea83570ea951f1d048ed137 e634fc2124051c0eaaf7525893bb09845b033034 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647203743 +0200	commit: Remove joined_at from Player model
+e634fc2124051c0eaaf7525893bb09845b033034 10b193b9b6b3208b2553907e516b2f59cbb160c0 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647271325 +0200	checkout: moving from feature/4/player-model to main
+10b193b9b6b3208b2553907e516b2f59cbb160c0 4130fa4489f95ea24fa2fd0757b3c48954773979 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647271328 +0200	pull: Fast-forward
+4130fa4489f95ea24fa2fd0757b3c48954773979 4130fa4489f95ea24fa2fd0757b3c48954773979 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647271574 +0200	checkout: moving from main to feature/5/sport-field-arena-models
+4130fa4489f95ea24fa2fd0757b3c48954773979 2bfd9d3087967e3f67b3c6ba3e62c168a046a1e1 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647271760 +0200	commit: Add scaffolded Sport model
+2bfd9d3087967e3f67b3c6ba3e62c168a046a1e1 a33265063b30b2a747c1b8d2e3a34e042cac6862 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647273320 +0200	commit: Create basic models
+a33265063b30b2a747c1b8d2e3a34e042cac6862 1a16405798fe0fe5f60f45dc903b85f93a946419 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647273681 +0200	commit: Create relationships
+1a16405798fe0fe5f60f45dc903b85f93a946419 4130fa4489f95ea24fa2fd0757b3c48954773979 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647273700 +0200	checkout: moving from feature/5/sport-field-arena-models to main
+4130fa4489f95ea24fa2fd0757b3c48954773979 d82941bac6b117a0e60c8d80deef8c30d461e6c3 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647273806 +0200	pull: Fast-forward
+d82941bac6b117a0e60c8d80deef8c30d461e6c3 d82941bac6b117a0e60c8d80deef8c30d461e6c3 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647274310 +0200	checkout: moving from main to feature/6/gmaps-arenas-index
+d82941bac6b117a0e60c8d80deef8c30d461e6c3 d82941bac6b117a0e60c8d80deef8c30d461e6c3 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647275907 +0200	reset: moving to HEAD
+d82941bac6b117a0e60c8d80deef8c30d461e6c3 d82941bac6b117a0e60c8d80deef8c30d461e6c3 Andrei Sasaran <sasaranandreipaul@gmail.com> 1650106743 +0300	checkout: moving from feature/6/gmaps-arenas-index to main
+d82941bac6b117a0e60c8d80deef8c30d461e6c3 d82941bac6b117a0e60c8d80deef8c30d461e6c3 Andrei Sasaran <sasaranandreipaul@gmail.com> 1650106859 +0300	checkout: moving from main to feature/omu-A
+d82941bac6b117a0e60c8d80deef8c30d461e6c3 5d443bb407e326b24b8f7f35d22c7a7b4c0e85b5 Andrei Sasaran <sasaranandreipaul@gmail.com> 1650106897 +0300	commit: Update title
+5d443bb407e326b24b8f7f35d22c7a7b4c0e85b5 d82941bac6b117a0e60c8d80deef8c30d461e6c3 Andrei Sasaran <sasaranandreipaul@gmail.com> 1650106940 +0300	checkout: moving from feature/omu-A to main
+d82941bac6b117a0e60c8d80deef8c30d461e6c3 d82941bac6b117a0e60c8d80deef8c30d461e6c3 Andrei Sasaran <sasaranandreipaul@gmail.com> 1650106951 +0300	checkout: moving from main to feature/omu-B
+d82941bac6b117a0e60c8d80deef8c30d461e6c3 91129e342ea6fbe2d20fbb990d5b90ebea498850 Andrei Sasaran <sasaranandreipaul@gmail.com> 1650106976 +0300	commit: Udppaga
+91129e342ea6fbe2d20fbb990d5b90ebea498850 d82941bac6b117a0e60c8d80deef8c30d461e6c3 Andrei Sasaran <sasaranandreipaul@gmail.com> 1650107213 +0300	checkout: moving from feature/omu-B to main
+d82941bac6b117a0e60c8d80deef8c30d461e6c3 91129e342ea6fbe2d20fbb990d5b90ebea498850 Andrei Sasaran <sasaranandreipaul@gmail.com> 1650107242 +0300	checkout: moving from main to feature/omu-B
+91129e342ea6fbe2d20fbb990d5b90ebea498850 c0513f28e332718aafde8b0c7adcf963c834c3bf Andrei Sasaran <sasaranandreipaul@gmail.com> 1650107652 +0300	commit (merge): Stash
+c0513f28e332718aafde8b0c7adcf963c834c3bf d82941bac6b117a0e60c8d80deef8c30d461e6c3 Andrei Sasaran <sasaranandreipaul@gmail.com> 1650107659 +0300	checkout: moving from feature/omu-B to main
+d82941bac6b117a0e60c8d80deef8c30d461e6c3 a2d20a4843f3579d8fbaebb5e33f94cd241fef1e Andrei Sasaran <sasaranandreipaul@gmail.com> 1650107752 +0300	pull: Fast-forward
+a2d20a4843f3579d8fbaebb5e33f94cd241fef1e d82941bac6b117a0e60c8d80deef8c30d461e6c3 Andrei Sasaran <sasaranandreipaul@gmail.com> 1650107772 +0300	reset: moving to HEAD~1
+d82941bac6b117a0e60c8d80deef8c30d461e6c3 a2d20a4843f3579d8fbaebb5e33f94cd241fef1e Andrei Sasaran <sasaranandreipaul@gmail.com> 1650107793 +0300	pull: Fast-forward
+a2d20a4843f3579d8fbaebb5e33f94cd241fef1e 9841a3e65d76f08829873e7739d47c97ca963afa Andrei Sasaran <sasaranandreipaul@gmail.com> 1650107802 +0300	commit: Update eback
+9841a3e65d76f08829873e7739d47c97ca963afa d82941bac6b117a0e60c8d80deef8c30d461e6c3 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651074651 +0300	checkout: moving from main to feature/6/gmaps-arenas-index
+d82941bac6b117a0e60c8d80deef8c30d461e6c3 43761b4c216c58f06af84d85f8ed33a0b9f7719d Andrei Sasaran <sasaranandreipaul@gmail.com> 1651082683 +0300	commit: Add GMaps + refactor
+43761b4c216c58f06af84d85f8ed33a0b9f7719d 035b9b6ae94067a4ee312a022fda1fbd65134498 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651089234 +0300	commit: Setup GMaps & Stimulus
+035b9b6ae94067a4ee312a022fda1fbd65134498 31ff0a61c10d4bced66d974e1397d8a293bfb674 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651094100 +0300	commit: Show the map somehow but its blocked by CSP
+31ff0a61c10d4bced66d974e1397d8a293bfb674 31ff0a61c10d4bced66d974e1397d8a293bfb674 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651159031 +0300	reset: moving to HEAD
+31ff0a61c10d4bced66d974e1397d8a293bfb674 07254281f9adafd64c2f05e0aafb5afa2105486e Andrei Sasaran <sasaranandreipaul@gmail.com> 1651161531 +0300	commit: Fix stimulus little problem
+07254281f9adafd64c2f05e0aafb5afa2105486e 7119efdd0000791c90fafcb8be7eb4e68512cade Andrei Sasaran <sasaranandreipaul@gmail.com> 1651163259 +0300	commit: Fuck it
+7119efdd0000791c90fafcb8be7eb4e68512cade 7119efdd0000791c90fafcb8be7eb4e68512cade Andrei Sasaran <sasaranandreipaul@gmail.com> 1651163266 +0300	checkout: moving from feature/6/gmaps-arenas-index to feature/6/copy
+7119efdd0000791c90fafcb8be7eb4e68512cade 7119efdd0000791c90fafcb8be7eb4e68512cade Andrei Sasaran <sasaranandreipaul@gmail.com> 1651163292 +0300	checkout: moving from feature/6/copy to feature/6/gmaps-arenas-index
+7119efdd0000791c90fafcb8be7eb4e68512cade 9841a3e65d76f08829873e7739d47c97ca963afa Andrei Sasaran <sasaranandreipaul@gmail.com> 1651163639 +0300	checkout: moving from feature/6/gmaps-arenas-index to main
+9841a3e65d76f08829873e7739d47c97ca963afa 7119efdd0000791c90fafcb8be7eb4e68512cade Andrei Sasaran <sasaranandreipaul@gmail.com> 1651163662 +0300	checkout: moving from main to feature/6/gmaps-arenas-index
+7119efdd0000791c90fafcb8be7eb4e68512cade 035b9b6ae94067a4ee312a022fda1fbd65134498 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651163683 +0300	reset: moving to HEAD~3
+035b9b6ae94067a4ee312a022fda1fbd65134498 7119efdd0000791c90fafcb8be7eb4e68512cade Andrei Sasaran <sasaranandreipaul@gmail.com> 1651163732 +0300	checkout: moving from feature/6/gmaps-arenas-index to feature/6/copy
+7119efdd0000791c90fafcb8be7eb4e68512cade 035b9b6ae94067a4ee312a022fda1fbd65134498 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651163770 +0300	checkout: moving from feature/6/copy to feature/6/gmaps-arenas-index
+035b9b6ae94067a4ee312a022fda1fbd65134498 3e4b5c337d914aae439312a434c48c51800ffbeb Andrei Sasaran <sasaranandreipaul@gmail.com> 1651163856 +0300	commit: WIP
+3e4b5c337d914aae439312a434c48c51800ffbeb 7119efdd0000791c90fafcb8be7eb4e68512cade Andrei Sasaran <sasaranandreipaul@gmail.com> 1651163859 +0300	checkout: moving from feature/6/gmaps-arenas-index to feature/6/copy
+7119efdd0000791c90fafcb8be7eb4e68512cade 3e4b5c337d914aae439312a434c48c51800ffbeb Andrei Sasaran <sasaranandreipaul@gmail.com> 1651163872 +0300	checkout: moving from feature/6/copy to feature/6/gmaps-arenas-index
+3e4b5c337d914aae439312a434c48c51800ffbeb 0d24dd1ebe750420f4ea3cb0c6090d077c6eac8f Andrei Sasaran <sasaranandreipaul@gmail.com> 1651165080 +0300	commit: Add Syndey map
+0d24dd1ebe750420f4ea3cb0c6090d077c6eac8f f7eba27d0e4ae1b4c4e36a3cf3589b3c06be4744 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651257342 +0300	commit: WIP
+f7eba27d0e4ae1b4c4e36a3cf3589b3c06be4744 6ae9b94c4e67f9db771fe42997602e3737911769 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651315117 +0300	commit: Add jquery
+6ae9b94c4e67f9db771fe42997602e3737911769 e4c3c45e36cf7d4b33659a6fb7de5b22d4b2860e Andrei Sasaran <sasaranandreipaul@gmail.com> 1651319655 +0300	commit: Add GMAPS basic functionality
+e4c3c45e36cf7d4b33659a6fb7de5b22d4b2860e 9841a3e65d76f08829873e7739d47c97ca963afa Andrei Sasaran <sasaranandreipaul@gmail.com> 1651321247 +0300	checkout: moving from feature/6/gmaps-arenas-index to main
+9841a3e65d76f08829873e7739d47c97ca963afa 32ec65cf32b0a6c052ccbfdd8675562fb00ccdb5 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651321255 +0300	pull origin main: Fast-forward
+32ec65cf32b0a6c052ccbfdd8675562fb00ccdb5 32ec65cf32b0a6c052ccbfdd8675562fb00ccdb5 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651398801 +0300	checkout: moving from main to feature/7/user-dashboard
+32ec65cf32b0a6c052ccbfdd8675562fb00ccdb5 32ec65cf32b0a6c052ccbfdd8675562fb00ccdb5 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651504412 +0300	checkout: moving from feature/7/user-dashboard to feature/8/create-reservations
+32ec65cf32b0a6c052ccbfdd8675562fb00ccdb5 0d71c2dc21b38e75968fa4f5919395455131de5b Andrei Sasaran <sasaranandreipaul@gmail.com> 1651602377 +0300	commit: Setup relantionship between players and reservation
+0d71c2dc21b38e75968fa4f5919395455131de5b 712f4d7e19baaa948a1106ec7bcdb9426820ee22 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651603130 +0300	commit: Fix schema typo
+712f4d7e19baaa948a1106ec7bcdb9426820ee22 d8c3595f1eba1732c97c7322644ddd9133d6f582 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651604981 +0300	commit: Add validation for reservaiton owner
+d8c3595f1eba1732c97c7322644ddd9133d6f582 d62fa71f0e8b6f01e5953c8673cf0a9e85d6ddab Andrei Sasaran <sasaranandreipaul@gmail.com> 1651667868 +0300	commit: Add TechQuestion
+d62fa71f0e8b6f01e5953c8673cf0a9e85d6ddab 32ec65cf32b0a6c052ccbfdd8675562fb00ccdb5 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651668007 +0300	checkout: moving from feature/8/create-reservations to main
+32ec65cf32b0a6c052ccbfdd8675562fb00ccdb5 06d6e1338fe9fac7cac4d92938b54b6f2b005bf2 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651668011 +0300	pull: Fast-forward
+06d6e1338fe9fac7cac4d92938b54b6f2b005bf2 06d6e1338fe9fac7cac4d92938b54b6f2b005bf2 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651668069 +0300	checkout: moving from main to feature/7/user-dashboard-ui
+06d6e1338fe9fac7cac4d92938b54b6f2b005bf2 9f094c85881b8f13e43f840830018a085aa44915 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651672327 +0300	commit: Add style for navbar unlogged user
+9f094c85881b8f13e43f840830018a085aa44915 994cf3544e4799e63bd2d3b00532691caf53eee7 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651673285 +0300	commit: Add more icons
+994cf3544e4799e63bd2d3b00532691caf53eee7 a0e4bd8f7b136149874739db441a23e37c34128e Andrei Sasaran <sasaranandreipaul@gmail.com> 1651676136 +0300	commit: Add footer & page
+a0e4bd8f7b136149874739db441a23e37c34128e f5030bdb720927c0090b66c7cc58d3e26a8a7e20 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651811103 +0300	commit: UI Improvements
+f5030bdb720927c0090b66c7cc58d3e26a8a7e20 b63c34c1d6f1e795e286702d188e22352137d3ac Andrei Sasaran <sasaranandreipaul@gmail.com> 1651814878 +0300	commit: Fit content
+b63c34c1d6f1e795e286702d188e22352137d3ac 202688840894b68826f3f3403c532c02f58ab9da Andrei Sasaran <sasaranandreipaul@gmail.com> 1651827799 +0300	commit: Create a reservation from UI
+202688840894b68826f3f3403c532c02f58ab9da e1b790e17951f47d4eaf8e49ddafb6892ef3f62b Andrei Sasaran <sasaranandreipaul@gmail.com> 1651832282 +0300	commit: WIP: Handle no arena
+e1b790e17951f47d4eaf8e49ddafb6892ef3f62b 06d6e1338fe9fac7cac4d92938b54b6f2b005bf2 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651902427 +0300	checkout: moving from feature/7/user-dashboard-ui to main
+06d6e1338fe9fac7cac4d92938b54b6f2b005bf2 2a37b6b90608592a3c386fc11ed7619699e1618d Andrei Sasaran <sasaranandreipaul@gmail.com> 1651902499 +0300	pull: Fast-forward
+2a37b6b90608592a3c386fc11ed7619699e1618d e1b790e17951f47d4eaf8e49ddafb6892ef3f62b Andrei Sasaran <sasaranandreipaul@gmail.com> 1651902871 +0300	checkout: moving from main to feature/7/user-dashboard-ui
+e1b790e17951f47d4eaf8e49ddafb6892ef3f62b e1b790e17951f47d4eaf8e49ddafb6892ef3f62b Andrei Sasaran <sasaranandreipaul@gmail.com> 1651903003 +0300	checkout: moving from feature/7/user-dashboard-ui to feature/9/create-reservation-from-ui
+e1b790e17951f47d4eaf8e49ddafb6892ef3f62b 2a37b6b90608592a3c386fc11ed7619699e1618d Andrei Sasaran <sasaranandreipaul@gmail.com> 1651903201 +0300	checkout: moving from feature/9/create-reservation-from-ui to main
+2a37b6b90608592a3c386fc11ed7619699e1618d e1b790e17951f47d4eaf8e49ddafb6892ef3f62b Andrei Sasaran <sasaranandreipaul@gmail.com> 1651903225 +0300	checkout: moving from main to feature/9/create-reservation-from-ui
+e1b790e17951f47d4eaf8e49ddafb6892ef3f62b 6d78b8d00169254a46996e1091b0962cbb38a55e Andrei Sasaran <sasaranandreipaul@gmail.com> 1651903399 +0300	commit (merge): Update from main
+6d78b8d00169254a46996e1091b0962cbb38a55e 2a37b6b90608592a3c386fc11ed7619699e1618d Andrei Sasaran <sasaranandreipaul@gmail.com> 1651903569 +0300	checkout: moving from feature/9/create-reservation-from-ui to main
+2a37b6b90608592a3c386fc11ed7619699e1618d b52c4e0b4d3973ace8c41616e6ac715f9fc3e37b Andrei Sasaran <sasaranandreipaul@gmail.com> 1651903571 +0300	pull: Fast-forward
+b52c4e0b4d3973ace8c41616e6ac715f9fc3e37b b52c4e0b4d3973ace8c41616e6ac715f9fc3e37b Andrei Sasaran <sasaranandreipaul@gmail.com> 1651903588 +0300	checkout: moving from main to feature/11/my-reservations-ui
+b52c4e0b4d3973ace8c41616e6ac715f9fc3e37b a11b4104dc66ac6489b8e96e7dc73d6b20631204 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651917174 +0300	commit: Add My reservations UI
+a11b4104dc66ac6489b8e96e7dc73d6b20631204 f891363dbc0a31ed6dd3a3a35b2d7ee763cfa443 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651917200 +0300	commit: Add AR+ gem
+f891363dbc0a31ed6dd3a3a35b2d7ee763cfa443 b52c4e0b4d3973ace8c41616e6ac715f9fc3e37b Andrei Sasaran <sasaranandreipaul@gmail.com> 1651917485 +0300	checkout: moving from feature/11/my-reservations-ui to main
+b52c4e0b4d3973ace8c41616e6ac715f9fc3e37b 99b8d82892ebb11a591aa1f71f05068084706062 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651917489 +0300	pull: Fast-forward
+99b8d82892ebb11a591aa1f71f05068084706062 99b8d82892ebb11a591aa1f71f05068084706062 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651917507 +0300	checkout: moving from main to feature/12/arenas-reservations-ui-improvements
+99b8d82892ebb11a591aa1f71f05068084706062 52480b64fc169d0f2293a7734446793aa5b26308 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651920568 +0300	commit: Add improvements
+52480b64fc169d0f2293a7734446793aa5b26308 9454d0dc7532e9f88233c20e502862463e887bb0 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651920612 +0300	commit: Add more improvements
+9454d0dc7532e9f88233c20e502862463e887bb0 99b8d82892ebb11a591aa1f71f05068084706062 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652084690 +0300	checkout: moving from feature/12/arenas-reservations-ui-improvements to main
+99b8d82892ebb11a591aa1f71f05068084706062 9454d0dc7532e9f88233c20e502862463e887bb0 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652084708 +0300	checkout: moving from main to feature/12/arenas-reservations-ui-improvements
+9454d0dc7532e9f88233c20e502862463e887bb0 99b8d82892ebb11a591aa1f71f05068084706062 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652084721 +0300	checkout: moving from feature/12/arenas-reservations-ui-improvements to main
+99b8d82892ebb11a591aa1f71f05068084706062 5367b084b3ffaa07499c73f6b42d2d7f734a6151 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652084724 +0300	pull: Fast-forward
+5367b084b3ffaa07499c73f6b42d2d7f734a6151 5367b084b3ffaa07499c73f6b42d2d7f734a6151 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652084849 +0300	checkout: moving from main to feature/10/create-reservation-manager
+5367b084b3ffaa07499c73f6b42d2d7f734a6151 3807506779594a08a1913c1fc4c264dbc63c8832 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652086153 +0300	commit: Route & UI improvements
+3807506779594a08a1913c1fc4c264dbc63c8832 0000000000000000000000000000000000000000 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652089743 +0300	Branch: renamed refs/heads/feature/10/create-reservation-manager to refs/heads/feature/13/available-reservations-ui
+0000000000000000000000000000000000000000 3807506779594a08a1913c1fc4c264dbc63c8832 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652089743 +0300	Branch: renamed refs/heads/feature/10/create-reservation-manager to refs/heads/feature/13/available-reservations-ui
+3807506779594a08a1913c1fc4c264dbc63c8832 9cd408d537b0101d435b0cb50c171b572264ca1d Andrei Sasaran <sasaranandreipaul@gmail.com> 1652097278 +0300	commit: UI IMprovements
+9cd408d537b0101d435b0cb50c171b572264ca1d ee234255cfa5a657b25e1766fae3f6c45634e521 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652277771 +0300	commit: Add more UI Improvements + curren_player method
+ee234255cfa5a657b25e1766fae3f6c45634e521 5367b084b3ffaa07499c73f6b42d2d7f734a6151 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652353690 +0300	checkout: moving from feature/13/available-reservations-ui to main
+5367b084b3ffaa07499c73f6b42d2d7f734a6151 4f6883c267f90549a1f21fcbc0e1e2e911df8270 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652353695 +0300	pull: Fast-forward
+4f6883c267f90549a1f21fcbc0e1e2e911df8270 4f6883c267f90549a1f21fcbc0e1e2e911df8270 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652353714 +0300	checkout: moving from main to feature/15/create-join-requests
+4f6883c267f90549a1f21fcbc0e1e2e911df8270 a3017a17bfc465c309464b824954fa2ca297ec14 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652358493 +0300	commit: Add JoinRequest model & stuff
+a3017a17bfc465c309464b824954fa2ca297ec14 1784d62d6f0b01bb0b288919733d8759dc7c459b Andrei Sasaran <sasaranandreipaul@gmail.com> 1652375191 +0300	commit: Create Ask to Join panel
+1784d62d6f0b01bb0b288919733d8759dc7c459b 11d61e211b4b1adb470a9e5d7970024d054a8f76 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652378779 +0300	commit: Add UI for JoinRequest
+11d61e211b4b1adb470a9e5d7970024d054a8f76 d236cee80a481676b142c3ed41b12035fccb255e Andrei Sasaran <sasaranandreipaul@gmail.com> 1652433112 +0300	commit: Add status & stuff
+d236cee80a481676b142c3ed41b12035fccb255e 9e6f8c43ceea9f8334c1886efd2bfa454ffd2555 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652435104 +0300	commit: Add Join Request UIs for different operatinos
+9e6f8c43ceea9f8334c1886efd2bfa454ffd2555 07570591bce1d7617ce39445262d5cb85341dae5 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652436872 +0300	commit: Finish flow for create join request
+07570591bce1d7617ce39445262d5cb85341dae5 4f6883c267f90549a1f21fcbc0e1e2e911df8270 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652437040 +0300	checkout: moving from feature/15/create-join-requests to main
+4f6883c267f90549a1f21fcbc0e1e2e911df8270 ab31622da5e557094634be80b74f692c997cd47d Andrei Sasaran <sasaranandreipaul@gmail.com> 1652437043 +0300	pull: Fast-forward
+ab31622da5e557094634be80b74f692c997cd47d ab31622da5e557094634be80b74f692c997cd47d Andrei Sasaran <sasaranandreipaul@gmail.com> 1652437061 +0300	checkout: moving from main to feature/20/approve-join-request
+ab31622da5e557094634be80b74f692c997cd47d 6796942da80843c4bfcccfb2598ded4c5f433bcf Andrei Sasaran <sasaranandreipaul@gmail.com> 1652450447 +0300	commit: Create flow for approve / decline / and cancel joinrequest
+6796942da80843c4bfcccfb2598ded4c5f433bcf d0a8d4b3e141c57cfc0443ae887d8bbfe36535af Andrei Sasaran <sasaranandreipaul@gmail.com> 1652451177 +0300	commit: Fix bug
+d0a8d4b3e141c57cfc0443ae887d8bbfe36535af ab603208d0400cc738427892886d3f79cab695e9 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652451923 +0300	commit: Add show for reservations
+ab603208d0400cc738427892886d3f79cab695e9 ab31622da5e557094634be80b74f692c997cd47d Andrei Sasaran <sasaranandreipaul@gmail.com> 1652451961 +0300	checkout: moving from feature/20/approve-join-request to main
+ab31622da5e557094634be80b74f692c997cd47d ab31622da5e557094634be80b74f692c997cd47d Andrei Sasaran <sasaranandreipaul@gmail.com> 1652451968 +0300	checkout: moving from main to feature/16/create-invitations
+ab31622da5e557094634be80b74f692c997cd47d ab31622da5e557094634be80b74f692c997cd47d Andrei Sasaran <sasaranandreipaul@gmail.com> 1652451983 +0300	checkout: moving from feature/16/create-invitations to main
+ab31622da5e557094634be80b74f692c997cd47d 53acd88976adf56c2b13f28e45c447915da32eb9 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652451998 +0300	pull: Fast-forward
+53acd88976adf56c2b13f28e45c447915da32eb9 53acd88976adf56c2b13f28e45c447915da32eb9 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652452002 +0300	checkout: moving from main to feature/16/create-invitations
+53acd88976adf56c2b13f28e45c447915da32eb9 71299c1ce42c281a84dfea5c4b140e8d6dcde440 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652452166 +0300	commit: Add mocked button for Create Invitation Link
+71299c1ce42c281a84dfea5c4b140e8d6dcde440 bbfc9f4ab5aa186e9e1a1eaa1e37783ec41361fb Andrei Sasaran <sasaranandreipaul@gmail.com> 1652457779 +0300	commit: Change some home stuff
+bbfc9f4ab5aa186e9e1a1eaa1e37783ec41361fb 671c01202bb5e9176dbf3b6439e1f52d4a8e0776 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652466323 +0300	commit: Add Invitation flow until Accept Invitation
+                                                                                                                                                                                               

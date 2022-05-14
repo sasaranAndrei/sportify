@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: %i[ show edit update destroy join_request ]
+  before_action :set_reservation, only: %i[ show edit update destroy join_request generate_invitation_link accept_invitation ]
 
   def index
     # @reservations = Reservation.all
@@ -10,6 +10,17 @@ class ReservationsController < ApplicationController
 
   # GET /reservations/1 or /reservations/1.json
   def show
+    @valid_invitation_token = false
+
+    if params[:invitation_token]
+      current_player = current_user.player # TODO: check why current_player is visible only in views, not in controllers too
+
+      redirect_back(fallback_location: reservations_player_path(current_player), notice: 'You cannot accept Invitation of your own Reservation') if @reservation.owner_player == current_player
+      redirect_to root_path, notice: 'Invalid Token! Try again!' unless @reservation.valid_invitation_token?(params[:invitation_token])      
+      
+      @valid_invitation_token = true
+    end
+
     @owner_player = @reservation.owner_player
   end
 
@@ -70,8 +81,18 @@ class ReservationsController < ApplicationController
     redirect_back(fallback_location: reservations_player_path(current_player), notice: 'You will regret this!')
   end
 
+  # nuj daca o sa mai am nevoie de asta?
   def join_requests
     # can use @reservation
+  end
+
+  def generate_invitation_link
+    @reservation.generate_invitation_token!
+    
+    redirect_back(fallback_location: reservation_path(@reservation), notice: 'Invitation Link Successfully generated!')
+  end
+
+  def accept_invitation
   end
 
   private

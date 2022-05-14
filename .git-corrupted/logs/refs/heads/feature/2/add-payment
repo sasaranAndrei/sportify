@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 0d0c3deae83b01ce497a14239b1edcc0c85adc8d Andrei Sasaran <sasaranandreipaul@gmail.com> 1646505606 +0200	branch: Created from HEAD
+0d0c3deae83b01ce497a14239b1edcc0c85adc8d c1f3131bf984f21ec729e6450066a7635d0e59fe Andrei Sasaran <sasaranandreipaul@gmail.com> 1646575401 +0200	commit: Add DEV credentials
+c1f3131bf984f21ec729e6450066a7635d0e59fe 5c481bf466c66d86af912eb5b5e94cb6e0285d4d Andrei Sasaran <sasaranandreipaul@gmail.com> 1646586014 +0200	commit: Add Pay & Stripe method
+5c481bf466c66d86af912eb5b5e94cb6e0285d4d 498df646829e8e8c520378e7ff6fb600a425e8e5 Andrei Sasaran <sasaranandreipaul@gmail.com> 1646586262 +0200	commit: Add basic display for 06.03 DEMO

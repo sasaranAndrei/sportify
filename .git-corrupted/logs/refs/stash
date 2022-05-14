@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 30f4df1fb1aed4974faec8327a9f9ffe84807f03 Andrei Sasaran <sasaranandreipaul@gmail.com> 1646503920 +0200	WIP on add-devise: 26ade83 Repair haml stuff
+30f4df1fb1aed4974faec8327a9f9ffe84807f03 695c37b7b5b51a42f7178a7bc1d188872441fc43 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647275907 +0200	WIP on gmaps-arenas-index: d82941b Feature/5/sport field arena models (#5)
+695c37b7b5b51a42f7178a7bc1d188872441fc43 2fdec0841f62301c37fa8b93e09ee1c68e2852bd Andrei Sasaran <sasaranandreipaul@gmail.com> 1651159031 +0300	WIP on gmaps-arenas-index: 31ff0a6 Show the map somehow but its blocked by CSP

@@ -29,5 +29,9 @@
                 - else
                   %td= link_to fa_icon('arrow-right'), new_join_request_path(reservation_id: reservation.id, player_id: current_player.id), class: 'btn sportify-small-button sportify-radius fs-5'
   .sportify-panel.sportify-small-panel.sportify-radius
-    %h1.sportify-font Details
-    %br
+    - if current_player
+      %h1.sportify-font Think about something!
+      %br
+    - else
+      %h1.sportify-font Welcome to Sportify!
+      %br

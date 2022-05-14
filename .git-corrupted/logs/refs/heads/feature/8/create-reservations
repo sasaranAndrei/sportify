@@ -1,0 +1,5 @@
+0000000000000000000000000000000000000000 32ec65cf32b0a6c052ccbfdd8675562fb00ccdb5 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651504412 +0300	branch: Created from HEAD
+32ec65cf32b0a6c052ccbfdd8675562fb00ccdb5 0d71c2dc21b38e75968fa4f5919395455131de5b Andrei Sasaran <sasaranandreipaul@gmail.com> 1651602377 +0300	commit: Setup relantionship between players and reservation
+0d71c2dc21b38e75968fa4f5919395455131de5b 712f4d7e19baaa948a1106ec7bcdb9426820ee22 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651603130 +0300	commit: Fix schema typo
+712f4d7e19baaa948a1106ec7bcdb9426820ee22 d8c3595f1eba1732c97c7322644ddd9133d6f582 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651604981 +0300	commit: Add validation for reservaiton owner
+d8c3595f1eba1732c97c7322644ddd9133d6f582 d62fa71f0e8b6f01e5953c8673cf0a9e85d6ddab Andrei Sasaran <sasaranandreipaul@gmail.com> 1651667868 +0300	commit: Add TechQuestion

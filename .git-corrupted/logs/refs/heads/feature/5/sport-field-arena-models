@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 4130fa4489f95ea24fa2fd0757b3c48954773979 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647271574 +0200	branch: Created from HEAD
+4130fa4489f95ea24fa2fd0757b3c48954773979 2bfd9d3087967e3f67b3c6ba3e62c168a046a1e1 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647271760 +0200	commit: Add scaffolded Sport model
+2bfd9d3087967e3f67b3c6ba3e62c168a046a1e1 a33265063b30b2a747c1b8d2e3a34e042cac6862 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647273320 +0200	commit: Create basic models
+a33265063b30b2a747c1b8d2e3a34e042cac6862 1a16405798fe0fe5f60f45dc903b85f93a946419 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647273681 +0200	commit: Create relationships

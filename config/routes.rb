@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'pages#home'
+  # get '/gamesfeed', to: 'reservations#index'
+  root 'reservations#index'
   
   # BUSINESS LOGIC
   resources :sports
@@ -9,8 +10,10 @@ Rails.application.routes.draw do
   resources :fields
   resources :reservations do
     get :join_requests, on: :member
+    get :generate_invitation_link, on: :member
+    get :accept_invitation, on: :member
   end
-  
+
   resources :join_requests do
     put :approve, on: :member
     put :decline, on: :member

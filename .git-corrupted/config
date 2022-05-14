@@ -1,0 +1,56 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/sasaranAndrei/sportify.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[remote "heroku"]
+	url = https://git.heroku.com/sportify-football.git
+	fetch = +refs/heads/*:refs/remotes/heroku/*
+[branch "feature/1/add-devise"]
+	remote = origin
+	merge = refs/heads/feature/1/add-devise
+[branch "feature/2/add-payment"]
+	remote = origin
+	merge = refs/heads/feature/2/add-payment
+[branch "feature/3/basic-deposit-token"]
+	remote = origin
+	merge = refs/heads/feature/3/basic-deposit-token
+[branch "feature/4/player-model"]
+	remote = origin
+	merge = refs/heads/feature/4/player-model
+[branch "feature/5/sport-field-arena-models"]
+	remote = origin
+	merge = refs/heads/feature/5/sport-field-arena-models
+[branch "feature/6/gmaps-arenas-index"]
+	remote = origin
+	merge = refs/heads/feature/6/gmaps-arenas-index
+[branch "feature/8/create-reservations"]
+	remote = origin
+	merge = refs/heads/feature/8/create-reservations
+[branch "feature/7/user-dashboard-ui"]
+	remote = origin
+	merge = refs/heads/feature/7/user-dashboard-ui
+[branch "feature/9/create-reservation-from-ui"]
+	remote = origin
+	merge = refs/heads/feature/9/create-reservation-from-ui
+[branch "feature/11/my-reservations-ui"]
+	remote = origin
+	merge = refs/heads/feature/11/my-reservations-ui
+[branch "feature/12/arenas-reservations-ui-improvements"]
+	remote = origin
+	merge = refs/heads/feature/12/arenas-reservations-ui-improvements
+[branch "feature/13/available-reservations-ui"]
+	remote = origin
+	merge = refs/heads/feature/13/available-reservations-ui
+[branch "feature/15/create-join-requests"]
+	remote = origin
+	merge = refs/heads/feature/15/create-join-requests
+[branch "feature/20/approve-join-request"]
+	remote = origin
+	merge = refs/heads/feature/20/approve-join-request

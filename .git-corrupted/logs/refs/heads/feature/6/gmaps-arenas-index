@@ -1,0 +1,12 @@
+0000000000000000000000000000000000000000 d82941bac6b117a0e60c8d80deef8c30d461e6c3 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647274310 +0200	branch: Created from HEAD
+d82941bac6b117a0e60c8d80deef8c30d461e6c3 43761b4c216c58f06af84d85f8ed33a0b9f7719d Andrei Sasaran <sasaranandreipaul@gmail.com> 1651082683 +0300	commit: Add GMaps + refactor
+43761b4c216c58f06af84d85f8ed33a0b9f7719d 035b9b6ae94067a4ee312a022fda1fbd65134498 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651089234 +0300	commit: Setup GMaps & Stimulus
+035b9b6ae94067a4ee312a022fda1fbd65134498 31ff0a61c10d4bced66d974e1397d8a293bfb674 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651094100 +0300	commit: Show the map somehow but its blocked by CSP
+31ff0a61c10d4bced66d974e1397d8a293bfb674 07254281f9adafd64c2f05e0aafb5afa2105486e Andrei Sasaran <sasaranandreipaul@gmail.com> 1651161531 +0300	commit: Fix stimulus little problem
+07254281f9adafd64c2f05e0aafb5afa2105486e 7119efdd0000791c90fafcb8be7eb4e68512cade Andrei Sasaran <sasaranandreipaul@gmail.com> 1651163259 +0300	commit: Fuck it
+7119efdd0000791c90fafcb8be7eb4e68512cade 035b9b6ae94067a4ee312a022fda1fbd65134498 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651163683 +0300	reset: moving to HEAD~3
+035b9b6ae94067a4ee312a022fda1fbd65134498 3e4b5c337d914aae439312a434c48c51800ffbeb Andrei Sasaran <sasaranandreipaul@gmail.com> 1651163856 +0300	commit: WIP
+3e4b5c337d914aae439312a434c48c51800ffbeb 0d24dd1ebe750420f4ea3cb0c6090d077c6eac8f Andrei Sasaran <sasaranandreipaul@gmail.com> 1651165080 +0300	commit: Add Syndey map
+0d24dd1ebe750420f4ea3cb0c6090d077c6eac8f f7eba27d0e4ae1b4c4e36a3cf3589b3c06be4744 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651257342 +0300	commit: WIP
+f7eba27d0e4ae1b4c4e36a3cf3589b3c06be4744 6ae9b94c4e67f9db771fe42997602e3737911769 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651315117 +0300	commit: Add jquery
+6ae9b94c4e67f9db771fe42997602e3737911769 e4c3c45e36cf7d4b33659a6fb7de5b22d4b2860e Andrei Sasaran <sasaranandreipaul@gmail.com> 1651319655 +0300	commit: Add GMAPS basic functionality

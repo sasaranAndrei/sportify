@@ -1,0 +1,10 @@
+0000000000000000000000000000000000000000 3d8071247a36cbcb639601f719a352fee36f8553 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647169767 +0200	branch: Created from HEAD
+3d8071247a36cbcb639601f719a352fee36f8553 cc14e4fb56489d38af2b1ca76b7301553fbde527 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647170753 +0200	commit: Add tokens to User model
+cc14e4fb56489d38af2b1ca76b7301553fbde527 651743f78697e7faf1b3cbe3a00a4b2bd20cd8ae Andrei Sasaran <sasaranandreipaul@gmail.com> 1647173516 +0200	commit: Add Purchasable models
+651743f78697e7faf1b3cbe3a00a4b2bd20cd8ae 651743f78697e7faf1b3cbe3a00a4b2bd20cd8ae Andrei Sasaran <sasaranandreipaul@gmail.com> 1647173541 +0200	Branch: renamed refs/heads/feature/3/basic-token to refs/heads/feature/3-7/basic-token-purchasable
+651743f78697e7faf1b3cbe3a00a4b2bd20cd8ae cc14e4fb56489d38af2b1ca76b7301553fbde527 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647177526 +0200	reset: moving to cc14e4f
+cc14e4fb56489d38af2b1ca76b7301553fbde527 191e6d8e587345a5e3892b63edab1b20c538c7f0 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647177840 +0200	commit: Add unwanted tables
+191e6d8e587345a5e3892b63edab1b20c538c7f0 03bf316f648ce2c1b01c633166cb46954317e581 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647177972 +0200	commit: Fix schema
+03bf316f648ce2c1b01c633166cb46954317e581 f692842a52635f5f3b308a97562c09177e734366 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647179493 +0200	commit: Add ability to select quantity
+f692842a52635f5f3b308a97562c09177e734366 ea8ae32606bcf81a185163ab94ec04c701ddc8c4 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647182163 +0200	commit: Rubocop
+ea8ae32606bcf81a185163ab94ec04c701ddc8c4 ea8ae32606bcf81a185163ab94ec04c701ddc8c4 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647182179 +0200	Branch: renamed refs/heads/feature/3-7/basic-token-purchasable to refs/heads/feature/3/basic-deposit-token

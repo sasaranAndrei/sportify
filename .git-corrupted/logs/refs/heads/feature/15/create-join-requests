@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 4f6883c267f90549a1f21fcbc0e1e2e911df8270 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652353714 +0300	branch: Created from HEAD
+4f6883c267f90549a1f21fcbc0e1e2e911df8270 a3017a17bfc465c309464b824954fa2ca297ec14 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652358493 +0300	commit: Add JoinRequest model & stuff
+a3017a17bfc465c309464b824954fa2ca297ec14 1784d62d6f0b01bb0b288919733d8759dc7c459b Andrei Sasaran <sasaranandreipaul@gmail.com> 1652375191 +0300	commit: Create Ask to Join panel
+1784d62d6f0b01bb0b288919733d8759dc7c459b 11d61e211b4b1adb470a9e5d7970024d054a8f76 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652378779 +0300	commit: Add UI for JoinRequest
+11d61e211b4b1adb470a9e5d7970024d054a8f76 d236cee80a481676b142c3ed41b12035fccb255e Andrei Sasaran <sasaranandreipaul@gmail.com> 1652433112 +0300	commit: Add status & stuff
+d236cee80a481676b142c3ed41b12035fccb255e 9e6f8c43ceea9f8334c1886efd2bfa454ffd2555 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652435104 +0300	commit: Add Join Request UIs for different operatinos
+9e6f8c43ceea9f8334c1886efd2bfa454ffd2555 07570591bce1d7617ce39445262d5cb85341dae5 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652436872 +0300	commit: Finish flow for create join request
