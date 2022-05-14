@@ -1,5 +1,0 @@
-0000000000000000000000000000000000000000 10b193b9b6b3208b2553907e516b2f59cbb160c0 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647186228 +0200	branch: Created from HEAD
-10b193b9b6b3208b2553907e516b2f59cbb160c0 10b193b9b6b3208b2553907e516b2f59cbb160c0 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647186239 +0200	Branch: renamed refs/heads/feature/4/user-model to refs/heads/feature/4/player-model
-10b193b9b6b3208b2553907e516b2f59cbb160c0 f6d3a99f0c99fdea5431de395fc572b1c44fc4a9 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647200893 +0200	commit: Add Player model & link with User on CREATE
-f6d3a99f0c99fdea5431de395fc572b1c44fc4a9 aa4f9dea3c2831bb9ea83570ea951f1d048ed137 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647203442 +0200	commit: Edit & Update User-Player
-aa4f9dea3c2831bb9ea83570ea951f1d048ed137 e634fc2124051c0eaaf7525893bb09845b033034 Andrei Sasaran <sasaranandreipaul@gmail.com> 1647203743 +0200	commit: Remove joined_at from Player model

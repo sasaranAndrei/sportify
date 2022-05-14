@@ -1,8 +1,0 @@
-0000000000000000000000000000000000000000 06d6e1338fe9fac7cac4d92938b54b6f2b005bf2 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651668069 +0300	branch: Created from HEAD
-06d6e1338fe9fac7cac4d92938b54b6f2b005bf2 9f094c85881b8f13e43f840830018a085aa44915 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651672327 +0300	commit: Add style for navbar unlogged user
-9f094c85881b8f13e43f840830018a085aa44915 994cf3544e4799e63bd2d3b00532691caf53eee7 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651673285 +0300	commit: Add more icons
-994cf3544e4799e63bd2d3b00532691caf53eee7 a0e4bd8f7b136149874739db441a23e37c34128e Andrei Sasaran <sasaranandreipaul@gmail.com> 1651676136 +0300	commit: Add footer & page
-a0e4bd8f7b136149874739db441a23e37c34128e f5030bdb720927c0090b66c7cc58d3e26a8a7e20 Andrei Sasaran <sasaranandreipaul@gmail.com> 1651811103 +0300	commit: UI Improvements
-f5030bdb720927c0090b66c7cc58d3e26a8a7e20 b63c34c1d6f1e795e286702d188e22352137d3ac Andrei Sasaran <sasaranandreipaul@gmail.com> 1651814878 +0300	commit: Fit content
-b63c34c1d6f1e795e286702d188e22352137d3ac 202688840894b68826f3f3403c532c02f58ab9da Andrei Sasaran <sasaranandreipaul@gmail.com> 1651827799 +0300	commit: Create a reservation from UI
-202688840894b68826f3f3403c532c02f58ab9da e1b790e17951f47d4eaf8e49ddafb6892ef3f62b Andrei Sasaran <sasaranandreipaul@gmail.com> 1651832282 +0300	commit: WIP: Handle no arena
