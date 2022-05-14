@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   # get '/gamesfeed', to: 'reservations#index'
   root 'reservations#index'
   
-  
   # BUSINESS LOGIC
   resources :sports
   resources :arenas
