@@ -65,7 +65,7 @@ class JoinRequestsController < ApplicationController
   def decline
     @join_request.update(approved: false)
     # TechQuestion - how to remove dependency with ReservatinoPlayer
-    ReservationPlayer.find_by((reservation_id: @join_request.reservation_id, player_id: @join_request.player_id)&.destroy
+    ReservationPlayer.find_by(reservation_id: @join_request.reservation_id, player_id: @join_request.player_id)&.destroy
 
     redirect_to join_requests_player_path(current_user.player) # TODO: check why current_player is not visible
   end
@@ -85,7 +85,7 @@ class JoinRequestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def join_request_params
-      params.require(:join_request).permit(:player_id, :reservation_id)
+      params.require(:join_request).permit(:player_id, :reservation_id, :joined_by)
     end
 
     def set_reservation_info
