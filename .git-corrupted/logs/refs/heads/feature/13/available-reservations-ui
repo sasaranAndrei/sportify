@@ -1,5 +1,0 @@
-0000000000000000000000000000000000000000 5367b084b3ffaa07499c73f6b42d2d7f734a6151 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652084849 +0300	branch: Created from HEAD
-5367b084b3ffaa07499c73f6b42d2d7f734a6151 3807506779594a08a1913c1fc4c264dbc63c8832 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652086153 +0300	commit: Route & UI improvements
-3807506779594a08a1913c1fc4c264dbc63c8832 3807506779594a08a1913c1fc4c264dbc63c8832 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652089743 +0300	Branch: renamed refs/heads/feature/10/create-reservation-manager to refs/heads/feature/13/available-reservations-ui
-3807506779594a08a1913c1fc4c264dbc63c8832 9cd408d537b0101d435b0cb50c171b572264ca1d Andrei Sasaran <sasaranandreipaul@gmail.com> 1652097278 +0300	commit: UI IMprovements
-9cd408d537b0101d435b0cb50c171b572264ca1d ee234255cfa5a657b25e1766fae3f6c45634e521 Andrei Sasaran <sasaranandreipaul@gmail.com> 1652277771 +0300	commit: Add more UI Improvements + curren_player method

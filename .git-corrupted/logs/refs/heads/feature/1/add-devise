@@ -1,4 +1,0 @@
-0000000000000000000000000000000000000000 a15ce3dc1c1740195493368e685a29ab568428d1 Andrei Sasaran <sasaranandreipaul@gmail.com> 1646501120 +0200	branch: Created from HEAD
-a15ce3dc1c1740195493368e685a29ab568428d1 62d2a85c0ff9952ab8dfbe4886df70cc0b1caaa0 Andrei Sasaran <sasaranandreipaul@gmail.com> 1646502686 +0200	commit: Add Devise basic usage
-62d2a85c0ff9952ab8dfbe4886df70cc0b1caaa0 26ade832297a9db1680ed5392646d529bfa7ac95 Andrei Sasaran <sasaranandreipaul@gmail.com> 1646503910 +0200	commit: Repair haml stuff
-26ade832297a9db1680ed5392646d529bfa7ac95 aaf12a62afcee0c6ce65bca551e1ad377c16a981 Andrei Sasaran <sasaranandreipaul@gmail.com> 1646504390 +0200	commit: Convert all erb files to haml

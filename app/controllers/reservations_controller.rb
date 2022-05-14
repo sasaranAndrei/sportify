@@ -8,23 +8,22 @@ class ReservationsController < ApplicationController
     # @reservations = Reservation.all # la un moment dat AvailableReservationsService.call // cv din ReservationManager
   end
 
-  # GET /reservations/1 or /reservations/1.json
   def show
-    @valid_invitation_token = false
+    @show_invitation_link = false
 
     if params[:invitation_token]
       current_player = current_user.player # TODO: check why current_player is visible only in views, not in controllers too
+      valid_invitation_token = @reservation.valid_invitation_token?(params[:invitation_token])
+      @show_invitation_link = !@reservation.participate?(current_player)
 
       redirect_back(fallback_location: reservations_player_path(current_player), notice: 'You cannot accept Invitation of your own Reservation') if @reservation.owner_player == current_player
-      redirect_to root_path, notice: 'Invalid Token! Try again!' unless @reservation.valid_invitation_token?(params[:invitation_token])      
-      
-      @valid_invitation_token = true
+      redirect_to root_path, notice: 'Invalid Token! Try again!' unless valid_invitation_token   
+      redirect_to reservation_path(@reservation), notice: 'You already joined this Reservation!' if @reservation.participate?(current_player)
     end
 
     @owner_player = @reservation.owner_player
   end
 
-  # GET /reservations/new
   def new
     return redirect_to arenas_path, notice: 'Please select an Arena before create a Reservation' if params[:arena_id].blank? # TODO: move this to method
 
@@ -33,11 +32,9 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new
   end
 
-  # GET /reservations/1/edit
   def edit
   end
 
-  # POST /reservations or /reservations.json
   def create
     @reservation = Reservation.new(
       reservation_params.merge(params.permit(
@@ -58,7 +55,6 @@ class ReservationsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /reservations/1 or /reservations/1.json
   def update
     respond_to do |format|
       if @reservation.update(reservation_params)
@@ -71,7 +67,6 @@ class ReservationsController < ApplicationController
     end
   end
 
-  # DELETE /reservations/1 or /reservations/1.json
   def destroy
     byebug # don;t do this only if you know what you are doing
     # TODO: also delete ReservationPlayer objects
@@ -93,6 +88,9 @@ class ReservationsController < ApplicationController
   end
 
   def accept_invitation
+    current_player = current_user.player
+
+    ReservationPlayer.find_or_create_by!(reservation_id: @reservation.id, player_id: current_player.id) # add joined_by: ReservationPlayer::INVITATION
   end
 
   private
