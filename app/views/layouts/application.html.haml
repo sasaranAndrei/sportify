@@ -16,7 +16,9 @@
     %script{:type => 'text/javascript',:src => "https://maps.googleapis.com/maps/api/js?key=#{ Rails.application.credentials[:google_maps_api_key] }"} 
   %body.background
     = render partial: 'layouts/navbar'
-    %p.notice= notice
-    %p.alert= alert
+    .sportify-notice
+      = notice
+    .sportify-alert
+      = alert
     = yield
     = render partial: 'layouts/footer'
