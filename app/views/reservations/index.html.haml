@@ -14,7 +14,7 @@
             %tr
               %td= reservation.date
               %td= reservation.place
-              %td= link_to fa_icon('eye'), reservation_path(reservation), class: "btn sportify-small-button sportify-radius fs-5 #{highlight_reservation_class(reservation, current_user.player)}"
+              %td= link_to fa_icon('eye'), reservation_path(reservation), class: "btn sportify-small-button sportify-radius fs-5 #{highlight_reservation_class(reservation, current_user&.player || Player.first)}"
           - @upcoming_reservations.each do |reservation|
             %tr
               %td= reservation.date
