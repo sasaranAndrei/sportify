@@ -2,11 +2,9 @@
   .panel
     = link_to fa_icon('map', text: 'Arenas'), arenas_path, class: 'btn fs-2 sportify-font'
     - if current_user
-      = link_to fa_icon('calendar', text: 'My reservations'), reservations_player_path(current_user.player), class: 'btn fs-2 sportify-font'
-  -# = image_tag('https://www.google.com/url?sa=i&url=https%3A%2F%2Ftheconversation.com%2Fliterature-sheds-light-on-the-history-and-mystery-of-the-southern-ocean-122664&psig=AOvVaw0at48P5uPShvmmpMfXFOcb&ust=1652767995001000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKCX5duu4_cCFQAAAAAdAAAAABAD')
-  -# = image_tag('s3://sportify-football/sportify-logo.jpg')
-  %img{:alt => "Girl in a jacket", :src => "s3://sportify-football/sportify-logo.jpg", :width => "500"}
-  -# = link_to 'Sportify', root_path, class: 'navbar-brand btn fs-1 sportify-font'
+      = link_to fa_icon('calendar', text: 'My reservations'), reservations_player_path(current_user.player), class: 'btn fs-2 sportify-font' 
+  .panel
+    = link_to image_tag('logos/sportify-logo.png', size: '100x100'), root_path, class: 'navbar-brand btn fs-1 sportify-font'
   .panel
     - if current_user
       - if current_user.admin?
