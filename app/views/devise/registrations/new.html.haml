@@ -1,44 +1,45 @@
 -# accept nested attributes for player!!!
-%h2 Sign up
-- resource.player = Player.new if resource.player.nil?
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .row
-    .col-md-6
-      .field
-        = f.label :email
-        %br
-        = f.email_field :email, autofocus: true, autocomplete: "email"
-      .field
-        = f.label :password
-        - if @minimum_password_length
-          %em
-            (#{@minimum_password_length} characters minimum)
-        %br
-        = f.password_field :password, autocomplete: "new-password"
-      .field
-        = f.label :password_confirmation
-        %br
-        = f.password_field :password_confirmation, autocomplete: "new-password"
+.sportify-page
+  %h2 Sign up
+  - resource.player = Player.new if resource.player.nil?
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .row
+      .col-md-6
+        .field
+          = f.label :email
+          %br
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .field
+          = f.label :password
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br
+          = f.password_field :password, autocomplete: "new-password"
+        .field
+          = f.label :password_confirmation
+          %br
+          = f.password_field :password_confirmation, autocomplete: "new-password"
 
-    .col-md-6
-    = f.fields_for :player do |ff|
-      .field
-        = ff.label :name
-        %br/
-        = ff.text_field :name, autofocus: true, autocomplete: "name"
-      .field
-        = ff.label :nickname
-        %br/
-        = ff.text_field :nickname, autofocus: true, autocomplete: "nickname"
-      .field
-        = ff.label :birth_date
-        %br/
-        = ff.date_field :birth_date, autofocus: true, autocomplete: "birth date"
-      .field
-        = ff.label :phone_number
-        %br/
-        = ff.text_field :phone_number, autofocus: true, autocomplete: "phone number"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+      .col-md-6
+      = f.fields_for :player do |ff|
+        .field
+          = ff.label :name
+          %br/
+          = ff.text_field :name, autofocus: true, autocomplete: "name"
+        .field
+          = ff.label :nickname
+          %br/
+          = ff.text_field :nickname, autofocus: true, autocomplete: "nickname"
+        .field
+          = ff.label :birth_date
+          %br/
+          = ff.date_field :birth_date, autofocus: true, autocomplete: "birth date"
+        .field
+          = ff.label :phone_number
+          %br/
+          = ff.text_field :phone_number, autofocus: true, autocomplete: "phone number"
+    .actions
+      = f.submit "Sign up"
+  = render "devise/shared/links"
