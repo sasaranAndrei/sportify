@@ -14,22 +14,28 @@
             %tr
               %td= reservation.date
               %td= reservation.place
-              %td= link_to fa_icon('eye'), reservation_path(reservation), class: "btn sportify-small-button sportify-radius fs-5 #{highlight_reservation_class(reservation, current_user.player)}"
+              - if current_user
+                %td= link_to fa_icon('eye'), reservation_path(reservation), class: "btn sportify-small-button sportify-radius fs-5 #{highlight_reservation_class(reservation, Player.first || current_player)}" # invers
+              - else
+                %td= link_to fa_icon('eye'), new_user_registration_path, class: 'btn sportify-small-button sportify-radius fs-5 error-notice-background'
           - @upcoming_reservations.each do |reservation|
             %tr
               %td= reservation.date
               %td= reservation.place
-              - if reservation.participate?(current_player)
-                %td= link_to fa_icon('eye'), reservation_path(reservation), class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
-              - else
-                - if reservation.awaiting_response?(current_player)
-                  // TechQuestion? - Cum sa fac aici?
-                  - join_request = JoinRequest.find_by(reservation_id: reservation.id, player_id: current_player.id)
-                  %td= link_to fa_icon('arrow-right'), edit_join_request_path(join_request), class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
+              - if current_user
+                - if reservation.participate?(current_player)
+                  %td= link_to fa_icon('eye'), reservation_path(reservation), class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
                 - else
-                  %td= link_to fa_icon('arrow-right'), new_join_request_path(reservation_id: reservation.id, player_id: current_player.id), class: 'btn sportify-small-button sportify-radius fs-5'
+                  - if reservation.awaiting_response?(current_player)
+                    // TechQuestion? - Cum sa fac aici?
+                    - join_request = JoinRequest.find_by(reservation_id: reservation.id, player_id: current_player.id)
+                    %td= link_to fa_icon('arrow-right'), edit_join_request_path(join_request), class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
+                  - else
+                    %td= link_to fa_icon('arrow-right'), new_join_request_path(reservation_id: reservation.id, player_id: current_player.id), class: 'btn sportify-small-button sportify-radius fs-5'
+              - else
+                %td= link_to fa_icon('eye'), new_user_registration_path, class: 'btn sportify-small-button sportify-radius fs-5'
   .sportify-panel.sportify-small-panel.sportify-radius
-    - if current_player
+    - if current_user
       %h1.sportify-font Think about something!
       %br
     - else

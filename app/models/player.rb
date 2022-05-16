@@ -42,4 +42,8 @@ class Player < ApplicationRecord
     # deocamdata hardcodat ca toti is baieti de treaba
     '100/100'
   end
+
+  def avatar
+    user.avatar
+  end
 end
