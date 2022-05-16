@@ -15,6 +15,9 @@ gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.0'
 
+# CLOUD
+gem 'aws-sdk-s3', require: false
+
 # STYLING
 gem 'bootstrap', '~> 5.1.3'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'

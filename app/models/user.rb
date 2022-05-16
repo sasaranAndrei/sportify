@@ -5,6 +5,9 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :player
 
+  # ActiveStorage
+  has_one_attached :avatar
+
   # DEVISE
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

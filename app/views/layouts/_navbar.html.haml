@@ -2,8 +2,9 @@
   .panel
     = link_to fa_icon('map', text: 'Arenas'), arenas_path, class: 'btn fs-2 sportify-font'
     - if current_user
-      = link_to fa_icon('calendar', text: 'My reservations'), reservations_player_path(current_user.player), class: 'btn fs-2 sportify-font'
-  = link_to 'Sportify', root_path, class: 'navbar-brand btn fs-1 sportify-font'
+      = link_to fa_icon('calendar', text: 'My reservations'), reservations_player_path(current_user.player), class: 'btn fs-2 sportify-font' 
+  .panel
+    = link_to image_tag('logos/sportify-logo-navbar.png', size: '300x100'), root_path, class: 'navbar-brand btn fs-1 sportify-font'
   .panel
     - if current_user
       - if current_user.admin?
