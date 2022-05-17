@@ -1,58 +1,61 @@
-.sportify-page
-  %h2
-    Edit #{resource_name.to_s.humanize}
-  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-    = render "devise/shared/error_messages", resource: resource
-    - if resource.avatar.attached?
-      = image_tag resource.avatar, size: '100x100' 
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: resource.email
-    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      %div
-        Currently waiting confirmation for: #{resource.unconfirmed_email}
-    .field
-      = f.label :password
-      %i (leave blank if you don't want to change it)
-      %br/
-      = f.password_field :password, autocomplete: "new-password"
-      - if @minimum_password_length
-        %br/
-        %em
-          = @minimum_password_length
-          characters minimum
-    - unless resource.avatar.attached?
-      .field
-        = f.label :avatar
-        %br/
-        = f.file_field :avatar
-    .field
-      = f.label :password_confirmation
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password"
-    .field
-      = f.label :current_password
-      %i (we need your current password to confirm your changes)
-      %br/
-      = f.password_field :current_password, autocomplete: "current-password"
-    .col-md-6
-    = f.fields_for :player do |ff|
-      .field
-        = ff.label :name
-        %br/
-        = ff.text_field :name, autofocus: true, autocomplete: "name", placeholder: resource.player.name
-      .field
-        = ff.label :nickname
-        %br/
-        = ff.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: resource.player.nickname
-      .field
-        = ff.label :phone_number
-        %br/
-        = ff.text_field :phone_number, autofocus: true, autocomplete: "phone number", placeholder: resource.player.phone_number
-    .actions
-      = f.submit "Update"
-  %h3 Cancel my account
-  %p
-    Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-  = link_to "Back", :back
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  = f.fields_for :player do |ff|  
+    .sportify-page
+      .sportify-panel.sportify-small-panel.sportify-radius
+        %h1.sportify-font Edit My Account
+        = render "devise/shared/error_messages", resource: resource
+        .form-group
+          = f.label :current_password, class: 'sportify-label'
+          %i (we need your current password to confirm your changes)
+          %br/
+          = f.password_field :current_password, autocomplete: "current-password"
+        .form-group
+          = f.label :email, class: 'sportify-label'
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: resource.email
+        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          %div
+            Currently waiting confirmation for: #{resource.unconfirmed_email}
+        .form-group
+          = f.label :password, class: 'sportify-label'
+          %i (leave blank if you don't want to change it)
+          %br/
+          = f.password_field :password, autocomplete: "new-password"
+          - if @minimum_password_length
+            %br/
+            %em
+              = @minimum_password_length
+              characters minimum
+        .form-group
+          = f.label :password_confirmation, class: 'sportify-label'
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password"
+      .sportify-panel.sportify-small-panel.sportify-radius
+        %h1.sportify-font Edit My Profile
+        - if resource.avatar.attached?
+          = image_tag resource.avatar, size: '100x100' 
+        .form-group
+          = f.label :avatar, class: 'sportify-label'
+          %br/
+          = f.file_field :avatar
+        .form-group
+          = ff.label :name, class: 'sportify-label'
+          %br/
+          = ff.text_field :name, autofocus: true, autocomplete: "name", placeholder: resource.player.name
+        .form-group
+          = ff.label :nickname, class: 'sportify-label'
+          %br/
+          = ff.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: resource.player.nickname
+        .form-group
+          = ff.label :phone_number, class: 'sportify-label'
+          %br/
+          = ff.text_field :phone_number, autofocus: true, autocomplete: "phone number", placeholder: resource.player.phone_number
+      .sportify-panel.sportify-small-panel.sportify-radius 
+        %h1.sportify-font Actions
+        .actions
+          = f.submit "Update"
+        %h3 Cancel my account
+        %p
+          Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+        = link_to "Back", :back
+      
