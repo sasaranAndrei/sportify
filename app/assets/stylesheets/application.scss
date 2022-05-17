@@ -161,10 +161,19 @@
   width: 100%;
 }
 
-.sportify-notice {
-  
+.sportify-flash-wraper {
+  display: flex;
+  top: 0;
 }
 
-.sportify-alert {
+.sportify-flash {
+  background-color: $big-panel-background-color;
+  width: 100%;
+  z-index: 4;
+}
 
+.sportify-close-flashes-button {
+  z-index: 4;
+  height: 6vh;
+  border: none;
 }

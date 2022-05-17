@@ -1,0 +1,6 @@
+.sportify-flash-wraper.sportify-radius
+  - flash.each do |key, message|
+    %div{:class => "sportify-flash alert alert-dismissible fade show text-center", :role => "alert"}
+      = message
+  - if flash.any?
+    = button_tag 'X', id: 'close-flashes', class: 'd-inline sportify-button sportify-small-button sportify-close-flashes-button', type: 'button'

@@ -14,6 +14,7 @@ import "jquery"
 import "controllers"
 
 // PROJECT FILES
+import "general"
 import "arenas"
 import "reservations"
 
