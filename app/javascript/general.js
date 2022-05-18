@@ -1,13 +1,9 @@
-$(function() {
-  $('#close-flashes').on("click", 
-    function () {
-      flashes = document.getElementsByClassName('sportify-flash');
+$(document).on('click', '#close-flashes', function() {
+  flashes = document.getElementsByClassName('sportify-flash');
 
-      for (flash of flashes) {
-        flash.remove();
-      }
+  for (flash of flashes) {
+    flash.remove();
+  }
 
-      $('#close-flashes').remove();
-    }
-  );
+  $('#close-flashes').remove();
 });
