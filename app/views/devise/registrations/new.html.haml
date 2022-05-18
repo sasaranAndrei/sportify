@@ -1,45 +1,45 @@
 -# accept nested attributes for player!!!
 .sportify-page
-  %h2 Sign up
-  - resource.player = Player.new if resource.player.nil?
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = render "devise/shared/error_messages", resource: resource
-    .row
-      .col-md-6
-        .field
-          = f.label :email, class: 'sportify-label'
-          %br
-          = f.email_field :email, autofocus: true, autocomplete: "email"
-        .field
-          = f.label :password
-          - if @minimum_password_length
-            %em
-              (#{@minimum_password_length} characters minimum)
-          %br
-          = f.password_field :password, autocomplete: "new-password"
-        .field
-          = f.label :password_confirmation
-          %br
-          = f.password_field :password_confirmation, autocomplete: "new-password"
+  .sportify-panel.sportify-small-panel.sportify-radius
+    %h1.sportify-font Sign Up
+    - resource.player = Player.new if resource.player.nil?
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource     
+      .form-group
+        = f.label :email, class: 'sportify-label'
+        %br
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+      .form-group
+        = f.label :password, class: 'sportify-label'
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} characters minimum)
+        %br
+        = f.password_field :password, autocomplete: "new-password", class: 'form-control'
+      .form-group
+        = f.label :password_confirmation, class: 'sportify-label'
+        %br
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
 
-      .col-md-6
       = f.fields_for :player do |ff|
-        .field
-          = ff.label :name
+        .form-group
+          = ff.label :name, class: 'sportify-label'
           %br/
-          = ff.text_field :name, autofocus: true, autocomplete: "name"
-        .field
-          = ff.label :nickname
+          = ff.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control'
+        .form-group
+          = ff.label :nickname, class: 'sportify-label'
           %br/
-          = ff.text_field :nickname, autofocus: true, autocomplete: "nickname"
-        .field
-          = ff.label :birth_date
+          = ff.text_field :nickname, autofocus: true, autocomplete: "nickname", class: 'form-control'
+        .form-group
+          = ff.label :birth_date, class: 'sportify-label'
           %br/
-          = ff.date_field :birth_date, autofocus: true, autocomplete: "birth date"
-        .field
-          = ff.label :phone_number
+          = ff.date_field :birth_date, autofocus: true, autocomplete: "birth date", class: 'form-control'
+        .form-group
+          = ff.label :phone_number, class: 'sportify-label'
           %br/
-          = ff.text_field :phone_number, autofocus: true, autocomplete: "phone number"
-    .actions
-      = f.submit "Sign up"
-  = render "devise/shared/links"
+          = ff.text_field :phone_number, autofocus: true, autocomplete: "phone number", class: 'form-control'
+      -# .actions
+        = f.submit "Sign up"
+      %br
+      = button_tag fa_icon('user-plus', text: 'Sign Up'), type: 'submit', class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'  
+    -# = render "devise/shared/links"
