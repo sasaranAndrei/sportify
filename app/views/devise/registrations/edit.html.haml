@@ -8,28 +8,29 @@
           = f.label :current_password, class: 'sportify-label'
           %i (we need your current password to confirm your changes)
           %br/
-          = f.password_field :current_password, autocomplete: "current-password"
+          = f.password_field :current_password, autocomplete: "current-password", class: 'form-control'
         .form-group
           = f.label :email, class: 'sportify-label'
           %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: resource.email
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: resource.email, class: 'form-control'
         - if devise_mapping.confirmable? && resource.pending_reconfirmation?
           %div
             Currently waiting confirmation for: #{resource.unconfirmed_email}
+        - if @minimum_password_length
+          %br/
+          %em
+            = @minimum_password_length
+            characters minimum
         .form-group
           = f.label :password, class: 'sportify-label'
           %i (leave blank if you don't want to change it)
           %br/
-          = f.password_field :password, autocomplete: "new-password"
-          - if @minimum_password_length
-            %br/
-            %em
-              = @minimum_password_length
-              characters minimum
+          = f.password_field :password, autocomplete: "new-password", class: 'form-control'
         .form-group
           = f.label :password_confirmation, class: 'sportify-label'
+
           %br/
-          = f.password_field :password_confirmation, autocomplete: "new-password"
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
       .sportify-panel.sportify-small-panel.sportify-radius
         %h1.sportify-font Edit My Profile
         - if resource.avatar.attached?
@@ -37,25 +38,27 @@
         .form-group
           = f.label :avatar, class: 'sportify-label'
           %br/
-          = f.file_field :avatar
+          = f.file_field :avatar, class: 'form-control'
         .form-group
           = ff.label :name, class: 'sportify-label'
           %br/
-          = ff.text_field :name, autofocus: true, autocomplete: "name", placeholder: resource.player.name
+          = ff.text_field :name, autofocus: true, autocomplete: "name", placeholder: resource.player.name, class: 'form-control'
         .form-group
           = ff.label :nickname, class: 'sportify-label'
           %br/
-          = ff.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: resource.player.nickname
+          = ff.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: resource.player.nickname, class: 'form-control'
         .form-group
           = ff.label :phone_number, class: 'sportify-label'
           %br/
-          = ff.text_field :phone_number, autofocus: true, autocomplete: "phone number", placeholder: resource.player.phone_number
+          = ff.text_field :phone_number, autofocus: true, autocomplete: "phone number", placeholder: resource.player.phone_number, class: 'form-control'
       .sportify-panel.sportify-small-panel.sportify-radius 
         %h1.sportify-font Actions
-        .actions
-          = f.submit "Update"
-        %h3 Cancel my account
-        %p
-          Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-        = link_to "Back", :back
+        = f.submit "Update", class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+        %br
+        %br
+        = link_to fa_icon('sign-out', text: 'Log Out'), destroy_user_session_path, method: :delete, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+        %br
+        %br
+        = link_to fa_icon('user-times', text: 'Delete Account'), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+        -# = link_to "Back", :back
       

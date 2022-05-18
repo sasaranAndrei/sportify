@@ -17,7 +17,7 @@
               - if current_user
                 %td= link_to fa_icon('eye'), reservation_path(reservation), class: "btn sportify-small-button sportify-radius fs-5 #{highlight_reservation_class(reservation, Player.first || current_player)}" # invers
               - else
-                %td= link_to fa_icon('eye'), new_user_registration_path, class: 'btn sportify-small-button sportify-radius fs-5 error-notice-background'
+                %td= link_to fa_icon('eye'), new_user_session_path, class: 'btn sportify-small-button sportify-radius fs-5 error-notice-background'
           - @upcoming_reservations.each do |reservation|
             %tr
               %td= reservation.date
@@ -33,7 +33,7 @@
                   - else
                     %td= link_to fa_icon('arrow-right'), new_join_request_path(reservation_id: reservation.id, player_id: current_player.id), class: 'btn sportify-small-button sportify-radius fs-5'
               - else
-                %td= link_to fa_icon('eye'), new_user_registration_path, class: 'btn sportify-small-button sportify-radius fs-5'
+                %td= link_to fa_icon('eye'), new_user_session_path, class: 'btn sportify-small-button sportify-radius fs-5'
   .sportify-panel.sportify-small-panel.sportify-radius
     - if current_user
       %h1.sportify-font Think about something!
@@ -42,6 +42,4 @@
       %h1.sportify-font Welcome to Sportify!
       %br
       = link_to fa_icon('user-plus', text: 'Sign Up Now!'), new_user_registration_path, class: 'btn sportify-wide-button sportify-primary-button sportify-radius sportify-font fs-4'
-      %br
-      %br
-      Ceva video  
+      = video_tag 'videos/mock-up-home-page.mp4', size: '500x350', autoplay: true, loop: true

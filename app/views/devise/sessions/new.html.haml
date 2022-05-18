@@ -1,21 +1,26 @@
-.sportify-page
-  .sportify-panel.sportify-small-panel.sportify-radius
-    %h2 Log in
-    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .field
-        = f.label :email
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .sportify-page
+    .sportify-panel.sportify-small-panel.sportify-radius
+      %h1.sportify-font Log In
+      .form-group
+        = f.label :email, class: 'sportify-label'
         %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email"
-      .field
-        = f.label :password
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+      .form-group
+        = f.label :password, class: 'sportify-label'
         %br/
-        = f.password_field :password, autocomplete: "current-password"
+        = f.password_field :password, autocomplete: "current-password", class: 'form-control'
       - if devise_mapping.rememberable?
-        .field
+        .form-group
           = f.check_box :remember_me
-          = f.label :remember_me
-      .actions
-        = f.submit "Log in"
-    = render "devise/shared/links"
-  .sportify-panel.sportify-big-panel.sportify-radius
-    %h2 TODO: refactor this page
+          = f.label :remember_me, class: 'sportify-label'
+      -# = f.submit "Log In"
+      %br
+      = button_tag fa_icon('sign-in', text: 'Log In'), type: 'submit', class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+      %br
+      %br
+      = link_to fa_icon('user-plus', text: 'Sign Up'), new_user_registration_path, class: 'btn sportify-wide-button sportify-primary-button sportify-radius sportify-font fs-4'
+      -# TODO: improvement: verify by email + forgot password
+      -# = render "devise/shared/links"
+    -# .sportify-panel.sportify-big-panel.sportify-radius
+    -#   %h2 TODO: refactor this page
