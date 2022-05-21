@@ -65,6 +65,8 @@
             %th Joined By
             %th Rating
             %th
+            %th
+            %th
         %tbody
           %tr
             - owner_player = @reservation.owner_player
@@ -73,8 +75,13 @@
             %td= image_tag owner_player.avatar, size: '100x100' if owner_player.avatar.attached?
             %td Reservation Owner
             %td= owner_player.rating
-            %td= link_to fa_icon('eye'), stats_player_path(owner_player), class: 'btn sportify-small-button sportify-radius fs-5'
-
+            %td= link_to fa_icon('eye'), stats_player_path(owner_player), class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
+            - unless current_player == owner_player
+              %td= link_to fa_icon('thumbs-down'), stats_player_path(owner_player), class: 'btn sportify-small-button sportify-radius fs-5 error-notice-background'
+              %td= link_to fa_icon('thumbs-up'), stats_player_path(owner_player), class: 'btn sportify-small-button sportify-radius fs-5 primary-background'
+            - else
+              %td
+              %td
           - @reservation.reservation_players.each do |reservation_player|
             - guest_player = reservation_player.player
             %tr
@@ -83,5 +90,10 @@
               %td= image_tag guest_player.avatar, size: '100x100' if guest_player.avatar.attached?
               %td= reservation_player.joined_by
               %td= guest_player.rating
-              %td= link_to fa_icon('eye'), stats_player_path(guest_player), class: 'btn sportify-small-button sportify-radius fs-5'
-
+              %td= link_to fa_icon('eye'), stats_player_path(guest_player), class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
+              - unless current_player == guest_player
+                %td= link_to fa_icon('thumbs-down'), player_reviews_path(rating: PlayerReview::RATING_MAX, player: guest_player, reservation: reservation_player.reservation), method: :post, class: 'btn sportify-small-button sportify-radius fs-5 error-notice-background'
+                %td= link_to fa_icon('thumbs-up'), stats_player_path(owner_player), method: :post, class: 'btn sportify-small-button sportify-radius fs-5 primary-background'
+              - else
+                %td
+                %td
