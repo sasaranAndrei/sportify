@@ -8,6 +8,8 @@ class Player < ApplicationRecord
   has_many :guest_reservations, class_name: 'Reservation', through: :reservation_players, source: :reservation
   has_many :join_requests
   has_many :join_request_reservations, class_name: 'Reservation', through: :join_requests, source: :reservation
+  has_many :own_reviews, class_name: 'PlayerReview', foreign_key: 'player_id'
+  has_many :guest_reviews, class_name: 'PlayerReview', foreign_key: 'reviewer_id'
 
   def all_reservations
     # TechQuestion
@@ -38,12 +40,18 @@ class Player < ApplicationRecord
   end
 
   def rating
-    # viitor feature
-    # deocamdata hardcodat ca toti is baieti de treaba
-    '100/100'
+    return 'N/A' if reviews_rating.nil?
+
+    "#{reviews_rating}/#{PlayerReview::RATING_MAX}"
   end
 
   def avatar
     user.avatar
   end
+
+  private
+
+    def reviews_rating
+      own_reviews.average(:rating)
+    end
 end

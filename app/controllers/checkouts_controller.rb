@@ -8,7 +8,7 @@ class CheckoutsController < ApplicationController
 
   def show
     # TODO: move to a constant - model file
-    sportify_coin_stripe_id = 'price_1KaKnXG0cbVdinhJ2k7yqKsz'
+    # sportify_coin_stripe_id = 'price_1KaKnXG0cbVdinhJ2k7yqKsz'
 
     current_user.set_payment_processor :stripe
 
@@ -18,7 +18,7 @@ class CheckoutsController < ApplicationController
       cancel_url: cancel_checkout_url,
       line_items: [
         {
-          price: sportify_coin_stripe_id,
+          price: ShopConfiguration::SPORTIFY_COIN_STRIPE_ID,
           quantity: @order_amount
         }
       ]
@@ -32,7 +32,7 @@ class CheckoutsController < ApplicationController
     # customer = Stripe::Customer.retrieve(session.customer)
 
     @added_amount = session.amount_total / 100
-    current_user.add_tokens(@added_amount)
+    current_user.add_tokens!(@added_amount)
   end
 
   def cancel; end
@@ -40,6 +40,6 @@ class CheckoutsController < ApplicationController
   private
 
     def set_order_amount
-      @order_amount = params[:order_amount] || 2
+      @order_amount = params[:order_amount].presence || ShopConfiguration::STRIPE_MINIMUM_BILL
     end
 end

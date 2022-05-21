@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_14_105000) do
+ActiveRecord::Schema.define(version: 2022_05_21_121104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -153,6 +153,18 @@ ActiveRecord::Schema.define(version: 2022_05_14_105000) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "player_reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.bigint "player_id", null: false
+    t.bigint "reviewer_id", null: false
+    t.bigint "reservation_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["player_id"], name: "index_player_reviews_on_player_id"
+    t.index ["reservation_id"], name: "index_player_reviews_on_reservation_id"
+    t.index ["reviewer_id"], name: "index_player_reviews_on_reviewer_id"
+  end
+
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.string "nickname"
@@ -215,6 +227,9 @@ ActiveRecord::Schema.define(version: 2022_05_14_105000) do
   add_foreign_key "pay_charges", "pay_subscriptions", column: "subscription_id"
   add_foreign_key "pay_payment_methods", "pay_customers", column: "customer_id"
   add_foreign_key "pay_subscriptions", "pay_customers", column: "customer_id"
+  add_foreign_key "player_reviews", "players"
+  add_foreign_key "player_reviews", "players", column: "reviewer_id"
+  add_foreign_key "player_reviews", "reservations"
   add_foreign_key "players", "users"
   add_foreign_key "reservation_players", "players"
   add_foreign_key "reservation_players", "reservations"

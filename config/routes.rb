@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :player_reviews
   # get '/gamesfeed', to: 'reservations#index'
   root 'reservations#index'
   
