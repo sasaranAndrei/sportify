@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Rating:
+  = @player_review.rating
+%p
+  %b Player:
+  = @player_review.player
+%p
+  %b Reviewer:
+  = @player_review.reviewer
+%p
+  %b Reservation:
+  = @player_review.reservation
+
+= link_to 'Edit', edit_player_review_path(@player_review)
+\|
+= link_to 'Back', player_reviews_path

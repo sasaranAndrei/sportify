@@ -1,0 +1,27 @@
+%h1 Listing player_reviews
+
+%table
+  %thead
+    %tr
+      %th Rating
+      %th Player
+      %th Reviewer
+      %th Reservation
+      %th
+      %th
+      %th
+
+  %tbody
+    - @player_reviews.each do |player_review|
+      %tr
+        %td= player_review.rating
+        %td= player_review.player
+        %td= player_review.reviewer
+        %td= player_review.reservation
+        %td= link_to 'Show', player_review
+        %td= link_to 'Edit', edit_player_review_path(player_review)
+        %td= link_to 'Destroy', player_review, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Player review', new_player_review_path

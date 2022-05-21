@@ -1,0 +1,22 @@
+= form_for @player_review do |f|
+  - if @player_review.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@player_review.errors.count, "error")} prohibited this player_review from being saved:"
+      %ul
+        - @player_review.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :rating
+    = f.number_field :rating
+  .field
+    = f.label :player
+    = f.text_field :player
+  .field
+    = f.label :reviewer
+    = f.text_field :reviewer
+  .field
+    = f.label :reservation
+    = f.text_field :reservation
+  .actions
+    = f.submit 'Save'
