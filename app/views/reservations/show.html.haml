@@ -76,9 +76,9 @@
             %td Reservation Owner
             %td= owner_player.rating
             %td= link_to fa_icon('eye'), stats_player_path(owner_player), class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
-            - unless current_player == owner_player
-              %td= link_to fa_icon('thumbs-down'), stats_player_path(owner_player), class: 'btn sportify-small-button sportify-radius fs-5 error-notice-background'
-              %td= link_to fa_icon('thumbs-up'), stats_player_path(owner_player), class: 'btn sportify-small-button sportify-radius fs-5 primary-background'
+            - unless (current_player == owner_player) || (review_submitted?(owner_player, current_player, @reservation))
+              %td= link_to fa_icon('thumbs-down'), player_reviews_path(player_review: { rating: PlayerReview::RATING_MIN, player_id: owner_player, reviewer_id: current_player, reservation_id: @reservation.id }), method: :post, class: 'btn sportify-small-button sportify-radius fs-5 error-notice-background'
+              %td= link_to fa_icon('thumbs-up'), player_reviews_path(player_review: { rating: PlayerReview::RATING_MAX, player_id: owner_player, reviewer_id: current_player, reservation_id: @reservation.id }), method: :post, class: 'btn sportify-small-button sportify-radius fs-5 primary-background'
             - else
               %td
               %td
@@ -91,9 +91,9 @@
               %td= reservation_player.joined_by
               %td= guest_player.rating
               %td= link_to fa_icon('eye'), stats_player_path(guest_player), class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
-              - unless current_player == guest_player
-                %td= link_to fa_icon('thumbs-down'), player_reviews_path(rating: PlayerReview::RATING_MAX, player: guest_player, reservation: reservation_player.reservation), method: :post, class: 'btn sportify-small-button sportify-radius fs-5 error-notice-background'
-                %td= link_to fa_icon('thumbs-up'), stats_player_path(owner_player), method: :post, class: 'btn sportify-small-button sportify-radius fs-5 primary-background'
+              - unless (current_player == guest_player) || (review_submitted?(guest_player, current_player, @reservation))
+                %td= link_to fa_icon('thumbs-down'), player_reviews_path(player_review: { rating: PlayerReview::RATING_MIN, player_id: guest_player, reviewer_id: current_player, reservation_id: reservation_player.reservation }), method: :post, class: 'btn sportify-small-button sportify-radius fs-5 error-notice-background'
+                %td= link_to fa_icon('thumbs-up'), player_reviews_path(player_review: { rating: PlayerReview::RATING_MAX, player_id: guest_player, reviewer_id: current_player, reservation_id: reservation_player.reservation }), method: :post, class: 'btn sportify-small-button sportify-radius fs-5 primary-background'
               - else
                 %td
                 %td

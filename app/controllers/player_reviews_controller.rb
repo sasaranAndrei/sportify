@@ -22,15 +22,13 @@ class PlayerReviewsController < ApplicationController
   # POST /player_reviews or /player_reviews.json
   def create
     @player_review = PlayerReview.new(player_review_params)
+    earned_tokens = @player_review.rating
+    @player_review.player.user.add_tokens!(earned_tokens)
 
-    respond_to do |format|
-      if @player_review.save
-        format.html { redirect_to player_review_url(@player_review), notice: "Player review was successfully created." }
-        format.json { render :show, status: :created, location: @player_review }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @player_review.errors, status: :unprocessable_entity }
-      end
+    if @player_review.save
+      redirect_back fallback_location: reservation_path(@player_review.reservation.id), notice: 'Player Review was successfully registered. Thank you!'
+    else
+      redirect_back fallback_location: reservation_path(@player_review.reservation.id), notice: 'Player Review was not registered. Please try again!'
     end
   end
 

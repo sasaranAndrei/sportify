@@ -14,8 +14,12 @@ class User < ApplicationRecord
   # PAY
   pay_customer
 
-  def add_tokens(added_tokens)
+  def add_tokens!(added_tokens)
     update(tokens: tokens + added_tokens)
+  end
+
+  def remove_tokens!(removed_tokens)
+    update(tokens: tokens - removed_tokens)
   end
 
   def admin?
