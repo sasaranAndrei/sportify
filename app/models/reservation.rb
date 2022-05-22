@@ -33,6 +33,10 @@ class Reservation < ApplicationRecord
     "#{booking_date.strftime('%d/%m/%Y')} #{booking_hour}:00"
   end
 
+  def chart_date
+    "#{booking_date.strftime('%m/%d/%Y')} #{booking_hour}:00"
+  end
+
   def place
     field.place
   end

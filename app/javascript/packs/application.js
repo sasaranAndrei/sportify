@@ -9,9 +9,10 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-// JQUERY + STIMULUS
+// JQUERY + STIMULUS + CHARTKICK
 import "jquery"
 import "controllers"
+import "chartkick/chart.js"
 
 // PROJECT FILES
 import "general"

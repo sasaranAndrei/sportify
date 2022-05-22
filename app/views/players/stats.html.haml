@@ -1,5 +1,7 @@
 .sportify-page
   .sportify-panel.sportify-big-panel.sportify-radius
-    %h1.sportify-font Stats
+    %h1.sportify-font Rating
+    = line_chart @rating_chart_data, library: { hAxis: { format: 'dd-mm-yyyy' } }
   .sportify-panel.sportify-small-panel.sportify-radius
-    %h1.sportify-font Stats  
+    %h1.sportify-font Reservations
+    = line_chart @reservations_chart_data
