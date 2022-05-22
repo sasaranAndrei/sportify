@@ -56,6 +56,9 @@
         = f.submit "Update", class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
         %br
         %br
+        = link_to fa_icon('address-card', text: 'My Stats'), stats_player_path(current_user.player), class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+        %br
+        %br
         = link_to fa_icon('sign-out', text: 'Log Out'), destroy_user_session_path, method: :delete, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
         %br
         %br

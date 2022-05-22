@@ -1,7 +1,6 @@
-SUCCESS!
-You successfully added 
-= @added_amount
-Sportify COINS to your account! 
-%br
-Your new Sportify COINS Balance is 
-= current_user.tokens
+.sportify-page  
+  .sportify-panel.sportify-small-panel.sportify-radius
+    %h1.sportify-font Congratulations!    
+    %h3= "You successfully added #{@added_amount} Sportify COINS to your account!"
+    %br
+    %h4= "Your new Sportify COINS Balance is #{current_user.tokens}"

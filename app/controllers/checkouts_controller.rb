@@ -26,11 +26,12 @@ class CheckoutsController < ApplicationController
   end
 
   def success
+    flash.now[:notice] = 'Tokens added successfully!'
     session = Stripe::Checkout::Session.retrieve(params[:session_id])
-
+    
     # TODO: change to player
     # customer = Stripe::Customer.retrieve(session.customer)
-
+    
     @added_amount = session.amount_total / 100
     current_user.add_tokens!(@added_amount)
   end
