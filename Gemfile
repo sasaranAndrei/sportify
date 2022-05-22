@@ -28,6 +28,7 @@ gem 'sass-rails', '>= 6'
 
 # AUTHENTICATION
 gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'activeadmin', '~> 2.13', '>= 2.13.1'
 
 # PAYMENT
 gem 'pay', '~> 3.0'

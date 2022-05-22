@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :player_reviews
-  # get '/gamesfeed', to: 'reservations#index'
   root 'reservations#index'
+  get '/gamesfeed', to: 'reservations#index'
   
   # BUSINESS LOGIC
   resources :sports
@@ -14,6 +13,7 @@ Rails.application.routes.draw do
     get :generate_invitation_link, on: :member
     get :accept_invitation, on: :member
   end
+  resources :player_reviews
 
   resources :join_requests do
     put :approve, on: :member
@@ -36,8 +36,12 @@ Rails.application.routes.draw do
   end
 
   # USER
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout'
   }
+
 end
