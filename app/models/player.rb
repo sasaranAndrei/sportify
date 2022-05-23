@@ -32,6 +32,7 @@ class Player < ApplicationRecord
 
   def guest_join_requests
     # own_reservations.map(&:join_requests) # asta nu creca e ok 
+    # TODO: use ARUnion for this
     JoinRequest.where(reservation_id: own_reservations.pluck(:id))
   end
 
