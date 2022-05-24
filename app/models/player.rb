@@ -15,6 +15,7 @@ class Player < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 30 }
   validates :birth_date, presence: true
+  validate :birth_date_in_the_past
   validates :phone_number, presence: true, 
                            format: { with: Regex::ROMANIAN_PHONE_NUMBER },
                            uniqueness: true
@@ -68,6 +69,10 @@ class Player < ApplicationRecord
   private
     def normalize_name
       self.name = name.strip.downcase.titleize
+    end
+
+    def birth_date_in_the_past
+      errors.add(:birth_date, 'The birth date must be in the past') unless birth_date.past?
     end
 
     def reviews_rating
