@@ -80,10 +80,18 @@ class Reservation < ApplicationRecord
     field.max_players - all_players.count
   end
 
+  # TechQuestion - It would be a bad practice to name
+  # this method free_slots(?)
+  # eu creca nu ca ar putea fii inconsistente gen: free_slots? = false && free_slots = 10 if code changes
+  def no_free_slots?
+    free_slots <= 0
+  end
+
   def invitation
-    return invitation_link if free_slots.positive?
+    # TODO: i18n
+    return 'Invitation Link disabled due to lack of Free Slots' if no_free_slots?
   
-    'Invitation Link disabled due to lack of Free Slots'
+    invitation_link
   end
 
   def generate_invitation_token!
