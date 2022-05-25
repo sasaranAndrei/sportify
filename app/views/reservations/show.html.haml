@@ -37,7 +37,7 @@
       - if @reservation.invitation_token
         .form-group 
           = label_tag :invitation_link, 'Invitation Link', class: 'sportify-label'
-          .form-control{ disabled: true }= @reservation.invitation_link    
+          .form-control{ disabled: true }= @reservation.invitation
       - else
         = link_to fa_icon('link', text: 'Generate Invitation Link'), generate_invitation_link_reservation_path(@reservation), class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
         %br

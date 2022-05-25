@@ -1,6 +1,6 @@
 module ReservationsHelper
   def mocked_hours
-    (0..23).map { |hour| Time.new(1, 1, 1, hour, 0).strftime('%H:%M') }
+    Reservation::WORKING_HOURS.map { |hour| Time.new(1, 1, 1, hour, 0).strftime('%H:%M') }
   end
 
   def highlight_reservation_class(reservation, player)

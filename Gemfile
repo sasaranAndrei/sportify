@@ -39,6 +39,7 @@ gem 'receipts', '~> 1.1'
 
 # OTHER
 gem 'active_record_union'
+gem 'date_validator', '~> 0.12.0'
 gem 'groupdate'
 
 # add?: rspec, redis, faker, chartkick, dotenv

@@ -63,7 +63,7 @@ class Player < ApplicationRecord
   # in caller:
   # player.nickname INSTEAD_OF player.nickname || player.name
   def nickname
-    nickname || name
+    read_attribute(:nickname) || name
   end
 
   private

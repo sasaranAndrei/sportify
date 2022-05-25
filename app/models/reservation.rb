@@ -1,4 +1,6 @@
 class Reservation < ApplicationRecord
+  WORKING_HOURS = (0..23).to_a
+
   belongs_to :owner_player, class_name: 'Player'
   belongs_to :field
 
@@ -18,6 +20,11 @@ class Reservation < ApplicationRecord
       where('join_requests.approved = ?', false)
     end
   end
+
+  # validates :booking_date, presencec: true, date: { after: Proc.new { Time.now } }
+  validates :booking_date, presence: true
+  validates :booking_hour, presence: true #, inclusion: WORKING_HOURS
+  validate :reservation_date_working_hours
 
   scope :upcoming, -> { where('booking_date >= ?', Date.today) }
   scope :past, -> { where('booking_date < ?', Date.today) }
@@ -73,8 +80,10 @@ class Reservation < ApplicationRecord
     field.max_players - all_players.count
   end
 
-  def invitation_link
-    "#{Rails.application.routes.url_helpers.reservation_url(self)}?invitation_token=#{invitation_token}"
+  def invitation
+    return invitation_link if free_slots.positive?
+  
+    'Invitation Link disabled due to lack of Free Slots'
   end
 
   def generate_invitation_token!
@@ -88,11 +97,27 @@ class Reservation < ApplicationRecord
   end
 
   private
-    
+    def reservation_date_working_hours
+      # TODO: field.working_hours
+      # momentan e ok asa, nu am facut cu validate inclusion
+      # ca sa am interfata publica ok, 
+      # si asta privata sa o schimb cand o sa trebuiasca
+      booking_date > Date.yesterday && WORKING_HOURS.include?(booking_hour)
+    end
+
     def generate_token!
       loop do
         token = SecureRandom.hex(10)
         break token unless Reservation.where(invitation_token: token).exists?
       end
+    end
+    
+    # TODO:*** ceva din cartea de OOP, deocamdata ii ok asa
+    def invitation_link
+      "#{Rails.application.routes.url_helpers.reservation_url(self)}?invitation_token=#{invitation_token}"
+    end
+    
+    class Invitation
+
     end
 end
