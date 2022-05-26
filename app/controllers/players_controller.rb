@@ -11,7 +11,7 @@ class PlayersController < ApplicationController
   def stats
     @rating_chart_data = @player.own_reviews
                                 .group_by(&:reservation_id)
-                                .transform_keys { |reservation_id| Reservation.find(reservation_id).chart_date }
+                                .transform_keys { |reservation_id| Reservation.find(reservation_id).display_datetime(:chart) }
                                 .transform_values { |reviews| reviews.map(&:rating).sum.to_f / reviews.count }
 
     @reservations_chart_data = {

@@ -1,5 +1,10 @@
 class Reservation < ApplicationRecord
-  WORKING_HOURS = (0..23).to_a
+  WORKING_HOURS = (0..23).to_a.freeze
+  DATE_FORMATS = Hash.new().merge(
+    reservation: '',
+    chart: '',
+    # mock: 
+  ).freeze
 
   belongs_to :owner_player, class_name: 'Player'
   belongs_to :field
@@ -36,17 +41,25 @@ class Reservation < ApplicationRecord
     guest_players.union(owner_player) # but I do it in order to call union here
   end
 
-  # TODO: create a date private method for @date ||= Date.new(booking_date, booking_hour)
-  # TODO: use a DP or some OOP tricky stuff
-  # and renamed this display_data { date.strftime(display_format) }
-  def date
-    "#{booking_date.strftime('%d/%m/%Y')} #{booking_hour}:00"
+  # TechQuestion - This feels like it doesn t belong to Reservation? This will be moved into a Decorator
+  def display_datetime(format_option)
+    # RubyBook #4 - 'Kind of' Duck Types (not really because its not based on klass)
+    date.strftime(DATE_FORMATS[format_option])
+    
+    # case display_format
+    # when :chart
+    #    date.strftime('#chart_format')
+    # when :reservation
+    #   date.strftime('#reservation_format')
+    # when :mock
+    #   date.strftime('#mock_format')
+    # end
   end
   
-  # and renamed this chart_data { date.strftime(chart_format) }
-  def chart_date
-    "#{booking_date.strftime('%m/%d/%Y')} #{booking_hour}:00"
-  end
+  # old version
+  # def chart_date
+  #   "#{booking_date.strftime('%m/%d/%Y')} #{booking_hour}:00"
+  # end
 
   # RubyBookOOP #2 - Law of Demeter
   def place
@@ -114,6 +127,15 @@ class Reservation < ApplicationRecord
       booking_date > Date.yesterday && WORKING_HOURS.include?(booking_hour)
     end
 
+    def datetime
+      # TechQuestion - O sa functioneze daca se schimba booking_date / boooking_hour
+      # @datetime ||= Time.parse("#{booking_hour}:00", booking_date)
+      Time.parse("#{booking_hour}:00", booking_date)
+      
+      # old version (def date)
+      # "#{booking_date.strftime('%d/%m/%Y')} #{booking_hour}:00" # old version
+    end
+    
     def generate_token!
       loop do
         token = SecureRandom.hex(10)
