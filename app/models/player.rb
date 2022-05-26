@@ -11,6 +11,15 @@ class Player < ApplicationRecord
   has_many :own_reviews, class_name: 'PlayerReview', foreign_key: 'player_id'
   has_many :guest_reviews, class_name: 'PlayerReview', foreign_key: 'reviewer_id'
 
+  before_validation :normalize_name
+
+  validates :name, presence: true, length: { maximum: 30 }
+  validates :birth_date, presence: true
+  validate :birth_date_in_the_past
+  validates :phone_number, presence: true, 
+                           format: { with: Regex::ROMANIAN_PHONE_NUMBER },
+                           uniqueness: true
+
   def all_reservations
     # TechQuestion
     # own_reservations.or(guest_reservations) # don't work
@@ -32,6 +41,7 @@ class Player < ApplicationRecord
 
   def guest_join_requests
     # own_reservations.map(&:join_requests) # asta nu creca e ok 
+    # TODO: use ARUnion for this
     JoinRequest.where(reservation_id: own_reservations.pluck(:id))
   end
 
@@ -45,11 +55,26 @@ class Player < ApplicationRecord
     "#{reviews_rating}/#{PlayerReview::RATING_MAX}"
   end
 
+  # RubyBookOOP #2 - Law of Demeter
   def avatar
     user.avatar
   end
 
+  # RubyBookOOP #1 - wrap private dependency
+  # in caller:
+  # player.nickname INSTEAD_OF player.nickname || player.name
+  def nickname
+    read_attribute(:nickname) || name
+  end
+
   private
+    def normalize_name
+      self.name = name.strip.downcase.titleize
+    end
+
+    def birth_date_in_the_past
+      errors.add(:birth_date, 'The birth date must be in the past') unless birth_date.past?
+    end
 
     def reviews_rating
       own_reviews.average(:rating)

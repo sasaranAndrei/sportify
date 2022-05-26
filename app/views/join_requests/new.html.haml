@@ -29,7 +29,7 @@
       %h1.sportify-font Reservation Details
       .form-group 
         = label_tag :date, 'Date', class: 'sportify-label'
-        .form-control{ disabled: true }= @reservation.date
+        .form-control{ disabled: true }= @reservation.display_datetime
       .form-group 
         = label_tag :place, 'Place', class: 'sportify-label'
         .form-control{ disabled: true }= @reservation.place
