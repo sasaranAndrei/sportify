@@ -55,6 +55,7 @@ class Player < ApplicationRecord
     "#{reviews_rating}/#{PlayerReview::RATING_MAX}"
   end
 
+  # RubyBookOOP #2 - Law of Demeter
   def avatar
     user.avatar
   end

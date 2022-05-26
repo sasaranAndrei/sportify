@@ -48,6 +48,7 @@ class Reservation < ApplicationRecord
     "#{booking_date.strftime('%m/%d/%Y')} #{booking_hour}:00"
   end
 
+  # RubyBookOOP #2 - Law of Demeter
   def place
     field.place
   end
@@ -125,7 +126,7 @@ class Reservation < ApplicationRecord
       "#{Rails.application.routes.url_helpers.reservation_url(self)}?invitation_token=#{invitation_token}"
     end
     
-    class Invitation
-
-    end
+    # RubyBook #3 - Hide Data Structures #TODO
+    # class Invitation; end
+    # Invitation = OpenStruct.new()
 end
