@@ -1,9 +1,13 @@
 class Reservation < ApplicationRecord
   WORKING_HOURS = (0..23).to_a.freeze
-  DATE_FORMATS = Hash.new().merge(
-    reservation: '',
-    chart: '',
-    # mock: 
+  DEFAULT_DATE_FORMAT = '%d/%m/%Y %H:%M'.freeze
+  DATE_FORMATS = Hash.new(DEFAULT_DATE_FORMAT).merge(
+    # reservation: '%d/%m/%Y %H:%M',
+    chart: '%m/%d/%Y %H:%M',
+    mock: '%H:%M' # TechQuestion - Aici ar fii mai bine sa redenumesc cheia 'time'?
+    # Ma gandesc ca asa as putea sa l folosesc si in alte scopuri decat 'mock'.
+    # Dar mai e si chestia ca daca vreau sa schimb cum se afisaza 'mock',
+    # tre sa adaug un nou key, val.
   ).freeze
 
   belongs_to :owner_player, class_name: 'Player'
@@ -42,10 +46,12 @@ class Reservation < ApplicationRecord
   end
 
   # TechQuestion - This feels like it doesn t belong to Reservation? This will be moved into a Decorator
-  def display_datetime(format_option)
+  def display_datetime(format_option = nil)
     # RubyBook #4 - 'Kind of' Duck Types (not really because its not based on klass)
-    date.strftime(DATE_FORMATS[format_option])
+    datetime.strftime(DATE_FORMATS[format_option])
     
+    # instead of:
+
     # case display_format
     # when :chart
     #    date.strftime('#chart_format')

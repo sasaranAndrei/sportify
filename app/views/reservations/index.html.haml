@@ -12,7 +12,7 @@
         %tbody
           - @recent_reservations.each do |reservation|
             %tr
-              %td= reservation.date
+              %td= reservation.display_datetime
               %td= reservation.place
               - if current_user
                 %td= link_to fa_icon('eye'), reservation_path(reservation), class: "btn sportify-small-button sportify-radius fs-5 #{highlight_reservation_class(reservation, Player.first || current_player)}" # invers
@@ -20,7 +20,7 @@
                 %td= link_to fa_icon('eye'), new_user_session_path, class: 'btn sportify-small-button sportify-radius fs-5 error-notice-background'
           - @upcoming_reservations.each do |reservation|
             %tr
-              %td= reservation.date
+              %td= reservation.display_datetime
               %td= reservation.place
               - if current_user
                 - if reservation.participate?(current_player)

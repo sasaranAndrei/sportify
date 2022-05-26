@@ -21,7 +21,7 @@
           - @upcoming_reservations.each do |reservation|
             %tr
               %td= reservation.owner_player_id == current_user.player.id ? 'Own' : 'Guest' # TechQuestion TODO: refactor this 
-              %td= reservation.date
+              %td= reservation.display_datetime
               %td= reservation.place
               %td= link_to fa_icon('eye'), reservation_path(reservation), class: 'btn sportify-small-button sportify-radius fs-5'
 
@@ -51,7 +51,7 @@
           - @past_reservations.each do |reservation|
             %tr
               %td= reservation.owner_player_id == current_user.player.id ? 'Own' : 'Guest' # TechQuestion TODO: refactor this 
-              %td= reservation.date
+              %td= reservation.display_datetime
               %td= reservation.place
               %td
               %td

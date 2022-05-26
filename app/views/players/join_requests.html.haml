@@ -46,7 +46,7 @@
         %tbody
           - @own_join_requests.each do |join_request|
             %tr
-              %td= join_request.reservation.date
+              %td= join_request.reservation.display_datetime
               %td= join_request.reservation.place
               %td= join_request.reservation.free_slots
               %td= join_request.status
