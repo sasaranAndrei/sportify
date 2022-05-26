@@ -3,10 +3,7 @@ class JoinRequest < ApplicationRecord
   belongs_to :reservation
 
   validate :owner_player
-
-  def owner_player
-    errors.add(:player, 'The owner player cannot create a JoinRequest for one of his Reservations') if player == reservation.owner_player
-  end
+  validate :reservation_free_slots
 
   def status
     return 'Pending' if pending?
@@ -18,4 +15,13 @@ class JoinRequest < ApplicationRecord
   def pending?
     approved.nil?
   end
+
+  private
+    def owner_player
+      errors.add(:player, 'The owner player cannot create a JoinRequest for one of his Reservations') if player == reservation.owner_player
+    end
+
+    def reservation_free_slots
+      errors.add(:reservation, 'There are no Free Slots on this Reservatino. Please choose another one') if reservation.no_free_slots?
+    end
 end

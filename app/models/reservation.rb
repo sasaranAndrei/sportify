@@ -1,4 +1,15 @@
 class Reservation < ApplicationRecord
+  WORKING_HOURS = (0..23).to_a.freeze
+  DEFAULT_DATE_FORMAT = '%d/%m/%Y %H:%M'.freeze
+  DATE_FORMATS = Hash.new(DEFAULT_DATE_FORMAT).merge(
+    # reservation: '%d/%m/%Y %H:%M',
+    chart: '%m/%d/%Y %H:%M',
+    mock: '%H:%M' # TechQuestion - Aici ar fii mai bine sa redenumesc cheia 'time'?
+    # Ma gandesc ca asa as putea sa l folosesc si in alte scopuri decat 'mock'.
+    # Dar mai e si chestia ca daca vreau sa schimb cum se afisaza 'mock',
+    # tre sa adaug un nou key, val.
+  ).freeze
+
   belongs_to :owner_player, class_name: 'Player'
   belongs_to :field
 
@@ -19,6 +30,11 @@ class Reservation < ApplicationRecord
     end
   end
 
+  # validates :booking_date, presencec: true, date: { after: Proc.new { Time.now } }
+  validates :booking_date, presence: true
+  validates :booking_hour, presence: true #, inclusion: WORKING_HOURS
+  validate :reservation_date_working_hours
+
   scope :upcoming, -> { where('booking_date >= ?', Date.today) }
   scope :past, -> { where('booking_date < ?', Date.today) }
   scope :ordered, ->(direction) { order(booking_date: direction, booking_hour: direction) }
@@ -29,18 +45,29 @@ class Reservation < ApplicationRecord
     guest_players.union(owner_player) # but I do it in order to call union here
   end
 
-  # TODO: create a date private method for @date ||= Date.new(booking_date, booking_hour)
-  # TODO: use a DP or some OOP tricky stuff
-  # and renamed this display_data { date.strftime(display_format) }
-  def date
-    "#{booking_date.strftime('%d/%m/%Y')} #{booking_hour}:00"
+  # TechQuestion - This feels like it doesn t belong to Reservation? This will be moved into a Decorator
+  def display_datetime(format_option = nil)
+    # RubyBook #4 - 'Kind of' Duck Types (not really because its not based on klass)
+    datetime.strftime(DATE_FORMATS[format_option])
+    
+    # instead of:
+
+    # case display_format
+    # when :chart
+    #    date.strftime('#chart_format')
+    # when :reservation
+    #   date.strftime('#reservation_format')
+    # when :mock
+    #   date.strftime('#mock_format')
+    # end
   end
   
-  # and renamed this chart_data { date.strftime(chart_format) }
-  def chart_date
-    "#{booking_date.strftime('%m/%d/%Y')} #{booking_hour}:00"
-  end
+  # old version
+  # def chart_date
+  #   "#{booking_date.strftime('%m/%d/%Y')} #{booking_hour}:00"
+  # end
 
+  # RubyBookOOP #2 - Law of Demeter
   def place
     field.place
   end
@@ -73,8 +100,18 @@ class Reservation < ApplicationRecord
     field.max_players - all_players.count
   end
 
-  def invitation_link
-    "#{Rails.application.routes.url_helpers.reservation_url(self)}?invitation_token=#{invitation_token}"
+  # TechQuestion - It would be a bad practice to name
+  # this method free_slots(?)
+  # eu creca nu ca ar putea fii inconsistente gen: free_slots? = false && free_slots = 10 if code changes
+  def no_free_slots?
+    free_slots <= 0
+  end
+
+  def invitation
+    # TODO: i18n
+    return 'Invitation Link disabled due to lack of Free Slots' if no_free_slots?
+  
+    invitation_link
   end
 
   def generate_invitation_token!
@@ -88,6 +125,22 @@ class Reservation < ApplicationRecord
   end
 
   private
+    def reservation_date_working_hours
+      # TODO: field.working_hours
+      # momentan e ok asa, nu am facut cu validate inclusion
+      # ca sa am interfata publica ok, 
+      # si asta privata sa o schimb cand o sa trebuiasca
+      booking_date > Date.yesterday && WORKING_HOURS.include?(booking_hour)
+    end
+
+    def datetime
+      # TechQuestion - O sa functioneze daca se schimba booking_date / boooking_hour
+      # @datetime ||= Time.parse("#{booking_hour}:00", booking_date)
+      Time.parse("#{booking_hour}:00", booking_date)
+      
+      # old version (def date)
+      # "#{booking_date.strftime('%d/%m/%Y')} #{booking_hour}:00" # old version
+    end
     
     def generate_token!
       loop do
@@ -95,4 +148,13 @@ class Reservation < ApplicationRecord
         break token unless Reservation.where(invitation_token: token).exists?
       end
     end
+    
+    # TODO:*** ceva din cartea de OOP, deocamdata ii ok asa
+    def invitation_link
+      "#{Rails.application.routes.url_helpers.reservation_url(self)}?invitation_token=#{invitation_token}"
+    end
+    
+    # RubyBook #3 - Hide Data Structures #TODO
+    # class Invitation; end
+    # Invitation = OpenStruct.new()
 end
