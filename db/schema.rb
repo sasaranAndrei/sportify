@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_22_155722) do
+ActiveRecord::Schema.define(version: 2022_05_27_051245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,14 @@ ActiveRecord::Schema.define(version: 2022_05_22_155722) do
     t.datetime "updated_at", precision: 6, null: false
     t.decimal "latitude", default: "46.77017"
     t.decimal "longitude", default: "23.59736"
+  end
+
+  create_table "balls", force: :cascade do |t|
+    t.string "color"
+    t.bigint "player_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["player_id"], name: "index_balls_on_player_id"
   end
 
   create_table "fields", force: :cascade do |t|
@@ -230,6 +238,17 @@ ActiveRecord::Schema.define(version: 2022_05_22_155722) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tshirts", force: :cascade do |t|
+    t.integer "number"
+    t.string "nickname"
+    t.string "color"
+    t.string "size"
+    t.bigint "player_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["player_id"], name: "index_tshirts_on_player_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -245,6 +264,7 @@ ActiveRecord::Schema.define(version: 2022_05_22_155722) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "balls", "players"
   add_foreign_key "fields", "arenas"
   add_foreign_key "fields", "sports"
   add_foreign_key "join_requests", "players"
@@ -261,4 +281,5 @@ ActiveRecord::Schema.define(version: 2022_05_22_155722) do
   add_foreign_key "reservation_players", "reservations"
   add_foreign_key "reservations", "fields"
   add_foreign_key "reservations", "players", column: "owner_player_id"
+  add_foreign_key "tshirts", "players"
 end

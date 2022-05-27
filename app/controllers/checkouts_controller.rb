@@ -4,7 +4,12 @@ class CheckoutsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_order_amount, only: :show
 
-  def new; end
+  def new
+    @products = ObjectSpace.each_object(Class)
+                           .select { |c| c.included_modules.include?(Sellable) }
+                           .map(&:name)
+    byebug
+  end
 
   def show
     # TODO: move to a constant - model file

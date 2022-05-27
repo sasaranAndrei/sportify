@@ -10,6 +10,7 @@ class Player < ApplicationRecord
   has_many :join_request_reservations, class_name: 'Reservation', through: :join_requests, source: :reservation
   has_many :own_reviews, class_name: 'PlayerReview', foreign_key: 'player_id'
   has_many :guest_reviews, class_name: 'PlayerReview', foreign_key: 'reviewer_id'
+  has_many :tshirts
 
   before_validation :normalize_name
 
