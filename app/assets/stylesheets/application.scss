@@ -7,6 +7,7 @@
 @import "variables";
 
 // CONTROLLERS
+@import "checkouts";
 @import "pages";
 @import "arenas";
 @import "fields";
@@ -79,6 +80,12 @@
 .sportify-small-panel {
   background-color: $small-panel-background-color;
   width: 30%;
+}
+
+.sportify-product-panel {
+  background-color: $primary-color;
+  width: 40%;
+  height: 30vh;
 }
 
 .sportify-primary-button {
@@ -175,8 +182,4 @@
   z-index: 4;
   height: 6vh;
   border: none;
-}
-
-.sportify-product {
-
 }

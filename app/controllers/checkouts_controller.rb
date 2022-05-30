@@ -3,12 +3,11 @@
 class CheckoutsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_order_amount, only: :show
+  before_action :set_products, only: %i[ new ]
 
   def new
-    @products = ObjectSpace.each_object(Class)
-                           .select { |c| c.included_modules.include?(Sellable) }
-                           .map(&:name)
-    byebug
+    # @products += ['Some product', 'Other product', 'Another product']
+    @products += [Ball.new, Tshirt.new, Tshirt.new]
   end
 
   def show
@@ -47,5 +46,14 @@ class CheckoutsController < ApplicationController
 
     def set_order_amount
       @order_amount = params[:order_amount].presence || ShopConfiguration::STRIPE_MINIMUM_BILL
+    end
+
+    def set_products
+      type_of_products = ObjectSpace.each_object(Class)
+                                    .select { |c| c.included_modules.include?(Sellable) }
+                                    .map(&:name)
+                                    .compact
+      # byebug
+      @products = type_of_products.collect { |product| product.constantize.sample }
     end
 end
