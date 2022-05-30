@@ -21,5 +21,10 @@
       - @products.each do |product|
         - product_type = product.class
         .sportify-panel.sportify-product-panel.sportify-radius
-          = product_type.sample.photo
-          = product_type
+          = image_tag(product_type.sample.photo, class: 'sportify-product-image')
+          %br
+          %h3.sportify-font
+            = product_type
+          %h4.sportify-font
+            = product.price
+          = link_to fa_icon('cart-arrow-down'), { controller: "#{product_type.to_s.downcase.pluralize}", action: 'new' }, class: 'btn sportify-small-button sportify-radius fs-5'

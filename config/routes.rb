@@ -25,6 +25,10 @@ Rails.application.routes.draw do
     get :reservations, on: :member
     get :join_requests, on: :member
   end
+
+  # SHOP
+  resources :balls, only: [ :new ]
+  resources :tshirts, only: [ :new ]
   
   # PAY
   get 'sportify_coins_shop', to: 'checkouts#new'
@@ -43,5 +47,4 @@ Rails.application.routes.draw do
     sign_in: 'login',
     sign_out: 'logout'
   }
-
 end

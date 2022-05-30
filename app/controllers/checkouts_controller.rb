@@ -7,7 +7,7 @@ class CheckoutsController < ApplicationController
 
   def new
     # @products += ['Some product', 'Other product', 'Another product']
-    @products += [Ball.new, Tshirt.new, Tshirt.new]
+    # @products += [Ball.new, Tshirt.new, Tshirt.new]
   end
 
   def show
@@ -49,11 +49,13 @@ class CheckoutsController < ApplicationController
     end
 
     def set_products
-      type_of_products = ObjectSpace.each_object(Class)
-                                    .select { |c| c.included_modules.include?(Sellable) }
-                                    .map(&:name)
-                                    .compact
-      # byebug
+      # TechQuestion? - NOT CONSISTENT !? eager-loading vs lazy-loading
+      # type_of_products = ObjectSpace.each_object(Class)
+      #                               .select { |c| c.included_modules.include?(Sellable) }
+      #                               .map(&:name)
+      #                               .compact
+      # byebug # atentie.
+      type_of_products = ['Tshirt', 'Ball']
       @products = type_of_products.collect { |product| product.constantize.sample }
     end
 end

@@ -88,6 +88,8 @@
   height: 30vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .sportify-primary-button {
@@ -184,4 +186,9 @@
   z-index: 4;
   height: 6vh;
   border: none;
+}
+
+.sportify-product-image {
+  width: 100%;
+  height: 75%;
 }

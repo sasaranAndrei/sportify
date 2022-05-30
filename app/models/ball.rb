@@ -5,6 +5,7 @@ class Ball < ApplicationRecord
   COLORS = %w(white green red).freeze
 
   belongs_to :player
+  # has_one_attached :photo # TODO: improvement
 
   validates :color, inclusion: { in: COLORS }
 
@@ -17,6 +18,6 @@ class Ball < ApplicationRecord
   end
 
   def photo
-    
+    'products/ball-white.jpg'
   end
 end
