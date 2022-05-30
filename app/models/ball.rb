@@ -15,4 +15,8 @@ class Ball < ApplicationRecord
   def price
     120
   end
+
+  def photo
+    
+  end
 end

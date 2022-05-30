@@ -86,6 +86,8 @@
   background-color: $primary-color;
   width: 40%;
   height: 30vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .sportify-primary-button {

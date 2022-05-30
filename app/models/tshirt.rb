@@ -10,10 +10,20 @@ class Tshirt < ApplicationRecord
   validates :color, inclusion: { in: COLORS }
 
   def self.sample
-    Tshirt.new(color: 'orange')
+    # TechQuestion? - Add @@sample ||= ?
+    Tshirt.new(
+      nickname: 'Sampleinho',
+      number: 10,
+      color: 'orange',
+      size: 'L'
+    )
   end
 
   def price
     80
+  end
+
+  def photo
+
   end
 end

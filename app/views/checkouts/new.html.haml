@@ -19,6 +19,7 @@
     %h1.sportify-font Sportify Shop
     .products-wrapper
       - @products.each do |product|
-        -# - byebug
+        - product_type = product.class
         .sportify-panel.sportify-product-panel.sportify-radius
-          = product.class
+          = product_type.sample.photo
+          = product_type
