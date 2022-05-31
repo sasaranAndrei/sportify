@@ -70,6 +70,10 @@ class Player < ApplicationRecord
     read_attribute(:nickname) || name
   end
 
+  def penalize(reservation)
+    print "#{nickname}, you will be penalized for reservation #{reservation}"
+  end
+
   private
     def normalize_name
       self.name = name.strip.downcase.titleize

@@ -1,4 +1,6 @@
 class ReservationPlayer < ApplicationRecord
+  include Observable
+
   belongs_to :reservation
   belongs_to :player
 
@@ -10,6 +12,10 @@ class ReservationPlayer < ApplicationRecord
   # def self.joining_options
     # [JOIN_REQUEST, INVITATION]
   # end
+
+  def cancel
+  
+  end
 
   private
 

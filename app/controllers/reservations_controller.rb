@@ -74,7 +74,7 @@ class ReservationsController < ApplicationController
     # @reservation.destroy
     @reservation.cancel
 
-    redirect_back(fallback_location: reservations_player_path(current_player), notice: 'You will regret this!')
+    redirect_back(fallback_location: reservations_player_path(current_user.player), notice: 'You will regret this!')
   end
 
   # nuj daca o sa mai am nevoie de asta?

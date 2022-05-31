@@ -1,3 +1,5 @@
+require 'observer'
+
 class Reservation < ApplicationRecord
   include Observable
 
@@ -127,11 +129,16 @@ class Reservation < ApplicationRecord
   end
 
   def cancel
+    # <client call>
+    create_reservation_player_observers
+
     # ar fii smeker daca as putea asta ca concrete observer Owner Player + Guest Player
     penalize_owner_player
-    # observers = guest_players + ?(owner_player)
+    byebug
+    changed
     notify_observers(Time.now, 'Owner Player canceled this reservation')
-    self.destroy!
+    byebug
+    # self.destroy!
   end
 
   private
@@ -155,6 +162,14 @@ class Reservation < ApplicationRecord
       
       # old version (def date)
       # "#{booking_date.strftime('%d/%m/%Y')} #{booking_hour}:00" # old version
+    end
+
+    def create_reservation_player_observers
+      ReservationObservers::OwnerPlayerObserver.new(self, owner_player)
+
+      guest_players.each do |guest_player|
+        ReservationObservers::GuestPlayerObserver.new(self, guest_player)
+      end
     end
     
     def generate_token!

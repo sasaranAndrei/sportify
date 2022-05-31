@@ -4,8 +4,8 @@ class PlayersController < ApplicationController
   def reservations
     reservations = @player.all_reservations
     
-    @upcoming_reservations = reservations.upcoming
-    @past_reservations = reservations.past
+    @upcoming_reservations = reservations.upcoming.ordered(:asc)
+    @past_reservations = reservations.past.ordered(:asc)
   end
 
   def stats
