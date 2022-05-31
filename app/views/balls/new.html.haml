@@ -7,4 +7,4 @@
         %br/
         = f.select :color, options_for_select(Ball::COLORS), {}, class: 'form-select form-control'
       %br
-      = button_tag fa_icon('cart', text: "Get a Ball (#{@ball.price})"), type: 'submit', class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+      = button_tag fa_icon('cart-arrow-down', text: "Get a Ball (#{@ball.price})"), type: 'submit', class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
