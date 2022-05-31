@@ -1,0 +1,12 @@
+.sportify-page
+  .sportify-panel.sportify-big-panel.sportify-radius 
+    %h1.sportify-font My Collection
+    .products-wrapper
+      - @items.each do |item|
+        - item_type = item.class
+        .sportify-panel.sportify-product-panel.sportify-radius
+          = image_tag(item.photo, class: 'sportify-product-image')
+          %br
+          %h3.sportify-font
+            = item_type
+

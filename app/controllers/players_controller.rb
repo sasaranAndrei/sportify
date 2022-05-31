@@ -1,5 +1,5 @@
 class PlayersController < ApplicationController
-  before_action :set_player, only: %i[ show edit update destroy reservations stats join_requests]
+  before_action :set_player, only: %i[ show edit update destroy reservations stats collection join_requests ]
 
   def reservations
     reservations = @player.all_reservations
@@ -23,6 +23,10 @@ class PlayersController < ApplicationController
   def join_requests
     @guest_join_requests = @player.guest_join_requests
     @own_join_requests = @player.join_requests
+  end
+
+  def collection
+    @items = @player.tshirts + @player.balls
   end
 
   private

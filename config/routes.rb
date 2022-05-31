@@ -23,12 +23,13 @@ Rails.application.routes.draw do
   resources :players do
     get :stats, on: :member
     get :reservations, on: :member
+    get :collection, on: :member
     get :join_requests, on: :member
   end
 
   # SHOP
-  resources :balls, only: [ :new ]
-  resources :tshirts, only: [ :new ]
+  resources :balls
+  resources :tshirts
   
   # PAY
   get 'sportify_coins_shop', to: 'checkouts#new'

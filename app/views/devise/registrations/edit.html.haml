@@ -56,6 +56,9 @@
         = f.submit "Update", class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
         %br
         %br
+        = link_to fa_icon('briefcase', text: 'My Collection'), collection_player_path(current_user.player), class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+        %br
+        %br
         = link_to fa_icon('address-card', text: 'My Stats'), stats_player_path(current_user.player), class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
         %br
         %br
@@ -64,4 +67,3 @@
         %br
         = link_to fa_icon('user-times', text: 'Delete Account'), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
         -# = link_to "Back", :back
-      

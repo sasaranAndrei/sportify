@@ -1,4 +1,10 @@
 module Sellable
+  extend ActiveSupport::Concern
+
+  included do
+    belongs_to :player
+  end
+
   def price
     raise NotImplementedError, 'Define <<price>> in the concrete products!'
   end
