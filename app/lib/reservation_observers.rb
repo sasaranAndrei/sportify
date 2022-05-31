@@ -1,17 +1,19 @@
 module ReservationObservers
   class ReservationPlayerObserver
-    def initialize(reservation, player)
+    # reservation_subject => ducktype: poate fii reservation / reservation_player
+    def initialize(reservation_subject, player)
       @player = player
-      reservation.add_observer(self)
+      reservation_subject.add_observer(self)
     end
   end
 
+  # cand owner player-ul da cancel la reservation
   class OwnerPlayerObserver < ReservationPlayerObserver
     def update(time, status = 'TODO')
       puts "I am Owner Player observer"
       puts "Name: #{@player.nickname}"
       # It works!
-      # TODO: Delete ReservationPlayer
+      # TODO: Delete ReservationPlayer # nu creca trebe ca has_many :destroy
     end
   end
   
@@ -21,6 +23,21 @@ module ReservationObservers
       puts "Name: #{@player.nickname}"
       # It works!
       # TODO: Delete ReservationPlayer
+    end
+  end
+
+  # cand un guest player da cancel la reservation
+  class OwnerReservationPlayerObserver < ReservationPlayerObserver
+    def update(time, status = 'TODO')
+      puts "I am Owner ReservationPlayer observer"
+      puts "Name: #{@player.nickname}"
+    end
+  end
+
+  class GuestReservationPlayerObserver
+    def update(time, status = 'TODO')
+      puts "I am Guest ReservationPlayer observer"
+      puts "Name: #{@player.nickname}"
     end
   end
 end

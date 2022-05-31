@@ -14,7 +14,12 @@ class ReservationPlayer < ApplicationRecord
   # end
 
   def cancel
-  
+    create_reservation_player_observers
+    penalize_player
+    changed
+
+    notify_observers(Time.now, 'Guest Player canceled this Reservation')
+    # byebug
   end
 
   private
@@ -23,5 +28,10 @@ class ReservationPlayer < ApplicationRecord
       if player == reservation.owner_player # TechQuestion: cum e mai ok? player_id == reservation.owner_player_id
         errors.add(:reservation_owner, "must join. He can't be present in the Guests list too") 
       end
+    end
+
+    def create_reservation_player_observers
+      ReservationObservers::OwnerReservationPlayerObserver.new(self, reservation.owner_player)
+      ReservationObservers::GuestReservationPlayerObserver.new(self, player)
     end
 end
