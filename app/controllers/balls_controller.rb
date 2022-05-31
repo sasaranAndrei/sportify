@@ -4,13 +4,17 @@ class BallsController < ApplicationController
   end
   
   def create
+    # TODO: Refactor!
     @ball = Ball.new(ball_params)
 
-    byebug
+    return redirect_back fallback_location: sportify_coins_shop_path, notice: "You don't have enough SCoins to buy a Ball" unless current_user.can_pay?(@ball.price)
+
     if @ball.save
-      redirect_to 
+      current_user.remove_tokens!(@ball.price)
+
+      redirect_to collection_player_path(current_user.player), notice: 'Ball was successfully purchased'
     else
-    
+      render :new, status: :unprocessable_entity
     end
   end
 

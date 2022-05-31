@@ -21,4 +21,8 @@ class User < ApplicationRecord
   def remove_tokens!(removed_tokens)
     update(tokens: tokens - removed_tokens)
   end
+
+  def can_pay?(amount_of_tokens)
+    tokens >= amount_of_tokens
+  end
 end
