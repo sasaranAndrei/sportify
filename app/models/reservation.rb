@@ -1,4 +1,6 @@
 class Reservation < ApplicationRecord
+  include Observable
+
   WORKING_HOURS = (0..23).to_a.freeze
   DEFAULT_DATE_FORMAT = '%d/%m/%Y %H:%M'.freeze
   DATE_FORMATS = Hash.new(DEFAULT_DATE_FORMAT).merge(
@@ -124,7 +126,16 @@ class Reservation < ApplicationRecord
     self.invitation_token == token
   end
 
+  def cancel
+    penalize_owner_player
+    notify_observers(Time.now, 'Owner Player canceled this reservation')
+    self.destroy!
+  end
+
   private
+    def penalize_owner_player
+    end
+
     def reservation_date_working_hours
       # TODO: field.working_hours
       # momentan e ok asa, nu am facut cu validate inclusion

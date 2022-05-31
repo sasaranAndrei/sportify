@@ -72,6 +72,7 @@ class ReservationsController < ApplicationController
     # TODO: also delete ReservationPlayer objects
     # TODO: find a way to notify players (trough SMS - improvement dupa ce i gata licenta)
     # @reservation.destroy
+    @reservation.cancel
 
     redirect_back(fallback_location: reservations_player_path(current_player), notice: 'You will regret this!')
   end
