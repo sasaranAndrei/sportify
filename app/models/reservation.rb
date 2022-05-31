@@ -127,13 +127,17 @@ class Reservation < ApplicationRecord
   end
 
   def cancel
+    # ar fii smeker daca as putea asta ca concrete observer Owner Player + Guest Player
     penalize_owner_player
+    # observers = guest_players + ?(owner_player)
     notify_observers(Time.now, 'Owner Player canceled this reservation')
     self.destroy!
   end
 
   private
+    # TechQuestion ? - Is this good?
     def penalize_owner_player
+      owner_player.penalize(self)
     end
 
     def reservation_date_working_hours
