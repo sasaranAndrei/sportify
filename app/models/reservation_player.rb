@@ -1,3 +1,5 @@
+require 'observer'
+
 class ReservationPlayer < ApplicationRecord
   include Observable
 

@@ -9,10 +9,10 @@ class ReservationsController < ApplicationController
   end
 
   def show
+    current_player = current_user.player # TODO: check why current_player is visible only in views, not in controllers too
     @show_invitation_link = false
 
     if params[:invitation_token]
-      current_player = current_user.player # TODO: check why current_player is visible only in views, not in controllers too
       valid_invitation_token = @reservation.valid_invitation_token?(params[:invitation_token])
       @show_invitation_link = !@reservation.participate?(current_player)
 
@@ -22,6 +22,8 @@ class ReservationsController < ApplicationController
     end
 
     @owner_player = @reservation.owner_player
+    @reservation_player = ReservationPlayer.find_by(player: current_player, reservation: @reservation)
+    # byebug
   end
 
   def new

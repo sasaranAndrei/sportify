@@ -51,6 +51,10 @@
         = link_to fa_icon('check', text: 'Accept Invitation'), accept_invitation_reservation_path(@reservation), class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4 participate-reservation-highlight'
         %br
         %br
+      - if @reservation_player
+        = link_to fa_icon('times', text: 'Left Reservation'), reservation_players_path(@reservation_player), class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4', method: :delete, data: { confirm: 'Are you sure?' }
+        %br
+        %br
     = link_to fa_icon('rotate-left', text: 'Back to GamesFeed'), reservations_path, id: 'join-requests-ask-to-join-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
   .sportify-panel.sportify-big-panel.sportify-radius
     %h1.sportify-font Players
