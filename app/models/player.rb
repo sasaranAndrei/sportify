@@ -86,11 +86,13 @@ class Player < ApplicationRecord
   end
 
   def penalize(reservation)
-    # puts "#{nickname}, you will be penalized for canceling your reservation on #{reservation.display_datetime} at #{reservation.place}"
-    # puts fine_amount(reservation.days_before_booking_date)
-    puts FINE_AMOUNT[reservation.days_before_booking_date]
+    fine_amount = FINE_AMOUNT[reservation.days_before_booking_date]
+    datetime = reservation.display_datetime
+    place = reservation.place
 
-    # user.remove_tokens!(FINE_AMOUNT[reservation.days_before_booking_date])
+    puts "#{nickname}, you will be penalized with #{fine_amount} SCoins for canceling your reservation on #{datetime} at #{place}"
+
+    user.remove_tokens!(fine_amount)
   end
 
   private
