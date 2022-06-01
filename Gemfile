@@ -37,6 +37,9 @@ gem 'braintree', '>= 4.4', '< 5.0'
 gem 'paddle_pay', '~> 0.1'
 gem 'receipts', '~> 1.1'
 
+# NOTIFICATIONS (SMS + MAIL)
+gem 'twilio-ruby', '~> 5.67', '>= 5.67.1'
+
 # OTHER
 gem 'active_record_union'
 gem 'date_validator', '~> 0.12.0'
