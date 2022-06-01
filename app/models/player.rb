@@ -1,6 +1,21 @@
 # frozen_string_literal: true
 
 class Player < ApplicationRecord
+  # TechQuestion? - Era bine? Ca nu mi o mai placut ideea asta
+  # FINE_AMOUNT = {
+  #   (-99999..0) => 20,
+  #   (0..1) => 10,
+  #   (1..2) => 5,
+  #   (2..99999) => 5,
+  # }.freeze
+
+  # TODO: Move in a separate class
+  FINE_AMOUNT = Hash.new(0).merge(
+    0 => 20,
+    1 => 10,
+    2 => 5
+  ).freeze
+
   belongs_to :user, dependent: :destroy
 
   has_many :own_reservations, class_name: 'Reservation', foreign_key: 'owner_player_id'
@@ -71,7 +86,11 @@ class Player < ApplicationRecord
   end
 
   def penalize(reservation)
-    print "#{nickname}, you will be penalized for reservation #{reservation}"
+    # puts "#{nickname}, you will be penalized for canceling your reservation on #{reservation.display_datetime} at #{reservation.place}"
+    # puts fine_amount(reservation.days_before_booking_date)
+    puts FINE_AMOUNT[reservation.days_before_booking_date]
+
+    # user.remove_tokens!(FINE_AMOUNT[reservation.days_before_booking_date])
   end
 
   private
@@ -85,5 +104,17 @@ class Player < ApplicationRecord
 
     def reviews_rating
       own_reviews.average(:rating)
+    end
+    
+    def fine_amount(days_before_booking_date)
+      # ideea cu constanta
+      # FINE_AMOUNT.find { |days, fine| break fine if days.cover? days_before_booking_date }
+    
+      # raise Exception('WTF FINE_AMOUNT') if days_before_booking_date.negative?
+      # return 20 if days_before_booking_date.zero?
+      # return 10 if days_before_booking_date == 1
+      # return 5 if days_before_booking_date == 2
+      
+      # 0
     end
 end

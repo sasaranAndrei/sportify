@@ -96,6 +96,10 @@ class Reservation < ApplicationRecord
     datetime < Time.now
   end
 
+  def days_before_booking_date
+    (booking_date - Date.today).to_i
+  end
+
   def slots_status
     "#{all_players.count} / #{field.max_players} players"
   end
@@ -144,7 +148,10 @@ class Reservation < ApplicationRecord
   private
     # TechQuestion ? - Is this good?
     def penalize_owner_player
+      # varianta 1 - reservation
       owner_player.penalize(self)
+      # varianta 2 - booking_date
+      # owner_player.penalize(booking_date)
     end
 
     def reservation_date_working_hours
