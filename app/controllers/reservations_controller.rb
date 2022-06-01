@@ -70,9 +70,6 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-    byebug # don;t do this only if you know what you are doing
-    # TODO: also delete ReservationPlayer objects
-    # TODO: find a way to notify players (trough SMS - improvement dupa ce i gata licenta)
     # @reservation.destroy
     @reservation.cancel
 
