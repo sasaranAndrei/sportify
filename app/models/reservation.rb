@@ -95,8 +95,6 @@ class Reservation < ApplicationRecord
   end
 
   def has_passed?
-    datetime = booking_date.to_time.change(hour: booking_hour)
-  
     datetime < Time.now
   end
 
