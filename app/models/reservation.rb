@@ -136,13 +136,13 @@ class Reservation < ApplicationRecord
     # <client call>
     create_reservation_player_observers
 
+    # TechQuestion?
     # ar fii smeker daca as putea asta ca concrete observer Owner Player + Guest Player
     # dar creca nu ar mai fii Single Responsability
     penalize_owner_player
-    byebug
+
     changed
     notify_observers(Time.now, 'Owner Player canceled this reservation')
-    byebug
     # self.destroy!
   end
 

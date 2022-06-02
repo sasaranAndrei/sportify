@@ -18,10 +18,10 @@ class ReservationPlayer < ApplicationRecord
   def cancel
     create_reservation_player_observers
     penalize_player
+    
     changed
-
     notify_observers(Time.now, 'Guest Player canceled this Reservation')
-    byebug
+    # self.destroy!
   end
 
   private
@@ -33,7 +33,7 @@ class ReservationPlayer < ApplicationRecord
     end
 
     def penalize_player
-      player.penalize(self)
+      player.penalize(self.reservation)
     end
     
     def create_reservation_player_observers
