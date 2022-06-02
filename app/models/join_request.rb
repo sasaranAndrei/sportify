@@ -19,9 +19,9 @@ class JoinRequest < ApplicationRecord
 
     def reservation_free_slots
       errors.add(:reservation, 'There are no Free Slots on this Reservatino. Please choose another one') if reservation.no_free_slots?
-    
+    end
+
     def pending?
       approved.nil?
     end
-  end
 end

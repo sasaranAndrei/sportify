@@ -147,7 +147,7 @@ class Reservation < ApplicationRecord
 
     changed
     notify_observers(Time.now)
-    # self.destroy!
+    self.destroy!
   end
 
   private

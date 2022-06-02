@@ -1,0 +1,13 @@
+= "Hi, #{@owner_player.nickname}"
+%br
+%br
+= "We're sorry to inform you that player #{@guest_player.nickname} left the reservation #{@reservation_info}."
+%br
+%br
+We notify you about this because you are the owner of this reservation.
+%br
+%br
+= "#{@guest_player.nickname} left this reservation at #{@time.strftime(Reservation::DEFAULT_DATE_FORMAT)}."
+%br
+%br
+= "Here's #{@guest_player.nickname} phone number for more details: #{@guest_player.phone_number}"

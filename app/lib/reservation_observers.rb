@@ -30,12 +30,14 @@ module ReservationObservers
 
   # cand un guest player da cancel la reservation => notifica reservation_players
   class OwnerReservationPlayerObserver < ReservationPlayerObserver
-    def update(time, status = 'TODO')
-      notify_cancel
+    def update(time)
+      notify_cancel(time)
     end
 
-    def notify_cancel
-      puts "TODO"
+    def notify_cancel(time)
+      reservation_player = @reservation_subject
+
+      ReservationMailer.notify_reservation_player_cancel(@player, reservation_player, time).deliver!
     end
   end
 

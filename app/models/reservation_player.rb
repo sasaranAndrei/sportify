@@ -21,7 +21,9 @@ class ReservationPlayer < ApplicationRecord
     
     changed
     notify_observers(Time.now)
-    # self.destroy!
+
+    self.destroy!
+    self.destroy_join_request # TODO: fix this architecture bug
   end
 
   private
@@ -41,5 +43,9 @@ class ReservationPlayer < ApplicationRecord
 
       # TODO: decide if we should notify GuestPlayer since we have flashes for that
       # ReservationObservers::GuestReservationPlayerObserver.new(self, player)
+    end
+
+    def destroy_join_request
+      JoinRequest.destroy_by(player_id: player.id, reservation_id: reservation.id)
     end
 end
