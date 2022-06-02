@@ -7,4 +7,7 @@
 We notify you about this because you were supposed to join this reservation.
 %br
 %br
+= "#{@owner_player.nickname} canceled this reservation at #{@time.strftime(Reservation::DEFAULT_DATE_FORMAT)}."
+%br
+%br
 = "Here's #{@owner_player.nickname} phone number for more details: #{@owner_player.phone_number}"

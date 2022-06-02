@@ -146,7 +146,7 @@ class Reservation < ApplicationRecord
     penalize_owner_player
 
     changed
-    notify_observers(Time.now, 'Owner Player canceled this reservation')
+    notify_observers(Time.now)
     # self.destroy!
   end
 

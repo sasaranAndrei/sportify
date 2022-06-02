@@ -17,29 +17,21 @@ module ReservationObservers
   # cand owner player-ul da cancel la reservation => notifica reservation_players
   class GuestPlayerObserver < ReservationPlayerObserver
     def update(time, status = 'TODO')
-      puts "I am Guest Player observer"
-      puts "Name: #{@player.nickname}"
-
-      notify_cancel
-      # It works!
-      # TODO: Delete ReservationPlayer
+      # las asa ca poate in timp o sa mai trebuiasca sa fac chestii pe update
+      notify_cancel(time)
     end
 
-    def notify_cancel
+    def notify_cancel(time)
       reservation = @reservation_subject # to be clear that we expect a reservation here
 
-      ReservationMailer.notify_reservation_cancel(@player, reservation).deliver!
+      ReservationMailer.notify_reservation_cancel(@player, reservation, time).deliver!
     end
   end
 
   # cand un guest player da cancel la reservation => notifica reservation_players
   class OwnerReservationPlayerObserver < ReservationPlayerObserver
     def update(time, status = 'TODO')
-      puts "I am Owner ReservationPlayer observer"
-      puts "Name: #{@player.nickname}"
       notify_cancel
-      # It works!
-      # TODO: Delete ReservationPlayer
     end
 
     def notify_cancel
