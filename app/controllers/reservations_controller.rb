@@ -19,6 +19,8 @@ class ReservationsController < ApplicationController
       redirect_back(fallback_location: reservations_player_path(current_player), notice: 'You cannot accept Invitation of your own Reservation') if @reservation.owner_player == current_player
       redirect_to root_path, notice: 'Invalid Token! Try again!' unless valid_invitation_token   
       redirect_to reservation_path(@reservation), notice: 'You already joined this Reservation!' if @reservation.participate?(current_player)
+    else
+      redirect_to new_join_request_path(reservation_id: @reservation.id, player_id: current_player.id) if !@reservation.participate?(current_player)
     end
 
     @owner_player = @reservation.owner_player

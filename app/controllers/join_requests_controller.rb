@@ -22,8 +22,11 @@ class JoinRequestsController < ApplicationController
 
   # GET /join_requests/1/edit
   def edit
+    current_player = current_user.player # TODO: refactor this
+
     @reservation = @join_request.reservation
     @owner_player = @reservation.owner_player
+    @reservation_player = ReservationPlayer.find_by(reservation_id: @reservation.id, player_id: current_player.id)
   end
 
   # POST /join_requests or /join_requests.json
@@ -74,7 +77,7 @@ class JoinRequestsController < ApplicationController
   def destroy
     @join_request.destroy
 
-    redirect_to reservations_player_path(current_user.player), notice: 'You will be penalized for what you did!'
+    redirect_to reservations_player_path(current_user.player)
   end
 
   private
