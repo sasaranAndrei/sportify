@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get :accept_invitation, on: :member
   end
   
-  resource :reservation_players
+  resources :reservation_players
   resources :player_reviews
 
   resources :join_requests do

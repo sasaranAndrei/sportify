@@ -23,7 +23,6 @@ class ReservationsController < ApplicationController
 
     @owner_player = @reservation.owner_player
     @reservation_player = ReservationPlayer.find_by(player: current_player, reservation: @reservation)
-    # byebug
   end
 
   def new
@@ -70,10 +69,9 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-    # @reservation.destroy
     @reservation.cancel
 
-    redirect_back(fallback_location: reservations_player_path(current_user.player), notice: 'You will regret this!')
+    redirect_back(fallback_location: reservations_player_path(current_user.player), notice: 'You have been penalized for this action!')
   end
 
   # nuj daca o sa mai am nevoie de asta?
@@ -107,4 +105,4 @@ class ReservationsController < ApplicationController
     def reservation_params
       params.require(:reservation).permit(:booking_date, :booking_hour, :owner_player_id, :arena_id, :field_id)
     end
-  end
+end

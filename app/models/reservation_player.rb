@@ -21,7 +21,7 @@ class ReservationPlayer < ApplicationRecord
     changed
 
     notify_observers(Time.now, 'Guest Player canceled this Reservation')
-    # byebug
+    byebug
   end
 
   private
@@ -32,6 +32,10 @@ class ReservationPlayer < ApplicationRecord
       end
     end
 
+    def penalize_player
+      player.penalize(self)
+    end
+    
     def create_reservation_player_observers
       ReservationObservers::OwnerReservationPlayerObserver.new(self, reservation.owner_player)
 
