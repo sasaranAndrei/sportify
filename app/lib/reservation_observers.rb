@@ -9,16 +9,18 @@ module ReservationObservers
 
   # TODO: find a way to notify players (trough SMS - improvement dupa ce i gata licenta)
   # cand owner player-ul da cancel la reservation
-  class OwnerPlayerObserver < ReservationPlayerObserver
-    def update(time, status = 'TODO')
-      puts "I am Owner Player observer"
-      puts "Name: #{@player.nickname}"
+  # class OwnerPlayerObserver < ReservationPlayerObserver
+  #   def update(time, status = 'TODO')
+  #     puts "I am Owner Player observer"
+  #     puts "Name: #{@player.nickname}"
 
-      # It works!
-      # TODO: Delete ReservationPlayer # nu creca trebe ca has_many :destroy
-    end
-  end
+
+  #     # It works!
+  #     # TODO: Delete ReservationPlayer # nu creca trebe ca has_many :destroy
+  #   end
+  # end
   
+  # cand owner player-ul da cancel la reservation => notifica reservation_players
   class GuestPlayerObserver < ReservationPlayerObserver
     def update(time, status = 'TODO')
       puts "I am Guest Player observer"
@@ -28,7 +30,7 @@ module ReservationObservers
     end
   end
 
-  # cand un guest player da cancel la reservation
+  # cand un guest player da cancel la reservation => notifica reservation_players
   class OwnerReservationPlayerObserver < ReservationPlayerObserver
     def update(time, status = 'TODO')
       puts "I am Owner ReservationPlayer observer"
@@ -36,10 +38,10 @@ module ReservationObservers
     end
   end
 
-  class GuestReservationPlayerObserver
-    def update(time, status = 'TODO')
-      puts "I am Guest ReservationPlayer observer"
-      puts "Name: #{@player.nickname}"
-    end
-  end
+  # class GuestReservationPlayerObserver
+  #   def update(time, status = 'TODO')
+  #     puts "I am Guest ReservationPlayer observer"
+  #     puts "Name: #{@player.nickname}"
+  #   end
+  # end
 end

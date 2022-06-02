@@ -34,6 +34,8 @@ class ReservationPlayer < ApplicationRecord
 
     def create_reservation_player_observers
       ReservationObservers::OwnerReservationPlayerObserver.new(self, reservation.owner_player)
-      ReservationObservers::GuestReservationPlayerObserver.new(self, player)
+
+      # TODO: decide if we should notify GuestPlayer since we have flashes for that
+      # ReservationObservers::GuestReservationPlayerObserver.new(self, player)
     end
 end
