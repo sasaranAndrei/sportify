@@ -1,15 +1,28 @@
-%p#notice= notice
+.sportify-page
+  .sportify-panel.sportify-big-panel.sportify-radius
+    %h1.sportify-font= @arena.title
+    poza cu arena
+    -# = @arena.avatar
+  .sportify-panel.sportify-small-panel.sportify-radius
+    %h1.sportify-font Info & Actions
+    .form-group 
+      = label_tag :location, 'Location', class: 'sportify-label'
+      .form-control{ disabled: true }= @arena.location
+    .form-group 
+      = label_tag :phone_number, 'Phone Number', class: 'sportify-label'
+      .form-control{ disabled: true }= @arena.phone_number
+    .form-group 
+      = label_tag :latitude, 'Latitude', class: 'sportify-label'
+      .form-control{ disabled: true }= @arena.latitude
+    .form-group 
+      = label_tag :longitude, 'Longitude', class: 'sportify-label'
+      .form-control{ disabled: true }= @arena.longitude
+    %br
+    = link_to fa_icon('plus', text: 'Create a Reservation'), new_reservation_path(arena_id: @arena.id), class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+    %br
+    %br
+    = link_to fa_icon('group', text: 'Go to GamesFeed'), reservations_path, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+    %br
+    %br
+    = link_to fa_icon('rotate-left', text: 'Back to Arenas'), arenas_path, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
 
-%p
-  %b Title:
-  = @arena.title
-%p
-  %b Location:
-  = @arena.location
-%p
-  %b Phone number:
-  = @arena.phone_number
-
-= link_to 'Edit', edit_arena_path(@arena)
-\|
-= link_to 'Back', arenas_path
