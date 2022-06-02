@@ -78,6 +78,10 @@ class Player < ApplicationRecord
     user.avatar
   end
 
+  def email
+    user.email
+  end
+
   # RubyBookOOP #1 - wrap private dependency
   # in caller:
   # player.nickname INSTEAD_OF player.nickname || player.name
@@ -87,10 +91,9 @@ class Player < ApplicationRecord
 
   def penalize(reservation)
     fine_amount = FINE_AMOUNT[reservation.days_before_booking_date]
-    datetime = reservation.display_datetime
-    place = reservation.place
+    info = reservation.info
 
-    puts "#{nickname}, you will be penalized with #{fine_amount} SCoins for canceling your reservation on #{datetime} at #{place}"
+    puts "#{nickname}, you will be penalized with #{fine_amount} SCoins for canceling your reservation #{info}"
 
     user.remove_tokens!(fine_amount)
   end

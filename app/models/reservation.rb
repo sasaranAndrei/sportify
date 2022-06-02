@@ -71,6 +71,10 @@ class Reservation < ApplicationRecord
   #   "#{booking_date.strftime('%m/%d/%Y')} #{booking_hour}:00"
   # end
 
+  def info
+    "on #{display_datetime} at #{place}"
+  end
+
   # RubyBookOOP #2 - Law of Demeter
   def place
     field.place
