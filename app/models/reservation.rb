@@ -199,3 +199,19 @@ class Reservation < ApplicationRecord
     # class Invitation; end
     # Invitation = OpenStruct.new()
 end
+
+
+# n-are link cu token 
+# => ori e un player care participa (si poate vedea)
+# => ori e un player care ar vrea sa participe cu joi_request
+#   => daca a expirat nu poate participa
+#   => daca nu a expirat du l la join request
+# else
+
+#   if participate?
+#     aratai
+#   else
+#     if has_passed?
+#       reservations
+#     else
+#        join_request

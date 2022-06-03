@@ -16,15 +16,20 @@ class ReservationsController < ApplicationController
       valid_invitation_token = @reservation.valid_invitation_token?(params[:invitation_token])
       @show_invitation_link = !@reservation.participate?(current_player)
 
-      redirect_back(fallback_location: reservations_player_path(current_player), notice: 'You cannot accept Invitation of your own Reservation') if @reservation.owner_player == current_player
+      redirect_back fallback_location: reservations_player_path(current_player), notice: 'You cannot accept Invitation of your own Reservation' if @reservation.owner_player == current_player
       redirect_to root_path, notice: 'Invalid Token! Try again!' unless valid_invitation_token   
       redirect_to reservation_path(@reservation), notice: 'You already joined this Reservation!' if @reservation.participate?(current_player)
     else
-      redirect_to new_join_request_path(reservation_id: @reservation.id, player_id: current_player.id) if !@reservation.participate?(current_player)
+      if !@reservation.participate?(current_player)
+        return redirect_back fallback_location: reservations_path, notice: "Sorry, this Reservation has passed and you didn't participate" if @reservation.has_passed?
+
+        redirect_to new_join_request_path(reservation_id: @reservation.id, player_id: current_player.id)
+      end
     end
 
     @owner_player = @reservation.owner_player
     @reservation_player = ReservationPlayer.find_by(player: current_player, reservation: @reservation)
+    flash.now[:notice] = 'This Reservation has passed' if @reservation.has_passed?
   end
 
   def new
