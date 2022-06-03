@@ -140,9 +140,12 @@
 
 .sportify-footer {
   position: absolute;
-  bottom: 0;
+  bottom: 2vh;
   height: 100px;
   overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .sportify-panel {
