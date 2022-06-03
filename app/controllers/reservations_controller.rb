@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[ show edit update destroy join_request generate_invitation_link accept_invitation ]
+  skip_before_action :authenticate_user!, only: :index
 
   def index
     # @reservations = Reservation.all
