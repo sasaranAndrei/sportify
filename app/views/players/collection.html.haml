@@ -1,12 +1,20 @@
 .sportify-page
-  .sportify-panel.sportify-big-panel.sportify-radius 
-    %h1.sportify-font My Collection
-    .products-wrapper
-      - @items.each do |item|
-        - item_type = item.class
-        .sportify-panel.sportify-product-panel.sportify-radius
-          = image_tag(item.photo, class: 'sportify-product-image')
-          %br
-          %h3.sportify-font
-            = item_type
+  - if @items.empty?
+    .sportify-panel.sportify-small-panel.sportify-radius
+      %h1.sportify-font My Collection
+      %h3.sportify-font You don't have any items in your Collection yet.
+      %br
+      = link_to fa_icon('shopping-cart', text: 'Go to Sportify Coins Shop'), sportify_coins_shop_path, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+  - else
+    .sportify-panel.sportify-big-panel.sportify-radius 
+      %h1.sportify-font My Collection
+      %br
+      .products-wrapper
+        - @items.each do |item|
+          - item_type = item.class
+          .sportify-panel.sportify-product-panel.sportify-radius
+            = image_tag(item.photo, class: 'sportify-product-image')
+            %br
+            %h3.sportify-font
+              = item_type
 

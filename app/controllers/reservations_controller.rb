@@ -30,6 +30,8 @@ class ReservationsController < ApplicationController
 
     @owner_player = @reservation.owner_player
     @reservation_player = ReservationPlayer.find_by(player: current_player, reservation: @reservation)
+    @reservation_join_requests = @reservation.join_requests
+
     flash.now[:notice] = 'This Reservation has passed' if @reservation.has_passed?
   end
 

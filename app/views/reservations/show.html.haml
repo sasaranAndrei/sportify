@@ -104,3 +104,34 @@
               - else
                 %td
                 %td
+  - if current_player == @reservation.owner_player
+    .sportify-panel.sportify-big-panel.sportify-radius
+      %h1.sportify-font Join Requests
+      %br
+      .table-responsive
+        %table.table.table-success.table-striped
+          %thead
+            %tr
+              %th Name
+              %th Nickname
+              %th Photo
+              %th Phone Number
+              %th Rating
+              %th
+              %th Status
+              %th
+          %tbody
+          - @reservation_join_requests.each do |join_request|
+            - player = join_request.player
+            %tr
+              %td= player.name
+              %td= player.nickname
+              %td= image_tag player.avatar, size: '100x100' if player.avatar.attached?
+              %td= player.phone_number
+              %td= player.rating
+              %td= link_to fa_icon('eye'), stats_player_path(player), class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
+              %td= join_request.status
+              - if join_request.approved?
+                %td= link_to fa_icon('times'), [:decline, join_request], method: :put, class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
+              - else
+                %td= link_to fa_icon('check'), [:approve, join_request], method: :put, class: 'btn sportify-small-button sportify-radius fs-5'

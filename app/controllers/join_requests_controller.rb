@@ -10,6 +10,7 @@ class JoinRequestsController < ApplicationController
 
   # GET /join_requests/1 or /join_requests/1.json
   def show
+    redirect_to edit_join_request_path(@join_request)
   end
 
   # GET /join_requests/new
@@ -62,7 +63,7 @@ class JoinRequestsController < ApplicationController
       joined_by: ReservationPlayer::JOIN_REQUEST
     ) 
     
-    redirect_to join_requests_player_path(current_user.player) # TODO: check why current_player is not visible
+    redirect_back fallback_location: join_requests_player_path(current_user.player) # TODO: check why current_player is not visible
   end
   
   def decline
@@ -70,7 +71,7 @@ class JoinRequestsController < ApplicationController
     # TechQuestion - how to remove dependency with ReservatinoPlayer
     ReservationPlayer.find_by(reservation_id: @join_request.reservation_id, player_id: @join_request.player_id)&.destroy
 
-    redirect_to join_requests_player_path(current_user.player) # TODO: check why current_player is not visible
+    redirect_back fallback_location: join_requests_player_path(current_user.player) # TODO: check why current_player is not visible
   end
 
   # DELETE /join_requests/1 or /join_requests/1.json

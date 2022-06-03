@@ -14,7 +14,11 @@
         = number_field_tag :order_amount, nil, min: 1, class: 'form-control'
         %br
         %br
-        = button_tag fa_icon('bag-shopping', text: 'Go to Checkout'), type: 'submit', class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+        = button_tag fa_icon('shopping-cart', text: 'Go to Checkout'), type: 'submit', class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+        %br
+        %br
+        = link_to fa_icon('briefcase', text: 'My Collection'), collection_player_path(current_user.player), class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+
   .sportify-panel.sportify-big-panel.sportify-radius
     %h1.sportify-font Sportify Shop
     .products-wrapper
