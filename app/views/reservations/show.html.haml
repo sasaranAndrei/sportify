@@ -131,7 +131,10 @@
               %td= player.rating
               %td= link_to fa_icon('eye'), stats_player_path(player), class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
               %td= join_request.status
-              - if join_request.approved?
-                %td= link_to fa_icon('times'), [:decline, join_request], method: :put, class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
+              - if @reservation.has_passed?
+                %td
               - else
-                %td= link_to fa_icon('check'), [:approve, join_request], method: :put, class: 'btn sportify-small-button sportify-radius fs-5'
+                - if join_request.approved?
+                  %td= link_to fa_icon('times'), [:decline, join_request], method: :put, class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
+                - else
+                  %td= link_to fa_icon('check'), [:approve, join_request], method: :put, class: 'btn sportify-small-button sportify-radius fs-5'
