@@ -1,6 +1,6 @@
 .sportify-page
   .sportify-panel.sportify-big-panel.sportify-radius
-    %h1.sportify-font Rating
+    %h1.sportify-font= "Rating #{@player.rating} (#{pluralize(@player.own_reviews.count, 'review')})" 
     = line_chart @rating_chart_data, library: { hAxis: { format: 'dd-mm-yyyy' } }
   .sportify-panel.sportify-small-panel.sportify-radius
     %h1.sportify-font Reservations

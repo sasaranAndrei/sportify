@@ -70,7 +70,7 @@ class Player < ApplicationRecord
   def rating
     return 'N/A' if reviews_rating.nil?
 
-    "#{reviews_rating}/#{PlayerReview::RATING_MAX}"
+    "#{reviews_rating.round(2)}/#{PlayerReview::RATING_MAX}"
   end
 
   # RubyBookOOP #2 - Law of Demeter
