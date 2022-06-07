@@ -98,7 +98,9 @@ class JoinRequestsController < ApplicationController
     end
 
     def find_join_request
+      # move array of params into a method
       # @join_request = JoinRequest.find_by(params.permit(:reservation_id, :player_id).slice(:reservation_id, :player_id)) # TechQuestion7? - Cum e mai elegant aici
+      
       @join_request = JoinRequest.find_by(reservation_id: params[:reservation_id], player_id: params[:player_id])
     end
 end

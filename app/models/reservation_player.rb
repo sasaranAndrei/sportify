@@ -23,13 +23,17 @@ class ReservationPlayer < ApplicationRecord
     # TechQuestion13? - Avand in vedere ca defapt nu updatez obiectul ci il sterg,
     # nu se face notify_obsers din cauza ca nu i changed, si tre sa l apelez manual inainte
     # Cum pot evita chestia asta?
-    changed
     notify_observers(Time.now)
+    changed
 
     self.destroy!
     self.destroy_join_request # TODO: fix this architecture bug
     # TechQuestion21 Cum ar fii mai ok sa leg JoinRequest-u de ReservationPlayer? 
     # reservation_player has_one :join_request, optional: true, dependent: destroy ?
+    
+    # check to be the same behaviour
+    # notify_observers(Time.now)
+    # TODO
   end
 
   private

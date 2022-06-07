@@ -11,6 +11,24 @@ module PlayerReviewsHelper
   end
 end
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # passed  equal  submitted  should_display_review_buttons?
 # 0         0       0           0
 # 0         0       1           0

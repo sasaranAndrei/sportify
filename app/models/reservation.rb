@@ -8,6 +8,7 @@ class Reservation < ApplicationRecord
   DATE_FORMATS = Hash.new(DEFAULT_DATE_FORMAT).merge(
     # reservation: '%d/%m/%Y %H:%M',
     chart: '%m/%d/%Y %H:%M',
+    # change to time
     mock: '%H:%M' # TechQuestion9 - Aici ar fii mai bine sa redenumesc cheia 'time'?
     # Ma gandesc ca asa as putea sa l folosesc si in alte scopuri decat 'mock'.
     # Dar mai e si chestia ca daca vreau sa schimb cum se afisaza 'mock',
@@ -44,6 +45,7 @@ class Reservation < ApplicationRecord
   scope :ordered, ->(direction) { order(booking_date: direction, booking_hour: direction) }
 
   def all_players
+    # tot cu sql mai elegant
     # TODO: TechQuestion10? - Come up with other idea. all_players = owner_player + guest_players (and I need to keep the all_players as an AR relation)
     owner_player = Player.where(id: owner_player_id) # yes, I know it's only an object
     guest_players.union(owner_player) # but I do it in order to call union here

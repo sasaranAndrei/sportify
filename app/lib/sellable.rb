@@ -5,6 +5,8 @@ module Sellable
     belongs_to :player
   end
 
+  # TODO: Check SINGLE TABLE INHERITANCE
+
   def price
     raise NotImplementedError, 'Define <<price>> in the concrete products!'
   end
