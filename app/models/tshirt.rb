@@ -8,12 +8,12 @@ class Tshirt < ApplicationRecord
   belongs_to :player
   has_one_attached :photo
 
-  # TechQuestion? - How can I extract this common behaviour in a ColorValidator
+  # TechQuestion16? - How can I extract this common behaviour in a ColorValidator
   validates :color, inclusion: { in: COLORS }
   validates :size, inclusion: { in: SIZES }
 
   def self.sample
-    # TechQuestion? - Add @@sample ||= ?
+    # TechQuestion17? - Add @@sample ||= ? will improve things? Nu mai stiu dar parca am incercat si o fo ceva probleme
     Tshirt.new(
       nickname: 'Sampleinho',
       number: 10,

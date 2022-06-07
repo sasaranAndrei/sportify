@@ -19,17 +19,23 @@ class ReservationPlayer < ApplicationRecord
     create_reservation_player_observers
     penalize_player
     
+
+    # TechQuestion13? - Avand in vedere ca defapt nu updatez obiectul ci il sterg,
+    # nu se face notify_obsers din cauza ca nu i changed, si tre sa l apelez manual inainte
+    # Cum pot evita chestia asta?
     changed
     notify_observers(Time.now)
 
     self.destroy!
     self.destroy_join_request # TODO: fix this architecture bug
+    # TechQuestion21 Cum ar fii mai ok sa leg JoinRequest-u de ReservationPlayer? 
+    # reservation_player has_one :join_request, optional: true, dependent: destroy ?
   end
 
   private
 
     def owner_absence_from_guests_list
-      if player == reservation.owner_player # TechQuestion: cum e mai ok? player_id == reservation.owner_player_id
+      if player == reservation.owner_player # TechQuestion1: Cum e mai ok? player_id == reservation.owner_player_id
         errors.add(:reservation_owner, "must join. He can't be present in the Guests list too") 
       end
     end

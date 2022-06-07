@@ -3,7 +3,7 @@ class Arena < ApplicationRecord
 
   validates :title, presence: true
   validates :location, presence: true
-  # TechQuestion? - create some PhoneNumberValidator
+  # TechQuestion4? - create some PhoneNumberValidator ? # ulterior am descoperit ca exista un 'phone' gem
   validates :phone_number, presence: true,
                            format: { with: Regex::ROMANIAN_PHONE_NUMBER },
                            uniqueness: true

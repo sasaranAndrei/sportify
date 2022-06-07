@@ -12,7 +12,6 @@ module ReservationsHelper
 
   def highlight_reservation_class(reservation, player)
     return 'error-notice-background' if reservation.has_passed?
-    return 'participate-reservation-highlight' if reservation.participate?(player) # TechQuestion - Numele sugereaza mai degraba invers: player.participate?(reservation), dar callu trebuie facut pe obiectu de reservare. cum sa redenumesc functia?
-    # return 'guest-reservation-highlight' if reservation.guest_players.include?(player)
+    return 'participate-reservation-highlight' if reservation.participate?(player)
   end
 end

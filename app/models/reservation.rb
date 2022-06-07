@@ -8,7 +8,7 @@ class Reservation < ApplicationRecord
   DATE_FORMATS = Hash.new(DEFAULT_DATE_FORMAT).merge(
     # reservation: '%d/%m/%Y %H:%M',
     chart: '%m/%d/%Y %H:%M',
-    mock: '%H:%M' # TechQuestion - Aici ar fii mai bine sa redenumesc cheia 'time'?
+    mock: '%H:%M' # TechQuestion9 - Aici ar fii mai bine sa redenumesc cheia 'time'?
     # Ma gandesc ca asa as putea sa l folosesc si in alte scopuri decat 'mock'.
     # Dar mai e si chestia ca daca vreau sa schimb cum se afisaza 'mock',
     # tre sa adaug un nou key, val.
@@ -44,12 +44,12 @@ class Reservation < ApplicationRecord
   scope :ordered, ->(direction) { order(booking_date: direction, booking_hour: direction) }
 
   def all_players
-    # TODO: TechQuestion? - Come up with other idea
+    # TODO: TechQuestion10? - Come up with other idea. all_players = owner_player + guest_players (and I need to keep the all_players as an AR relation)
     owner_player = Player.where(id: owner_player_id) # yes, I know it's only an object
     guest_players.union(owner_player) # but I do it in order to call union here
   end
 
-  # TechQuestion - This feels like it doesn t belong to Reservation? This will be moved into a Decorator
+  # TODO: This feels like it doesn t belong to Reservation. This will be moved into a Decorator
   def display_datetime(format_option = nil)
     # RubyBook #4 - 'Kind of' Duck Types (not really because its not based on klass)
     datetime.strftime(DATE_FORMATS[format_option])
@@ -65,11 +65,6 @@ class Reservation < ApplicationRecord
     #   date.strftime('#mock_format')
     # end
   end
-  
-  # old version
-  # def chart_date
-  #   "#{booking_date.strftime('%m/%d/%Y')} #{booking_hour}:00"
-  # end
 
   def info
     "on #{display_datetime} at #{place}"
@@ -80,7 +75,7 @@ class Reservation < ApplicationRecord
     field.place
   end
 
-  # TODO: TechQuestion? - Choosing Dependency Direction?
+  # TODO: TechQuestion11? - Choosing Dependency Direction?
   # X change_more_than Y => x.dependency_method(y) ???
   # Player change_more_than Reservation => player.participate?(reservation)
   # Reservation change_more_than Player => reservation.participate?(player)
@@ -89,7 +84,7 @@ class Reservation < ApplicationRecord
     player == owner_player || guest_players.include?(player)
   end
 
-  # TODO: same as above
+  # TODO: TechQuestion11? - Choosing Dependency Direction?
   def awaiting_response?(player)
     join_request_players.awaiting.include?(player)
   end
@@ -110,9 +105,9 @@ class Reservation < ApplicationRecord
     field.max_players - all_players.count
   end
 
-  # TechQuestion - It would be a bad practice to name
+  # TechQuestion12 - It would be a bad practice to name
   # this method free_slots(?)
-  # eu creca nu ca ar putea fii inconsistente gen: free_slots? = false && free_slots = 10 if code changes
+  # eu cred ca nu deoarece ar putea fii inconsistente gen: free_slots? == false // free_slots == 0 if code changes
   def no_free_slots?
     free_slots <= 0
   end
@@ -138,23 +133,21 @@ class Reservation < ApplicationRecord
     # <client call>
     create_reservation_player_observers
 
-    # TechQuestion?
-    # ar fii smeker daca as putea asta ca concrete observer Owner Player + Guest Player
-    # dar creca nu ar mai fii Single Responsability
     penalize_owner_player
-
+    
+    # TechQuestion13? - Avand in vedere ca defapt nu updatez obiectul ci il sterg,
+    # nu se face notify_obsers din cauza ca nu i changed, si tre sa l apelez manual inainte
+    # Cum pot evita chestia asta?
     changed
     notify_observers(Time.now)
+
     self.destroy!
   end
 
   private
-    # TechQuestion ? - Is this good?
+    # TechQuestion14 ? - Is this good? Ma refer la Dependencies, OOP Design, ...
     def penalize_owner_player
-      # varianta 1 - reservation
       owner_player.penalize(self)
-      # varianta 2 - booking_date
-      # owner_player.penalize(booking_date)
     end
 
     def reservation_date_working_hours
@@ -166,12 +159,9 @@ class Reservation < ApplicationRecord
     end
 
     def datetime
-      # TechQuestion - O sa functioneze daca se schimba booking_date / boooking_hour
+      # TechQuestion15 - Chestia de mai jos o sa functioneze daca fac update la booking_date / boooking_hour
       # @datetime ||= Time.parse("#{booking_hour}:00", booking_date)
       Time.parse("#{booking_hour}:00", booking_date)
-      
-      # old version (def date)
-      # "#{booking_date.strftime('%d/%m/%Y')} #{booking_hour}:00" # old version
     end
 
     def create_reservation_player_observers
@@ -190,7 +180,6 @@ class Reservation < ApplicationRecord
       end
     end
     
-    # TODO:*** ceva din cartea de OOP, deocamdata ii ok asa
     def invitation_link
       "#{Rails.application.routes.url_helpers.reservation_url(self)}?invitation_token=#{invitation_token}"
     end
@@ -199,19 +188,3 @@ class Reservation < ApplicationRecord
     # class Invitation; end
     # Invitation = OpenStruct.new()
 end
-
-
-# n-are link cu token 
-# => ori e un player care participa (si poate vedea)
-# => ori e un player care ar vrea sa participe cu joi_request
-#   => daca a expirat nu poate participa
-#   => daca nu a expirat du l la join request
-# else
-
-#   if participate?
-#     aratai
-#   else
-#     if has_passed?
-#       reservations
-#     else
-#        join_request

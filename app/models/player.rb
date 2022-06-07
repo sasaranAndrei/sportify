@@ -1,14 +1,6 @@
 # frozen_string_literal: true
 
 class Player < ApplicationRecord
-  # TechQuestion? - Era bine? Ca nu mi o mai placut ideea asta
-  # FINE_AMOUNT = {
-  #   (-99999..0) => 20,
-  #   (0..1) => 10,
-  #   (1..2) => 5,
-  #   (2..99999) => 5,
-  # }.freeze
-
   # TODO: Move in a separate class
   FINE_AMOUNT = Hash.new(0).merge(
     0 => 20,
@@ -25,7 +17,7 @@ class Player < ApplicationRecord
   has_many :join_request_reservations, class_name: 'Reservation', through: :join_requests, source: :reservation
   has_many :own_reviews, class_name: 'PlayerReview', foreign_key: 'player_id'
   has_many :guest_reviews, class_name: 'PlayerReview', foreign_key: 'reviewer_id'
-  # has_many :items, class_name: 'Sellable' # TechQuestion? 
+  # has_many :items, class_name: 'Sellable' # TechQuestion3 - Se poate face ceva de genu? 
   has_many :tshirts
   has_many :balls
 
@@ -39,10 +31,11 @@ class Player < ApplicationRecord
                            uniqueness: true
 
   def all_reservations
-    # TechQuestion
+    # TechQuestion5 - De ce nu merge chestia asta? Ar trebui sa mearga, nu?
     # own_reservations.or(guest_reservations) # don't work
     # TODO: FIX THIS
 
+    # varianta asta de mai jos foloseste union gem:
     own_reservations.union(guest_reservations)
     # [own_reservations, guest_reservations].inject(:union)
 

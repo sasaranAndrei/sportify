@@ -6,5 +6,5 @@ class PlayerReview < ApplicationRecord
   RATING_MIN = 1
   RATING_MAX = 5
 
-  # TODO: TechQuestion? How to move review_submitted? method here. 
+  # TODO: TechQuestion8? How to move review_submitted? method here (maybe as a static method).
 end

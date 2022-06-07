@@ -49,12 +49,12 @@ class CheckoutsController < ApplicationController
     end
 
     def set_products
-      # TechQuestion? - NOT CONSISTENT !? eager-loading vs lazy-loading
+      # TechQuestion3 ? - NOT CONSISTENT !? eager-loading vs lazy-loading
       # type_of_products = ObjectSpace.each_object(Class)
       #                               .select { |c| c.included_modules.include?(Sellable) }
       #                               .map(&:name)
       #                               .compact
-      # byebug # atentie.
+
       type_of_products = ['Tshirt', 'Ball']
       @products = type_of_products.collect { |product| product.constantize.sample }
     end

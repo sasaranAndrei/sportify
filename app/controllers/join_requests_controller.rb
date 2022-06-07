@@ -56,7 +56,7 @@ class JoinRequestsController < ApplicationController
 
   def approve
     @join_request.update(approved: true)
-    # TechQuestion - how to remove dependency with ReservatinoPlayer
+    # TechQuestion6 - How to remove dependency with ReservationPlayer
     ReservationPlayer.find_or_create_by!(
       reservation_id: @join_request.reservation_id,
       player_id: @join_request.player_id,
@@ -68,7 +68,7 @@ class JoinRequestsController < ApplicationController
   
   def decline
     @join_request.update(approved: false)
-    # TechQuestion - how to remove dependency with ReservatinoPlayer
+    # TechQuestion6 - How to remove dependency with ReservationPlayer
     ReservationPlayer.find_by(reservation_id: @join_request.reservation_id, player_id: @join_request.player_id)&.destroy
 
     redirect_back fallback_location: join_requests_player_path(current_user.player) # TODO: check why current_player is not visible
@@ -93,12 +93,12 @@ class JoinRequestsController < ApplicationController
     end
 
     def set_reservation_info
-      @reservation = Reservation.find(params[:reservation_id] || params[:join_request][:reservation_id]) # TODO: refactor this. its too dangerous. # TechQuestion
+      @reservation = Reservation.find(params[:reservation_id] || params[:join_request][:reservation_id]) # TODO: refactor this. its too dangerous. # TechQuestion???? (nu mai stiu dc am zis asta)
       @owner_player = @reservation.owner_player
     end
 
     def find_join_request
-      # @join_request = JoinRequest.find_by(params.permit(:reservation_id, :player_id).slice(:reservation_id, :player_id)) # TechQuestion? - Cum e mai elegant aici
+      # @join_request = JoinRequest.find_by(params.permit(:reservation_id, :player_id).slice(:reservation_id, :player_id)) # TechQuestion7? - Cum e mai elegant aici
       @join_request = JoinRequest.find_by(reservation_id: params[:reservation_id], player_id: params[:player_id])
     end
 end
