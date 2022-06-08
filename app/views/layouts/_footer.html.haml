@@ -1,6 +1,19 @@
-.sportify-footer
-  .sportify-panel.sportify-big-panel.sportify-radius
-    .contact
-      Contact
-    .logo
-      = link_to image_tag('logos/sportify-logo-navbar.png', size: '500x20'), root_path, class: 'navbar-brand btn fs-1 sportify-font'
+%nav.navbar.navbar-expand-sm.sportify-footer-navbar.primary-background.sportify-radius
+  .panel
+    = link_to fa_icon('map', text: 'Arenas'), arenas_path, class: 'btn fs-2 sportify-font'
+    - if current_user
+      = link_to fa_icon('calendar', text: 'My reservations'), reservations_player_path(current_user.player), class: 'btn fs-2 sportify-font' 
+  .panel
+    = link_to image_tag('logos/sportify-logo-navbar.png', size: '300x100'), root_path, class: 'navbar-brand btn fs-1 sportify-font'
+  .panel
+    - if current_user
+      = link_to fa_icon('user', text: 'My Account'), edit_user_registration_path(current_user), class: 'btn fs-2 sportify-font'
+      = link_to fa_icon('shopping-cart', text: "#{current_user.tokens} SCoins"), sportify_coins_shop_path, class: 'btn fs-2 sportify-font'
+    - else
+      = link_to fa_icon('user', text: 'Log In'), new_user_session_path, class: 'btn fs-2 sportify-font'
+-# .sportify-footer
+-#   .sportify-panel.sportify-big-panel.sportify-radius
+-#     .contact
+-#       Contact
+-#     .logo
+-#       = link_to image_tag('logos/sportify-logo-navbar.png', size: '500x20'), root_path, class: 'navbar-brand btn fs-1 sportify-font'
