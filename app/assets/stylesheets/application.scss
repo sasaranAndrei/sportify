@@ -65,6 +65,25 @@
   overflow: hidden;
 }
 
+.sportify-footer-navbar {
+  position: absolute;
+  height: 100px;
+  width: 96%;
+  bottom: -1vh;
+  left: 0;
+  padding: 6vh;
+  margin: 3vh;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+
+  .panel {
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+  }
+}
+
 .sportify-panel {
   margin: 2vh;
   border-color: $primary-color;
@@ -106,22 +125,11 @@
   font-family: 'IBM Plex Sans Arabic', sans-serif;
 }
 
-.sportify-footer-navbar {
-  position: absolute;
-  width: 96%;
-  bottom: -1vh;
-  left: 0;
-  padding: 4vh;
-  margin: 3vh;
-  display: flex;
-  justify-content: space-between;
-  overflow: hidden;
-
-  .panel {
-    display: flex;
-    justify-content: space-around;
-    width: 25%;
-  }
+.sportify-social-media-button {
+  background-color: $primary-color;
+  color: black;
+  padding: 1vh;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
 }
 
 .sportify-radius-panel {
