@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get :join_requests, on: :member
     get :generate_invitation_link, on: :member
     get :accept_invitation, on: :member
+    get :timetable, on: :collection # daca merge move to field#timetable
   end
   
   resources :reservation_players

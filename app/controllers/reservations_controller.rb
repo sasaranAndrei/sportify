@@ -50,8 +50,11 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new
   end
 
-  def update_timetable
-    
+  def timetable
+    selected_field = params[:field_id].present? ? Field.find(params[:field_id]) : @arena.fields.first
+    timetable = display_timetable_for(selected_field, params[:initial_date])
+  
+    render json: { timetable: timetable }
   end
 
   def edit
