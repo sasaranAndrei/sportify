@@ -49,6 +49,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    byebug
     @reservation = Reservation.new(
       reservation_params.merge(params.permit(
         :owner_player_id,

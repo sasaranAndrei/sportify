@@ -13,6 +13,7 @@ export default class extends Controller {
   refreshTimetable() {
     console.log(this.selectedFieldTag)
     this.titleTarget.textContent = `${this.selectedFieldTag} Timetable`
+    this.timetableTarget
   }
 
   get selectedFieldTag() {
