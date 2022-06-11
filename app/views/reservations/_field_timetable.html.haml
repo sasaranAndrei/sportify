@@ -1,0 +1,14 @@
+.table-responsive
+  %table.table.table-success.table-bordered
+    %thead
+      %tr
+        %th{ scope: 'col' }
+        - @field_timetable.keys.each do |date|
+          %th= date.strftime(Reservation::DATE_FORMATS[:timetable_date])
+    %tbody
+      - Reservation::WORKING_HOURS.each do |hour|
+        %tr
+          -# TODO: REFACTOR
+          %td #{hour}:00-#{hour + 1}:00
+          - @field_timetable.keys.each do |date|
+            %td.timetable-slot{ class: @field_timetable[date][hour] ? 'error-notice-background' : 'free-slot' }

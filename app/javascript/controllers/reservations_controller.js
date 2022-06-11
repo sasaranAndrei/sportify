@@ -13,8 +13,13 @@ export default class extends Controller {
   refreshTimetable() {
     console.log(this.selectedFieldTag)
     this.titleTarget.textContent = `${this.selectedFieldTag} Timetable`
-    this.timetableTarget
+    updateTimetable()
+    // this.timetableTarget
   }
+
+  updateTimetable() {
+    
+  } 
 
   get selectedFieldTag() {
     const field = this.fieldTarget

@@ -14,4 +14,27 @@ module ReservationsHelper
     return 'error-notice-background' if reservation.has_passed?
     return 'participate-reservation-highlight' if reservation.participate?(player)
   end
+
+  def display_timetable_for(field, initial_date)
+    initial_date ||= Date.today
+    final_date = initial_date + 6.days
+    
+    # (initial_date..final_date).collect do |date|
+    #   Reservation::WORKING_HOURS.map do |hour|
+    #     field.occupied_on?(date, hour) ? false : true
+    #   end
+    # end
+
+    # refactor ca are n+1
+    timetable = {}
+    (initial_date..final_date).each do |date|
+      timetable[date] = {}
+
+      Reservation::WORKING_HOURS.each do |hour|
+        timetable[date][hour] = field.occupied_on?(date, hour) 
+      end
+    end
+
+    timetable
+  end
 end

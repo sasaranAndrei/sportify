@@ -3,11 +3,13 @@ require 'observer'
 class Reservation < ApplicationRecord
   include Observable
 
-  WORKING_HOURS = (0..23).to_a.freeze
+  WORKING_HOURS = (10..21).to_a.freeze
   DEFAULT_DATE_FORMAT = '%d/%m/%Y %H:%M'.freeze
   DATE_FORMATS = Hash.new(DEFAULT_DATE_FORMAT).merge(
     # reservation: '%d/%m/%Y %H:%M',
     chart: '%m/%d/%Y %H:%M',
+    timetable_date: '%m.%d',
+    # timetable: '',
     # change to time
     mock: '%H:%M' # TechQuestion9 - Aici ar fii mai bine sa redenumesc cheia 'time'?
     # Ma gandesc ca asa as putea sa l folosesc si in alte scopuri decat 'mock'.

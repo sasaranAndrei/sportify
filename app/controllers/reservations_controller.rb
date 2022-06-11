@@ -1,4 +1,6 @@
 class ReservationsController < ApplicationController
+  include ReservationsHelper
+
   before_action :set_reservation, only: %i[ show edit update destroy join_request generate_invitation_link accept_invitation ]
   skip_before_action :authenticate_user!, only: :index
 
@@ -42,14 +44,20 @@ class ReservationsController < ApplicationController
 
     @arena = Arena.find(params[:arena_id])
     # @scheduler = ArenaSchedulerService.call(arena: @arena, start_date: Date.today)
+    @selected_field = params[:field_id].present? ? Field.find(params[:field_id]) : @arena.fields.first
+    @field_timetable = display_timetable_for(@selected_field, params[:initial_date])
+    
     @reservation = Reservation.new
+  end
+
+  def update_timetable
+    
   end
 
   def edit
   end
 
   def create
-    byebug
     @reservation = Reservation.new(
       reservation_params.merge(params.permit(
         :owner_player_id,

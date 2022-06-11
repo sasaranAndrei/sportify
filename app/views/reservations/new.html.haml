@@ -1,8 +1,11 @@
 %div{ class: 'sportify-page', 'data-controller' => 'reservations' }
   .sportify-panel.sportify-big-panel.sportify-radius
-    %h1.sportify-font{ 'data-reservations-target' => 'title' }= "#{@arena.present? ? @arena.fields.first.label : ''} Timetable"
+    %h1.sportify-font{ 'data-reservations-target' => 'title' }= "#{@selected_field.label} Timetable"
     -# %h1.sportify-font{ data: { target: 'reservations.title' } }= "#{@arena.fields.first.label} Timetable"
     -# %h1.sportify-font{ 'data-reservations-title-value' => "#{@arena.fields.first.label} Timetable" }= "#{@arena.fields.first.label} Timetable"
+    = render partial: 'field_timetable', locals: { field_timetable: @field_timetable }
+
+
   .sportify-panel.sportify-small-panel.sportify-radius
     %h1.sportify-font New Reservation
     %br
