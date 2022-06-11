@@ -17,7 +17,6 @@ import "chartkick/chart.js"
 // PROJECT FILES
 import "general"
 import "arenas"
-import "reservations"
 
 Rails.start()
 Turbolinks.start()

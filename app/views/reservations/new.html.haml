@@ -1,9 +1,41 @@
-.sportify-page
+%div{ class: 'sportify-page', 'data-controller' => 'reservations' }
   .sportify-panel.sportify-big-panel.sportify-radius
-    O poza / Orar-u fieldului 
+    %h1.sportify-font{ 'data-reservations-target' => 'title' }= "#{@arena.fields.first.label} Timetable"
+    -# %h1.sportify-font{ data: { target: 'reservations.title' } }= "#{@arena.fields.first.label} Timetable"
+    -# %h1.sportify-font{ 'data-reservations-title-value' => "#{@arena.fields.first.label} Timetable" }= "#{@arena.fields.first.label} Timetable"
   .sportify-panel.sportify-small-panel.sportify-radius
-    %h1 New Reservation
+    %h1.sportify-font New Reservation
     %br
-    %br
-    %br
-    = render 'form'
+    -# = render 'form'
+    = form_for @reservation do |f|
+      - if @reservation.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@reservation.errors.count, "error")} prohibited this reservation from being saved:"
+          %ul
+            - @reservation.errors.full_messages.each do |message|
+              %li= message
+
+      .field
+        = hidden_field_tag :owner_player_id, current_user.player.id
+        
+        -# %h3 Select a field
+        // asta onChange => schimba oraru din partea stanga
+        // maybe use Stimulus for this
+        -# %h1.sportify-font{ 'data-reservations-target' => 'title' } alabala
+
+        -# = select_tag :field_id, options_from_collection_for_select(@arena.fields, 'id', 'label'), 'data-action' => 'reservations#refreshTimetable', 'data-reservations-target' => 'title'
+        = select_tag :field_id, options_from_collection_for_select(@arena.fields, 'id', 'label'), data: { action: 'reservations#refreshTimetable', 'reservations_target' => 'field' } # TODO: refactor
+        
+        .form-group
+          = f.label :booking_date
+          = f.date_field :booking_date, class: 'form-control'
+        %br
+        .form-group
+          = f.label :booking_hour
+          // in loc de [1,2,3,4] o sa vina options_from_select(ReservationManager)
+          = f.select :booking_hour, mocked_hours, class: 'form-control'
+        %br
+
+      %br
+      .actions
+        = f.submit 'Save', id: 'create-reservation-button', class: 'btn sportify-primary-button sportify-radius fs-4'
