@@ -36,7 +36,7 @@ module ReservationObservers
 
     def notify_cancel(time)
       reservation_player = @reservation_subject
-      puts "guest player a dat cancel"
+      logger.debug "guest player a dat cancel"
       ReservationMailer.notify_reservation_player_cancel(@player, reservation_player, time).deliver!
     end
   end

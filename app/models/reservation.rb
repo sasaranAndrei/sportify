@@ -152,7 +152,7 @@ class Reservation < ApplicationRecord
   private
     # TechQuestion14 ? - Is this good? Ma refer la Dependencies, OOP Design, ...
     def penalize_owner_player
-      puts "penalize player!"
+      logger.debug "penalize player!"
       owner_player.penalize(self)
     end
 
