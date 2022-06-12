@@ -26,7 +26,7 @@ export default class extends Controller {
     $.ajax({
       url: `/reservations/timetable${window.location.search}&field_id=${this.selectedFieldValue}`,
       success: function(data) {
-        timetable = data.timetable
+        const timetable = data.timetable
 
         $('.timetable-slot').each(function (index, element) {
           const date = element.getAttribute('date')
