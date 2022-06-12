@@ -41,7 +41,7 @@ class Reservation < ApplicationRecord
   validates :booking_date, presence: true
   validates :booking_hour, presence: true #, inclusion: WORKING_HOURS
   validate :reservation_date_working_hours
-  validates_uniqueness_of :field, scope: %i[booking_date booking_hour], message: ' is already reservated on this time. Please choose another time.'
+  validates_uniqueness_of :field, scope: %i[booking_date booking_hour], message: ' is already booked on this time. Please choose another time.'
 
   scope :upcoming, -> { where('booking_date >= ?', Date.today) }
   scope :past, -> { where('booking_date < ?', Date.today) }
