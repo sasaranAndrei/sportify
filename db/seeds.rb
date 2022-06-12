@@ -1,3 +1,6 @@
+Sport.create!([
+  {name: "Football"}
+])
 Arena.create!([
   {title: "Wonderland Cluj", location: "Feleacu, nr. 5 A-E", phone_number: "0740966337", latitude: "46.72209", longitude: "23.58956"},
   {title: "Baza Sportiva Gheorgheni", location: "str. Alexandru Vaida Voevod nr. FN, Cluj-Napoca", phone_number: "0729039322", latitude: "46.77108", longitude: "23.63603"},
@@ -6,6 +9,13 @@ Arena.create!([
 Field.create!([
   {arena_id: 1, sport_id: 1, label: "Teren Fotbal 1", min_players: 10, max_players: 12},
   {arena_id: 1, sport_id: 1, label: "Teren Fotbal 2", min_players: 8, max_players: 12}
+])
+User.create!([
+  {email: "marcel@gmail.com", encrypted_password: "$2a$12$dmISXIHxAxDZdo0OlmtuIOSpeVDsYzKWGhMIBD.4IO2DIhPH09hSe", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, tokens: 140},
+  {email: "first_user@gmail.com", encrypted_password: "$2a$12$dGOktpFJ9Wge7rwwP0qUHO7sfrC0t76G7xeecJ/9qH5Db/Sgz7M0u", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, tokens: 205},
+  {email: "second_user_test@sportify.com", encrypted_password: "$2a$12$MAl08yyF3xBjt2ey4XK4XOr4/sbH5cp1eRD8m.N/Co2E93tNgnPEm", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, tokens: 50},
+  {email: "user_nou_2@sportify.com", encrypted_password: "$2a$12$iZSEzs4OYwzqD4Y7JLWFh.RYerwJDUi/XxqdEhz5K9niLwCSTxqem", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, tokens: 100},
+  {email: "alexandru_marin@gmail.com", encrypted_password: "$2a$12$jPeN4Q.EMiQrWpRhPSyqT.Oh2t0lmEfmYEkEzistwvZyD2jrEyP1S", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, tokens: 200}
 ])
 Player.create!([
   {name: "Second User", nickname: "Secondyyy", birth_date: "1212-12-12", phone_number: "0712345678999", user_id: 9},
@@ -33,13 +43,6 @@ Reservation.create!([
   {booking_date: "2022-06-18", booking_hour: 12, owner_player_id: 1, field_id: 2, invitation_token: nil},
   {booking_date: "2022-06-12", booking_hour: 18, owner_player_id: 1, field_id: 2, invitation_token: nil},
   {booking_date: "2022-06-15", booking_hour: 14, owner_player_id: 1, field_id: 1, invitation_token: "4aa0990a8f4e96d68f97"}
-])
-User.create!([
-  {email: "marcel@gmail.com", encrypted_password: "$2a$12$dmISXIHxAxDZdo0OlmtuIOSpeVDsYzKWGhMIBD.4IO2DIhPH09hSe", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, tokens: 140},
-  {email: "first_user@gmail.com", encrypted_password: "$2a$12$dGOktpFJ9Wge7rwwP0qUHO7sfrC0t76G7xeecJ/9qH5Db/Sgz7M0u", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, tokens: 205},
-  {email: "second_user_test@sportify.com", encrypted_password: "$2a$12$MAl08yyF3xBjt2ey4XK4XOr4/sbH5cp1eRD8m.N/Co2E93tNgnPEm", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, tokens: 50},
-  {email: "user_nou_2@sportify.com", encrypted_password: "$2a$12$iZSEzs4OYwzqD4Y7JLWFh.RYerwJDUi/XxqdEhz5K9niLwCSTxqem", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, tokens: 100},
-  {email: "alexandru_marin@gmail.com", encrypted_password: "$2a$12$jPeN4Q.EMiQrWpRhPSyqT.Oh2t0lmEfmYEkEzistwvZyD2jrEyP1S", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, tokens: 200}
 ])
 Tshirt.create!([
   {number: 11, nickname: "Alex", color: "orange", size: "M", player_id: 1},
@@ -69,9 +72,7 @@ PlayerReview.create!([
   {rating: 1, player_id: 5, reviewer_id: 1, reservation_id: 11},
   {rating: 1, player_id: 1, reviewer_id: 5, reservation_id: 11}
 ])
-Sport.create!([
-  {name: "Football"}
-])
+
 # ActiveStorage::Blob.create!([
 #   {key: "eq6f5s3y41gen63lyr9winfzvbe5", filename: "messi.jpg", content_type: "image/jpeg", metadata: {"identified"=>true, "analyzed"=>true}, service_name: "amazon", byte_size: 66384, checksum: "eMF5p/E5772IWx+qalHgsA=="},
 #   {key: "5qefobckhm87ocb98z1yelpbke13", filename: "ronaldo.jpg", content_type: "image/jpeg", metadata: {"identified"=>true, "analyzed"=>true}, service_name: "local", byte_size: 82721, checksum: "LIKp6pCnR2k/GIoM3loNcg=="},
