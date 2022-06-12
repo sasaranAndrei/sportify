@@ -69,14 +69,17 @@ class ReservationsController < ApplicationController
       )
     )
 
-    respond_to do |format|
-      if @reservation.save
-        format.html { redirect_to reservation_url(@reservation), notice: 'Reservation was successfully created.' }
-        format.json { render :show, status: :created, location: @reservation }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @reservation.errors, status: :unprocessable_entity }
-      end
+    # TODO: move into function cumva nuj
+    @selected_field = @reservation.field
+    @field_timetable = display_timetable_for(@selected_field, params[:initial_date])
+    @arena = @selected_field.arena
+
+    if @reservation.save
+      redirect_to reservation_url(@reservation), notice: 'Reservation was successfully created.'
+    else
+      flash[:error] = @reservation.errors.full_messages.join('. ')
+      # TODO: REFACTOOOR
+      redirect_to new_reservation_path(arena_id: @arena.id)
     end
   end
 

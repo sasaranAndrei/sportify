@@ -11,5 +11,4 @@
           -# TODO: REFACTOR
           %td #{hour}:00-#{hour + 1}:00
           - @field_timetable.keys.each do |date|
-            -# - byebug # poate merge asa cu slot-date
             %td.timetable-slot{ id: "slot-#{date}-#{hour}", date: date, hour: hour, class: @field_timetable[date][hour] ? 'occupied-slot' : 'free-slot' }

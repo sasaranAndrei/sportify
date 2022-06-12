@@ -4,7 +4,6 @@ module PlayerReviewsHelper
   end
 
   def should_display_review_buttons?(player, reviewer_player, reservation)
-    # byebug
     reservation.has_passed? &&
       !(player == reviewer_player) && 
       !review_submitted?(player, reviewer_player, reservation)
