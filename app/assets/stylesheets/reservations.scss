@@ -11,7 +11,11 @@
   // width: 80px;
 }
 
+.occupied-slot {
+  background-color: red !important;
+}
+
 .free-slot {
   // background-color: $primary-color !important;
-  background-color: green; // todo: fix this
+  background-color: green !important; // todo: fix this
 }

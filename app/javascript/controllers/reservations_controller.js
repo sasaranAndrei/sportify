@@ -20,31 +20,31 @@ export default class extends Controller {
   } 
 
   refreshTimetable() {
-    console.log(this.selectedFieldLabel)
     this.titleTarget.textContent = `${this.selectedFieldLabel} Timetable`
     // updateTimetable(this.selectedFieldValue)
 
-    console.log(this.selectedFieldValue)
-    console.log(window.location.pathname)
-    console.log(window.location.search)
     $.ajax({
-      url: `${window.location.pathname}${window.location.search}&field_id=${this.selectedFieldValue}`,
       url: `/reservations/timetable${window.location.search}&field_id=${this.selectedFieldValue}`,
       success: function(data) {
         timetable = data.timetable
-        console.log('s-a facut ajax callu vez domne')
-        console.log(timetable)
-        
-        // o sa fac asa cu methoda asta ciobaneasca
-        $('#slot-2022-06-11-20').removeClass('error-notice-background');
 
+        $('.timetable-slot').each(function (index, element) {
+          const date = element.getAttribute('date')
+          const hour = element.getAttribute('hour')
+          
+          element.removeAttribute('class')
+          element.classList.add('timetable-slot')
+
+          const occupiedClass = timetable[date][hour] ? 'occupied-slot' : 'free-slot'
+          element.classList.add(occupiedClass)
+        })
+        
         // $('#timetable').replaceWith("<%= j(render partial: 'reservations/timetable', locals: { timetable: @timetable } ) %>")
         // $('#timetable').html('= j render ()')
         // updateThatShit();
-        
-
-        
-
+      },
+      error: function(xhr, ajaxOptions, thrownError){
+        alert(xhr.status);
       }
     })
   }
