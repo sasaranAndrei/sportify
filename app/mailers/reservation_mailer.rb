@@ -9,6 +9,7 @@ class ReservationMailer < ApplicationMailer
   end
 
   def notify_reservation_player_cancel(owner_player, reservation_player, time)
+    puts "doamne ajuta"
     @guest_player = reservation_player.player
     @owner_player = owner_player
     @reservation_info = reservation_player.reservation.info

@@ -2,7 +2,7 @@
 
 class Player < ApplicationRecord
   # TODO: Move in a separate class
-  FINE_AMOUNT = Hash.new(0).merge(
+  FINE_AMOUNT = Hash.new(1).merge(
     0 => 20,
     1 => 10,
     2 => 5
