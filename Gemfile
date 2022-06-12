@@ -44,12 +44,14 @@ gem 'twilio-ruby', '~> 5.67', '>= 5.67.1'
 gem 'active_record_union'
 gem 'date_validator', '~> 0.12.0'
 gem 'groupdate'
+gem 'seed_dump'
 
 # add?: rspec, redis, faker, chartkick, dotenv
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rubocop', '~> 1.25', '>= 1.25.1'
+  gem 'dotenv-rails'
 end
 
 group :development do
