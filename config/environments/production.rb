@@ -65,6 +65,12 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "sportify_production"
 
+  host = 'https://sportify-football.herokuapp.com'
+  Rails.application.routes.default_url_options[:host] = host
+  config.action_mailer.default_url_options = { host: host }
+
+  config.action_mailer.perform_deliveries = true
+
   config.action_mailer.perform_caching = false
   ActionMailer::Base.smtp_settings = {
     :port           => ENV['MAILGUN_SMTP_PORT'],
