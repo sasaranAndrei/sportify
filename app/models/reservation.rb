@@ -8,7 +8,7 @@ class Reservation < ApplicationRecord
   DATE_FORMATS = Hash.new(DEFAULT_DATE_FORMAT).merge(
     # reservation: '%d/%m/%Y %H:%M',
     chart: '%m/%d/%Y %H:%M',
-    timetable_date: '%m.%d',
+    timetable: '%a %d/%m',
     # timetable: '',
     # change to time
     mock: '%H:%M' # TechQuestion9 - Aici ar fii mai bine sa redenumesc cheia 'time'?

@@ -4,7 +4,7 @@
       %tr
         %th{ scope: 'col' }
         - @field_timetable.keys.each do |date|
-          %th= date.strftime(Reservation::DATE_FORMATS[:timetable_date])
+          %th= date.strftime(Reservation::DATE_FORMATS[:timetable])
     %tbody
       - Reservation::WORKING_HOURS.each do |hour|
         %tr

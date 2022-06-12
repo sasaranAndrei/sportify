@@ -1,3 +1,5 @@
+@import "variables";
+
 #create-reservation-button {
   width: 100%;
 }
@@ -12,10 +14,10 @@
 }
 
 .occupied-slot {
-  background-color: red !important;
+  background-color: $error-notice-background-color !important;
 }
 
 .free-slot {
-  // background-color: $primary-color !important;
-  background-color: green !important; // todo: fix this
+  background-color: $primary-color !important;
+  // background-color: green !important; // todo: fix this
 }
