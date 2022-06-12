@@ -22,8 +22,8 @@ class ReservationPlayer < ApplicationRecord
     # TechQuestion13? - Avand in vedere ca defapt nu updatez obiectul ci il sterg,
     # nu se face notify_obsers din cauza ca nu i changed, si tre sa l apelez manual inainte
     # Cum pot evita chestia asta?
-    notify_observers(Time.now)
     changed
+    notify_observers(Time.now)
 
     self.destroy!
     self.destroy_join_request # TODO: fix this architecture bug
