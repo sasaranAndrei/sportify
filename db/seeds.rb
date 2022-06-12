@@ -18,7 +18,7 @@ User.create!([
   {email: "alexandru_marin@gmail.com", encrypted_password: "$2a$12$jPeN4Q.EMiQrWpRhPSyqT.Oh2t0lmEfmYEkEzistwvZyD2jrEyP1S", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, tokens: 200}
 ])
 Player.create!([
-  {name: "Second User", nickname: "Secondyyy", birth_date: "1212-12-12", phone_number: "0712345678999", user_id: 9},
+  {name: "Second User", nickname: "Secondyyy", birth_date: "1212-12-12", phone_number: "0745123552", user_id: 9},
   {name: "Marcel Raducanu", nickname: "Marcy", birth_date: "1994-06-15", phone_number: "0745782932", user_id: 10},
   {name: "Alexandru Marin", nickname: "Alex", birth_date: "1999-09-28", phone_number: "0744178201", user_id: 1},
   {name: "Firsty Usery", nickname: "Firstyyyyyy", birth_date: "1111-11-11", phone_number: "0750512346", user_id: 8},
