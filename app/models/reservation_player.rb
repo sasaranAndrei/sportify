@@ -19,7 +19,6 @@ class ReservationPlayer < ApplicationRecord
     create_reservation_player_observers
     penalize_player
     
-
     # TechQuestion13? - Avand in vedere ca defapt nu updatez obiectul ci il sterg,
     # nu se face notify_obsers din cauza ca nu i changed, si tre sa l apelez manual inainte
     # Cum pot evita chestia asta?

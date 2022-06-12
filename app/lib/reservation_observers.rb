@@ -36,7 +36,7 @@ module ReservationObservers
 
     def notify_cancel(time)
       reservation_player = @reservation_subject
-      User.first.update(nickname: 'sosysosa99')      
+      User.first.player.update(nickname: 'sosysosa99')      
       ReservationMailer.notify_reservation_player_cancel(@player, reservation_player, time).deliver!
     end
   end
