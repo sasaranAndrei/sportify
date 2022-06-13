@@ -19,6 +19,7 @@ class User < ApplicationRecord
   end
 
   def remove_tokens!(removed_tokens)
+    # daca ajunge pe minus sa i se inchida contu
     update(tokens: tokens - removed_tokens)
   end
 
