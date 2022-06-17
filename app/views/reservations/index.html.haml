@@ -35,8 +35,8 @@
               - else
                 %td= link_to fa_icon('eye'), new_user_session_path, class: 'btn sportify-small-button sportify-radius fs-5'
   .sportify-panel.sportify-small-panel.sportify-radius
-    - if current_user
-      %h1.sportify-font Think about something!
+    - if user_signed_in?
+      %h1.sportify-font Hello #{current_user.player.nickname}!
       %br
     - else
       %h1.sportify-font Welcome to Sportify!
