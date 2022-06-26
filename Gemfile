@@ -42,11 +42,12 @@ gem 'twilio-ruby', '~> 5.67', '>= 5.67.1'
 
 # OTHER
 gem 'active_record_union'
+# TODO: check and remove unused gems (=> decreased bundle size => faster build)
 gem 'date_validator', '~> 0.12.0'
 gem 'groupdate'
 gem 'seed_dump'
 
-# add?: rspec, redis, faker, chartkick, dotenv
+# TODO: add?: redis, sidekiq, bullet, (+ restu de pe Trello) + gem de testing din prezentarea lu codrut
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
