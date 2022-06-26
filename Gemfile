@@ -52,6 +52,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rubocop', '~> 1.25', '>= 1.25.1'
   gem 'dotenv-rails'
+  gem 'rspec-rails'
 end
 
 group :development do
