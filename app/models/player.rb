@@ -18,6 +18,7 @@ class Player < ApplicationRecord
   has_many :own_reviews, class_name: 'PlayerReview', foreign_key: 'player_id'
   has_many :guest_reviews, class_name: 'PlayerReview', foreign_key: 'reviewer_id'
   # has_many :items, class_name: 'Sellable' # TechQuestion3 - Se poate face ceva de genu? 
+  # TODO: check single table inheritance
   has_many :tshirts
   has_many :balls
 
@@ -31,23 +32,7 @@ class Player < ApplicationRecord
                            uniqueness: true
 
   def all_reservations
-    # TechQuestion5 - De ce nu merge chestia asta? Ar trebui sa mearga, nu?
-    # own_reservations.or(guest_reservations) # don't work
-    # TODO: FIX THIS
-
-    # varianta asta de mai jos foloseste union gem:
     own_reservations.union(guest_reservations)
-    # [own_reservations, guest_reservations].inject(:union)
-
-    # asta chiar nu stiu ce are
-    # Reservation.joins(:reservation_players).where('reservation_players.player_id = :id OR reservations.owner_player_id = :id', id: id)
-    
-    # nici asta
-    # Reservation.joins(:reservation_players).where('reservation_players.player_id = ?', id)
-    #            .or(Reservation.where(owner_player_id: id))
-    
-    # la fel ca alea de mai sus
-    # Reservation.where(reservation_players: { player_id: id }).or(Reservation.where(owner_player_id: id))
   end
 
   def guest_join_requests
@@ -66,7 +51,6 @@ class Player < ApplicationRecord
     "#{reviews_rating.round(2)}/#{PlayerReview::RATING_MAX}"
   end
 
-  # RubyBookOOP #2 - Law of Demeter
   def avatar
     user.avatar
   end
@@ -75,9 +59,6 @@ class Player < ApplicationRecord
     user.email
   end
 
-  # RubyBookOOP #1 - wrap private dependency
-  # in caller:
-  # player.nickname INSTEAD_OF player.nickname || player.name
   def nickname
     read_attribute(:nickname) || name
   end
@@ -86,6 +67,7 @@ class Player < ApplicationRecord
     fine_amount = FINE_AMOUNT[reservation.days_before_booking_date]
     info = reservation.info
 
+    # TODO remove puts
     puts "#{nickname}, you will be penalized with #{fine_amount} SCoins for canceling your reservation #{info}"
 
     user.remove_tokens!(fine_amount)
@@ -102,17 +84,5 @@ class Player < ApplicationRecord
 
     def reviews_rating
       own_reviews.average(:rating)
-    end
-    
-    def fine_amount(days_before_booking_date)
-      # ideea cu constanta
-      # FINE_AMOUNT.find { |days, fine| break fine if days.cover? days_before_booking_date }
-    
-      # raise Exception('WTF FINE_AMOUNT') if days_before_booking_date.negative?
-      # return 20 if days_before_booking_date.zero?
-      # return 10 if days_before_booking_date == 1
-      # return 5 if days_before_booking_date == 2
-      
-      # 0
     end
 end
