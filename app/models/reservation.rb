@@ -24,6 +24,7 @@ class Reservation < ApplicationRecord
   has_many :guest_players, class_name: 'Player', through: :reservation_players, source: :player
   has_many :join_requests
   has_many :join_request_players, class_name: 'Player', through: :join_requests, source: :player do
+    # TODO: how to test these associations
     def awaiting
       where('join_requests.approved is NULL')
     end

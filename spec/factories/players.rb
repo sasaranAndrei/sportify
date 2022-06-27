@@ -4,6 +4,7 @@ FactoryBot.define do
     birth_date { Faker::Date.birthday }
     phone_number { ['0745123123', '0754987987', '0755765765'].sample } # TODO: refactor this
 
+    association :user
     # TODO: cum fac sa mock-uiesc un user
     # ideea e ca am nevoie de ceva care sa poata raspunda la
     # .avatar, .email, .remove_tokens!, 

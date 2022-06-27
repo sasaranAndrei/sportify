@@ -7,7 +7,26 @@ RSpec.describe Reservation, type: :model do
 
   subject(:reservation) { build(:reservation) }
 
-  
+  describe 'ActiveRecord associations' do
+    it { is_expected.to belong_to(:owner_player).class_name('Player') }
+    it { is_expected.to belong_to(:field) }
+    it { is_expected.to have_many(:reservation_players).dependent(:destroy) }
+    it { is_expected.to have_many(:guest_players).through(:reservation_players) }
+    it { is_expected.to have_many(:join_requests) }
+    it { is_expected.to have_many(:join_request_players).through(:join_requests).class_name('Player') }
+  end
+
+  describe 'ActiveRecord validations' do
+    # TODO: check dc crapa asta? conform byebug, exista booking_date
+    it 'bla bla' do
+      # byebug
+    end
+
+    # pare ca functia validate_presence_of face field-u nil? - wtf
+    # it { is_expected.to validate_presence_of(:booking_date) }
+    # it { is_expected.to validate_presence_of(:booking_hour) }
+    # it { is_expected.to validate_uniqueness_of(:field).scoped_to(:booking_date, :booking_hour) }
+  end
 
   describe 'Instance methods' do
     describe '#days_before_booking_date' do 
