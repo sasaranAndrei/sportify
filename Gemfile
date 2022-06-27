@@ -70,6 +70,7 @@ end
 
 group :test do
   gem 'capybara', '>= 3.26'
+  gem 'database_cleaner-active_record'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end

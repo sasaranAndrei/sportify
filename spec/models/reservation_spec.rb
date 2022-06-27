@@ -20,10 +20,6 @@ RSpec.describe Reservation, type: :model do
       
     end
 
-    describe '#free_slots' do
-
-    end
-
     describe '#has_passed?' do
       subject { reservation.has_passed? }
 
@@ -44,6 +40,19 @@ RSpec.describe Reservation, type: :model do
 
         it 'return false' do
           expect(subject).to be false
+        end
+      end
+    end
+
+    describe '#free_slots' do
+      subject { reservation.free_slots }
+
+      context 'brand new reservation' do
+        before do
+        end
+
+        it 'returns MAX_SLOTS - 1 (reservation_owner)' do
+          byebug
         end
       end
     end
