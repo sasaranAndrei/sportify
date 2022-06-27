@@ -5,6 +5,8 @@ RSpec.describe Reservation, type: :model do
     expect(build(:reservation)).to be_valid
   end
 
+  subject(:reservation) { build(:reservation) }
+
   describe 'Instance methods' do
     # TODO: oare pt astea de mai jos trebe teste? daca da, cum? :-)
     # describe '#all_players' do 
@@ -23,19 +25,25 @@ RSpec.describe Reservation, type: :model do
     end
 
     describe '#has_passed?' do
+      subject { reservation.has_passed? }
+
       context 'passed reservation' do
-        # poate ar fii mai bine sa l mut in subject si sa fac update in before
-        let(:reservation) { build(:reservation, :passed) }
+        before do
+          reservation.booking_date = Date.yesterday
+        end
         
         it 'returns true' do
-          # byebug
-          expect(reservation.has_passed?).to be true
+          expect(subject).to be true
         end
       end
 
       context 'upcoming reservation' do
+        before do
+          reservation.booking_date = Date.tomorrow
+        end
+
         it 'return false' do
-          expect(false).to be false
+          expect(subject).to be false
         end
       end
     end

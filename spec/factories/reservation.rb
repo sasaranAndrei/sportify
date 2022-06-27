@@ -20,8 +20,9 @@ FactoryBot.define do
       invitation_token { SecureRandom.hex(10) } # TechQuestion? - E ok sa fac asta? Cand se ruleaza testu si se adauga chestii in test_db se ruleaza codu asta? ca trebe sa fie unic ala check app/models/reservation.rb
     end
 
-    trait :without_invitation_token do
-      invitation_token { nil }
-    end
+    # not sure if necessary
+    # trait :without_invitation_token do
+    #   invitation_token { nil }
+    # end
   end
 end
