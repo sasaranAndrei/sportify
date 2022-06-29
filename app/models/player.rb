@@ -35,6 +35,14 @@ class Player < ApplicationRecord
     own_reservations.union(guest_reservations)
   end
 
+  def upcoming_reservations
+    all_reservations.upcoming.ordered(:asc)
+  end
+
+  def past_reservations
+    all_reservations.past.ordered(:asc)
+  end
+
   def guest_join_requests
     # own_reservations.map(&:join_requests) # asta nu creca e ok 
     # TODO: use ARUnion for this

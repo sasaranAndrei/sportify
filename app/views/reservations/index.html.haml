@@ -38,6 +38,28 @@
     - if user_signed_in?
       %h1.sportify-font Hello #{current_user.player.nickname}!
       %br
+      - if current_player.upcoming_reservations.any?  
+        %h2.sportify-font Upcoming Reservations
+        %br
+        .table-responsive
+          %table.table.table-success.table-striped
+            %thead
+              %tr
+                %th Type
+                %th Date
+                %th Place
+                %th 
+            %tbody
+              - @upcoming_reservations.each do |reservation|
+                %tr
+                  %td= reservation.owner_player_id == current_user.player.id ? 'Own' : 'Guest'
+                  %td= reservation.display_datetime
+                  %td= reservation.place
+                  %td= link_to fa_icon('eye'), reservation_path(reservation), class: 'btn sportify-small-button sportify-radius fs-5'
+      - else  
+        %h2.sportify-font You don't have any upcoming reservations
+        %br
+        = link_to fa_icon('plus', text: 'Create a Reservation'), new_reservation_path, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
     - else
       %h1.sportify-font Welcome to Sportify!
       %br
