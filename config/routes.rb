@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   # BUSINESS LOGIC
   resources :sports
-  resources :arenas, only: %i[ index show ]
+  resources :arenas, only: %i[ update index show ]
   resources :fields
   resources :reservations do
     get :join_requests, on: :member

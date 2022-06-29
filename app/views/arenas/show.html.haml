@@ -1,8 +1,21 @@
 .sportify-page
   .sportify-panel.sportify-big-panel.sportify-radius
     %h1.sportify-font= @arena.title
-    poza cu arena
-    -# = @arena.avatar
+    - if @arena.photo.attached?
+      = image_tag @arena.photo, height: '100%', width: '100%'
+    - else
+      -# This arena doesn't have a photo attached yet :-(
+      
+      -# hide this functionality
+      = form_for(@arena, url: arena_path(@arena), html: { method: :put }) do |f| 
+        .form-group
+          = f.label :photo, class: 'sportify-label'
+          %br/
+          = f.file_field :photo, class: 'form-control'
+        %br
+        %br
+        = f.submit "Update", class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+        
   .sportify-panel.sportify-small-panel.sportify-radius
     %h1.sportify-font Info & Actions
     .form-group 

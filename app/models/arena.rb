@@ -1,6 +1,8 @@
 class Arena < ApplicationRecord
   has_many :fields, dependent: :destroy
 
+  has_one_attached :photo
+
   validates :title, presence: true
   validates :location, presence: true
   # TechQuestion4? - create some PhoneNumberValidator ? # ulterior am descoperit ca exista un 'phone' gem
