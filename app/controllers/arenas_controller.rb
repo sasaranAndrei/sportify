@@ -9,13 +9,13 @@ class ArenasController < ApplicationController
   def show
   end
 
-  # TODO: remove this functionality
+  # TODO: hide this functionality
   def update
-    if @arena.update(arena_params)
-      redirect_to arena_path(@arena), notice: 'Photo successfully attached to this arena!'
-    else
-      render :show
-    end
+    # if @arena.update(arena_params)
+    #   redirect_to arena_path(@arena), notice: 'Photo successfully attached to this arena!'
+    # else
+    #   render :show
+    # end
   end
 
   private
