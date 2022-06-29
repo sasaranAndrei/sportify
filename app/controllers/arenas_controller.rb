@@ -11,7 +11,6 @@ class ArenasController < ApplicationController
 
   # TODO: remove this functionality
   def update
-    byebug
     if @arena.update(arena_params)
       redirect_to arena_path(@arena), notice: 'Photo successfully attached to this arena!'
     else
