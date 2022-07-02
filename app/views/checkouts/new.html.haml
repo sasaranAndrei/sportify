@@ -25,7 +25,7 @@
       - @products.each do |product|
         - product_type = product.class
         .sportify-panel.sportify-product-panel.sportify-radius
-          = image_tag(product_type.sample.photo, class: 'sportify-product-image')
+          -# = image_tag(product_type.sample.photo, class: 'sportify-product-image')
           %br
           %h3.sportify-font
             = product_type

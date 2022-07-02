@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  
-  
   root 'reservations#index'
   get '/gamesfeed', to: 'reservations#index'
   
