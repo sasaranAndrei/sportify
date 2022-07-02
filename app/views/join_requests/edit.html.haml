@@ -40,7 +40,7 @@
       .form-control{ disabled: true }= @join_request.status
     %br
     - if @reservation_player
-      = link_to fa_icon('times', text: 'Left Reservation'), @reservation_player, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4', method: :delete, data: { confirm: 'Are you sure?' }
+      = link_to fa_icon('times', text: 'Leave Reservation'), @reservation_player, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4', method: :delete, data: { confirm: 'Are you sure?' }
     - else
       = link_to fa_icon('times', text: 'Cancel Join Request'), join_request_path(@join_request), class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4', method: :delete, data: { confirm: 'Are you sure?' }
     %br

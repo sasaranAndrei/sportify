@@ -40,7 +40,7 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    return redirect_to arenas_path, notice: 'Please select an Arena before create a Reservation' if params[:arena_id].blank? # TODO: move this to method
+    return redirect_to arenas_path, notice: 'Please select an Arena before creating a Reservation' if params[:arena_id].blank? # TODO: move this to method
 
     @arena = Arena.find(params[:arena_id])
     # @scheduler = ArenaSchedulerService.call(arena: @arena, start_date: Date.today)

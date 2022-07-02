@@ -27,6 +27,7 @@ class ReservationPlayer < ApplicationRecord
 
     self.destroy!
     self.destroy_join_request # TODO: fix this architecture bug
+    
     # TechQuestion21 Cum ar fii mai ok sa leg JoinRequest-u de ReservationPlayer? 
     # reservation_player has_one :join_request, optional: true, dependent: destroy ?
     

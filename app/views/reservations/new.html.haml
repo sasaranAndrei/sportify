@@ -8,30 +8,23 @@
 
   .sportify-panel.sportify-small-panel.sportify-radius
     %h1.sportify-font New Reservation
-    %br
     -# = render 'form'
     = form_for @reservation do |f|
       .field
         = hidden_field_tag :owner_player_id, current_user.player.id
         
-        -# %h3 Select a field
-        // asta onChange => schimba oraru din partea stanga
-        // maybe use Stimulus for this
-        -# %h1.sportify-font{ 'data-reservations-target' => 'title' } alabala
-
-        -# = select_tag :field_id, options_from_collection_for_select(@arena.fields, 'id', 'label'), 'data-action' => 'reservations#refreshTimetable', 'data-reservations-target' => 'title'
-        = select_tag :field_id, options_from_collection_for_select(@arena.fields, 'id', 'label'), data: { action: 'reservations#refreshTimetable', 'reservations_target' => 'field' } # TODO: refactor
+        = label_tag :field, 'Field', class: 'sportify-label'
+        = select_tag :field_id, options_from_collection_for_select(@arena.fields, 'id', 'label'), data: { action: 'reservations#refreshTimetable', 'reservations_target' => 'field' }, class: 'form-select form-control' # TODO: refactor
         
         .form-group
-          = f.label :booking_date
+          = f.label :booking_date, class: 'sportify-label'
           = f.date_field :booking_date, class: 'form-control'
-        %br
         .form-group
-          = f.label :booking_hour
+          = f.label :booking_hour, class: 'sportify-label'
+          %br
           // in loc de [1,2,3,4] o sa vina options_from_select(ReservationManager)
-          = f.select :booking_hour, mocked_hours, class: 'form-control'
-        %br
-
+          = f.select :booking_hour, mocked_hours, {}, class: 'form-select form-control'
+      %br
       %br
       .actions
-        = f.submit 'Save', id: 'create-reservation-button', class: 'btn sportify-primary-button sportify-radius fs-4'
+        = f.submit 'Set up Reservation', id: 'create-reservation-button', class: 'btn sportify-primary-button sportify-radius fs-4'
