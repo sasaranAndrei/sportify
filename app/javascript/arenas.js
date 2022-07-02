@@ -2,16 +2,15 @@ const MAP_CENTER_LATITUDE = 46.75550;
 const MAP_CENTER_LONGITUDE = 23.59950;
 var selectedArenaTitle = -1; // no arena selected yet
 
-window.onload = function() {
+$(document).on('turbolinks:load', function () {
   url = window.location.href;
   arenas_path = '/arenas';
   url_substring_path = url.substring(url.length - arenas_path.length);
 
-  // console.log(url_substring_path);
   if (url_substring_path == arenas_path) {
     initGoogleMaps();
   }
-}
+});
 
 function initGoogleMaps() {
   $.ajax({
