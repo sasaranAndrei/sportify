@@ -14,6 +14,7 @@
     %script{:src => "https://js.stripe.com/v3/"}
     // GOOGLE MAPS. ENABLE => API COST!
     %script{:type => 'text/javascript',:src => "https://maps.googleapis.com/maps/api/js?key=#{ Rails.application.credentials[:google_maps_api_key] }"} 
+    = favicon_link_tag
   %body.background
     = render partial: 'layouts/flashes'
     = render partial: 'layouts/navbar'
