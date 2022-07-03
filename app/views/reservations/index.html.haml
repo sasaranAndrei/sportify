@@ -37,8 +37,8 @@
   .sportify-panel.sportify-small-panel.sportify-radius
     - if user_signed_in?
       %h1.sportify-font Hello, #{current_user.player.nickname}!
-      %br
-      - if current_player.upcoming_reservations.any?  
+      -# %br
+      -# - if current_player.upcoming_reservations.any?  
         %h2.sportify-font Upcoming Reservations
         %br
         .table-responsive
@@ -56,7 +56,7 @@
                   %td= reservation.display_datetime
                   %td= reservation.place
                   %td= link_to fa_icon('eye'), reservation_path(reservation), class: 'btn sportify-small-button sportify-radius fs-5'
-      - else  
+      -# - else  
         %h2.sportify-font You don't have any upcoming reservations
         %br
         = link_to fa_icon('plus', text: 'Create a Reservation'), new_reservation_path, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
@@ -64,4 +64,4 @@
       %h1.sportify-font Welcome to Sportify!
       %br
       = link_to fa_icon('user-plus', text: 'Sign Up Now!'), new_user_registration_path, class: 'btn sportify-wide-button sportify-primary-button sportify-radius sportify-font fs-4'
-      -# = video_tag 'videos/mock-up-home-page.mp4', size: '500x350', autoplay: true, loop: true
+    = video_tag 'videos/reservation_index.mp4', size: '500x350', autoplay: true, loop: true
