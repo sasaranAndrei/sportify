@@ -5,6 +5,8 @@ class ReservationsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
+    @player_upcoming_reservations = current_user&.player&.upcoming_reservations
+
     # @reservations = Reservation.all
     @recent_reservations = Reservation.past.ordered(:asc).last(5)
     @upcoming_reservations = Reservation.upcoming.ordered(:asc)

@@ -50,7 +50,7 @@
                 %th Place
                 %th 
             %tbody
-              - @upcoming_reservations.each do |reservation|
+              - @player_upcoming_reservations.each do |reservation|
                 %tr
                   %td= reservation.owner_player_id == current_user.player.id ? 'Own' : 'Guest'
                   %td= reservation.display_datetime
