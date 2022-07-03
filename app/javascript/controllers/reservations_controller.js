@@ -3,10 +3,6 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets  = [ "field", "title" ]
 
-  initialize() {
-    this.fieldTarget.value = '1'
-  }
-
   refreshTimetable() {
     this.titleTarget.textContent = `${this.selectedFieldLabel} Timetable`
 

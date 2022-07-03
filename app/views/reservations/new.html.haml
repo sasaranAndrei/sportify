@@ -14,7 +14,7 @@
         = hidden_field_tag :owner_player_id, current_user.player.id
         
         = label_tag :field, 'Field', class: 'sportify-label'
-        = select_tag :field_id, options_from_collection_for_select(@arena.fields, 'id', 'label'), data: { action: 'reservations#refreshTimetable', 'reservations_target' => 'field' }, class: 'form-select form-control' # TODO: refactor
+        = select_tag :field_id, options_from_collection_for_select(@arena.fields, 'id', 'label', @arena.fields.first.id), data: { action: 'reservations#refreshTimetable', 'reservations_target' => 'field' }, class: 'form-select form-control' # TODO: refactor
         
         .form-group
           = f.label :booking_date, class: 'sportify-label'
