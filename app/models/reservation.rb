@@ -157,6 +157,8 @@ class Reservation < ApplicationRecord
     end
 
     def reservation_date_working_hours
+      return false unless booking_date && booking_hour
+      
       # TODO: field.working_hours
       # momentan e ok asa, nu am facut cu validate inclusion
       # ca sa am interfata publica ok, 
