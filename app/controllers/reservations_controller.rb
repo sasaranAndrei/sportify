@@ -9,7 +9,7 @@ class ReservationsController < ApplicationController
 
     # @reservations = Reservation.all
     @recent_reservations = Reservation.past.ordered(:asc).last(5)
-    @upcoming_reservations = Reservation.upcoming.ordered(:asc)
+    @upcoming_reservations = Reservation.upcoming.ordered(:asc).last(5)
     # @reservations = Reservation.all # la un moment dat AvailableReservationsService.call // cv din ReservationManager
   end
 
