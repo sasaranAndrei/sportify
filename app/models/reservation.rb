@@ -57,26 +57,13 @@ class Reservation < ApplicationRecord
 
   # TODO: This feels like it doesn t belong to Reservation. This will be moved into a Decorator
   def display_datetime(format_option = nil)
-    # RubyBook #4 - 'Kind of' Duck Types (not really because its not based on klass)
     datetime.strftime(DATE_FORMATS[format_option])
-    
-    # instead of:
-
-    # case display_format
-    # when :chart
-    #    date.strftime('#chart_format')
-    # when :reservation
-    #   date.strftime('#reservation_format')
-    # when :mock
-    #   date.strftime('#mock_format')
-    # end
   end
 
   def info
     "on #{display_datetime} at #{place}"
   end
 
-  # RubyBookOOP #2 - Law of Demeter
   def place
     field.place
   end
@@ -111,9 +98,6 @@ class Reservation < ApplicationRecord
     field.max_players - all_players.count
   end
 
-  # TechQuestion12 - It would be a bad practice to name
-  # this method free_slots(?)
-  # eu cred ca nu deoarece ar putea fii inconsistente gen: free_slots? == false // free_slots == 0 if code changes
   def no_free_slots?
     free_slots <= 0
   end
@@ -151,7 +135,6 @@ class Reservation < ApplicationRecord
   end
 
   private
-    # TechQuestion14 ? - Is this good? Ma refer la Dependencies, OOP Design, ...
     def penalize_owner_player
       owner_player.penalize(self)
     end
