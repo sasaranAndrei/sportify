@@ -6,10 +6,10 @@ namespace :db do
       player_ids = Player.pluck(:id)
       field_ids = Field.pluck(:id)
 
-      dates = (9..13).to_a.map { |day| Date.new(2022, 7, day) }
+      dates = (6..13).to_a.map { |day| Date.new(2022, 7, day) }
       hours = (10..21).to_a
 
-      30.times do
+      100.times do
         player_id = player_ids.sample
         field_id = field_ids.sample
         booking_date = dates.sample
