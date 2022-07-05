@@ -6,15 +6,9 @@ class Reservation < ApplicationRecord
   WORKING_HOURS = (10..21).to_a.freeze
   DEFAULT_DATE_FORMAT = '%d/%m/%Y %H:%M'.freeze
   DATE_FORMATS = Hash.new(DEFAULT_DATE_FORMAT).merge(
-    # reservation: '%d/%m/%Y %H:%M',
     chart: '%m/%d/%Y %H:%M',
     timetable: '%a %d/%m',
-    # timetable: '',
-    # change to time
-    mock: '%H:%M' # TechQuestion9 - Aici ar fii mai bine sa redenumesc cheia 'time'?
-    # Ma gandesc ca asa as putea sa l folosesc si in alte scopuri decat 'mock'.
-    # Dar mai e si chestia ca daca vreau sa schimb cum se afisaza 'mock',
-    # tre sa adaug un nou key, val.
+    mock: '%H:%M'
   ).freeze
 
   belongs_to :owner_player, class_name: 'Player'
@@ -77,7 +71,6 @@ class Reservation < ApplicationRecord
     player == owner_player || guest_players.include?(player)
   end
 
-  # TODO: TechQuestion11? - Choosing Dependency Direction?
   def awaiting_response?(player)
     join_request_players.awaiting.include?(player)
   end
