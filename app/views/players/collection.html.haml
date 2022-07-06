@@ -15,5 +15,13 @@
           .sportify-panel.sportify-product-panel.sportify-radius
             %h3.sportify-font
               = item_type
-            -# TODO: Afisat detalii ca pe reservations#info
-
+            .form-group 
+              = label_tag :color, 'Color', class: 'sportify-label'
+              .form-control{ disabled: true }= item.color
+            - if item_type == Tshirt
+              .form-group
+                = label_tag :size, 'Size', class: 'sportify-label'
+                .form-control{ disabled: true }= item.size
+              .form-group
+                = label_tag :nickname, 'Nickname', class: 'sportify-label'
+                .form-control{ disabled: true }= item.nickname
