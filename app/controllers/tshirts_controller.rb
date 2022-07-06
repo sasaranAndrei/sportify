@@ -4,10 +4,12 @@ class TshirtsController < ApplicationController
   end
 
   def create
-    # TODO: Refactor!
     @tshirt = Tshirt.new(tshirt_params)
 
     return redirect_back fallback_location: sportify_coins_shop_path, notice: "You don't have enough SCoins to buy a Tshirt" unless current_user.can_pay?(@tshirt.price)
+
+    @tshirt.nickname = @tshirt.player.nickname if @tshirt.nickname.blank?
+    @tshirt.number ||= 10
 
     if @tshirt.save
       current_user.remove_tokens!(@tshirt.price)
