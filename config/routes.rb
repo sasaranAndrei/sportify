@@ -50,8 +50,8 @@ Rails.application.routes.draw do
   resource :sportify_admin, only: :show do
     get 'test_mailer'
   end
-  get '/admin', to: 'sportify_admin#show'
-  get '/dashboard', to: 'sportify_admin#show'
+  get '/admin', to: 'sportify_admins#show'
+  get '/dashboard', to: 'sportify_admins#show'
 
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
