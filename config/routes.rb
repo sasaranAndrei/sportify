@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   root 'reservations#index'
   get '/gamesfeed', to: 'reservations#index'
-  
+
   # BUSINESS LOGIC
   resources :sports
   resources :arenas, only: %i[ update index show ]
@@ -44,8 +44,13 @@ Rails.application.routes.draw do
   end
 
   # USER
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  # devise_for :admin_users, ActiveAdmin::Devise.config
+  # ActiveAdmin.routes(self)
+
+  resource :sportify_admin, only: :show do
+    get 'test_mailer'
+  end
+  get '/admin', to: 'sportify_admin#show'
 
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
