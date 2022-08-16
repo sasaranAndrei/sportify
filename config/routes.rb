@@ -51,6 +51,7 @@ Rails.application.routes.draw do
     get 'test_mailer'
   end
   get '/admin', to: 'sportify_admin#show'
+  get '/dashboard', to: 'sportify_admin#show'
 
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
