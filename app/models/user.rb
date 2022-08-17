@@ -14,6 +14,8 @@ class User < ApplicationRecord
   # PAY
   pay_customer
 
+  enum email_status: %i(unauthorized pending authorized)
+
   def add_tokens!(added_tokens)
     update(tokens: tokens + added_tokens)
   end

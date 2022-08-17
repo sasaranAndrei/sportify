@@ -64,6 +64,7 @@ class Player < ApplicationRecord
   end
 
   def email
+    # TODO: check delegate!
     user.email
   end
 

@@ -53,8 +53,13 @@ Rails.application.routes.draw do
   get '/admin', to: 'sportify_admins#show'
   get '/dashboard', to: 'sportify_admins#show'
 
-  devise_for :users, path: '', path_names: {
-    sign_in: 'login',
-    sign_out: 'logout'
-  }
+  devise_for :users, 
+    path: '', 
+    path_names: {
+      sign_in: 'login',
+      sign_out: 'logout'
+    },
+    controllers: {
+      registrations: 'sportify_registrations'
+    }
 end
