@@ -7,6 +7,6 @@ class SportifyAdminsController < ApplicationController
   def test_mailer
     SportifyAdminMailer.send_test_email.deliver!
 
-    head :ok
+    redirect_to sportify_admin_path
   end
 end
