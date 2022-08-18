@@ -3,6 +3,7 @@ class SportifyAdminsController < ApplicationController
   http_basic_authenticate_with name: ENV['ADMIN_NAME'], password: ENV['ADMIN_PASSWORD']
 
   def show
+    @users = User.order(created_at: :desc)
   end
 
   def test_mailer
@@ -10,4 +11,16 @@ class SportifyAdminsController < ApplicationController
 
     redirect_to sportify_admin_path
   end
+
+  def update_user
+    user = User.find(params[:user_id])
+    user.update(user_params.except(:user_id))
+
+    redirect_to sportify_admin_path
+  end
+
+  private
+    def user_params
+      params.permit(:user_id, :email_status)
+    end
 end

@@ -49,7 +49,9 @@ Rails.application.routes.draw do
 
   resource :sportify_admin, only: :show do
     get 'test_mailer'
+    put 'update_user'
   end
+
   get '/admin', to: 'sportify_admins#show'
   get '/dashboard', to: 'sportify_admins#show'
 
