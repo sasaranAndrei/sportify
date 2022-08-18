@@ -1,11 +1,15 @@
 .sportify-page
   .sportify-panel.sportify-small-panel.sportify-radius
-    %h1 Hello, Sasa!
-    %h2 You are in the Sportify Admin Mode.
-    %h3 Do your best to bring more people to sport & connect them!
+    %h1.sportify-font Hello, Sasa!
+    %h2.sportify-font You are in the Sportify Admin Mode.
+    %h3.sportify-font Do your best to bring more people to sport & connect them!
     = link_to 'Test Admin Mailer', test_mailer_sportify_admin_path, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
     %br
     %br
+    - if @new_users.count.positive?
+      %h3.sportify-font There are 
+      %h3.sportify-font{ style: 'color: yellow' } #{@new_users.count} 
+      %h3.sportify-font new users that need authorization!  
   .sportify-panel.sportify-big-panel.sportify-radius
     .buttons-container
       = link_to fa_icon('mail', text: 'Open MailGun Dashboard'), ENV['ADMIN_MAILGUN_LINK'], target: '_blank', class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'

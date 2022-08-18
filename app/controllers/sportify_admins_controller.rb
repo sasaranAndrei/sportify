@@ -4,6 +4,7 @@ class SportifyAdminsController < ApplicationController
 
   def show
     @users = User.order(created_at: :desc)
+    @new_users = User.from_last(2.days).unauthorized.pluck(:email)
   end
 
   def test_mailer
