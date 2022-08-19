@@ -3,7 +3,6 @@
     %h1.sportify-font Hello, Sasa!
     %h2.sportify-font You are in the Sportify Admin Mode.
     %h3.sportify-font Do your best to bring more people to sport & connect them!
-<<<<<<< HEAD
     = link_to fa_icon('inbox', text: 'Test Admin Mailer'), test_mailer_sportify_admin_path, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
     %br
     %br
@@ -18,18 +17,6 @@
   .sportify-panel.sportify-big-panel.sportify-radius
     .buttons-container
       = link_to fa_icon('dashboard', text: 'Open MailGun Dashboard'), ENV['ADMIN_MAILGUN_LINK'], target: '_blank', class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
-=======
-    = link_to 'Test Admin Mailer', test_mailer_sportify_admin_path, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
-    %br
-    %br
-    - if @new_users.count.positive?
-      %h3.sportify-font There are 
-      %h3.sportify-font{ style: 'color: yellow' } #{@new_users.count} 
-      %h3.sportify-font new users that need authorization!  
-  .sportify-panel.sportify-big-panel.sportify-radius
-    .buttons-container
-      = link_to fa_icon('mail', text: 'Open MailGun Dashboard'), ENV['ADMIN_MAILGUN_LINK'], target: '_blank', class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
->>>>>>> 71d53bc5cbca3fea59badd4f4f9df3d5f56c6d8f
       %span
       -# = link_to fa_icon('address-card', text: 'My Stats'), stats_player_path(current_user.player), id: 'my-reservations-player-stats-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
     %br
