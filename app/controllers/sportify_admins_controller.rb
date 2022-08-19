@@ -20,7 +20,6 @@ class SportifyAdminsController < ApplicationController
     redirect_to sportify_admin_path
   end
 
-<<<<<<< HEAD
   def download_arenas
     arenas = Arena.all.as_json
     arenas_file = JSON.pretty_generate(arenas)
