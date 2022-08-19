@@ -1,0 +1,57 @@
+.sportify-page
+  .sportify-panel.sportify-small-panel.sportify-radius
+    %h1.sportify-font Hello, Sasa!
+    %h2.sportify-font You are in the Sportify Admin Mode.
+    %h3.sportify-font Do your best to bring more people to sport & connect them!
+    = link_to fa_icon('inbox', text: 'Test Admin Mailer'), test_mailer_sportify_admin_path, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+    %br
+    %br
+    .d-flex.justify-between
+      = link_to fa_icon('download', text: 'Download Arenas'), download_arenas_sportify_admin_path, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+      = link_to fa_icon('download', text: 'Download Fields'), download_fields_sportify_admin_path, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+    %br
+    %br
+    %h3.sportify-font There are 
+    %h3.sportify-font{ style: 'color: yellow' } #{@new_users.count} 
+    %h3.sportify-font new users that need authorization!  
+  .sportify-panel.sportify-big-panel.sportify-radius
+    .buttons-container
+      = link_to fa_icon('dashboard', text: 'Open MailGun Dashboard'), ENV['ADMIN_MAILGUN_LINK'], target: '_blank', class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
+      %span
+      -# = link_to fa_icon('address-card', text: 'My Stats'), stats_player_path(current_user.player), id: 'my-reservations-player-stats-button', class: 'btn sportify-primary-button sportify-radius sportify-font fs-4'
+    %br
+    %br
+
+    %h1.sportify-font Users
+    %br
+
+    .table-responsive
+      %table.table.table-success.table-striped
+        %thead
+          %tr
+            %th ID
+            %th Name
+            %th Nickname
+            %th Email
+            %th Phone Number
+            %th Joined at
+            %th Status
+            %th
+            %th
+        %tbody
+          - @users.each do |user|
+            %tr
+              %td= user.id
+              %td= user.player&.name
+              %td= user.player.nickname
+              %td= user.email
+              %td= user.player.phone_number
+              %td= user.created_at.strftime('%d/%m/%Y')
+              %td= user.email_status
+              - if user.unauthorized?
+                %td= link_to fa_icon('check', text: 'Set Pending'), update_user_sportify_admin_path(user_id: user.id, email_status: :pending), method: :put, class: 'btn sportify-small-button sportify-radius fs-5 participate-reservation-highlight'
+              - elsif user.pending?
+                %td= link_to fa_icon('check', text: 'Set Authorized'), update_user_sportify_admin_path(user_id: user.id, email_status: :authorized), method: :put, class: 'btn sportify-small-button sportify-radius fs-5'
+              - else
+                %td
+              %td= link_to fa_icon('eye'), stats_player_path(user.player), class: 'btn sportify-small-button sportify-radius fs-5'

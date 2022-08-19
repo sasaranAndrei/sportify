@@ -14,6 +14,10 @@ class User < ApplicationRecord
   # PAY
   pay_customer
 
+  enum email_status: %i(unauthorized pending authorized)
+
+  scope :from_last, ->(time_period) { where('created_at > ?', time_period.ago) }
+
   def add_tokens!(added_tokens)
     update(tokens: tokens + added_tokens)
   end

@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 1291e074701b39641ed74ba8dbcb329a2789b708 Andrei Sasaran <sasaranandreipaul@gmail.com> 1660825967 +0300	branch: Created from HEAD
+1291e074701b39641ed74ba8dbcb329a2789b708 7afaff4c93e60ef4048d70cfa922e3b0826219a9 Andrei Sasaran <sasaranandreipaul@gmail.com> 1660826599 +0300	commit: Fix footer
+7afaff4c93e60ef4048d70cfa922e3b0826219a9 60342e62f1ee1e5dc93ec52550d76f60c2a37e20 Andrei Sasaran <sasaranandreipaul@gmail.com> 1660837015 +0300	commit: Add update_user functionality for admin
+60342e62f1ee1e5dc93ec52550d76f60c2a37e20 71d53bc5cbca3fea59badd4f4f9df3d5f56c6d8f Andrei Sasaran <sasaranandreipaul@gmail.com> 1660843772 +0300	commit: Improvements on stats & admin mailer

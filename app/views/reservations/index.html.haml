@@ -38,28 +38,26 @@
     - if user_signed_in?
       %h1.sportify-font Hello, #{current_user.player.nickname}!
       %br
-      -# - if current_player.upcoming_reservations.any?  
-        %h2.sportify-font Upcoming Reservations
+      - if current_user.unauthorized?
+        .sportify-radius.participate-reservation-highlight{ style: 'padding: 5%' }
+          %h6.sportify-font Your registration was successfully created!
+          From now, you can freely use Sportify!
+          %br
+          MailGun will send you an email for authorization, so that Sportify can notify you via email.
+          %br
+          This process might take up to 3 days, but don't worry; you can still use all the Sportify awsome features, except the Email Notification one.
+          %br
         %br
-        .table-responsive
-          %table.table.table-success.table-striped
-            %thead
-              %tr
-                %th Type
-                %th Date
-                %th Place
-                %th 
-            %tbody
-              - @player_upcoming_reservations.each do |reservation|
-                %tr
-                  %td= reservation.owner_player_id == current_user.player.id ? 'Own' : 'Guest'
-                  %td= reservation.display_datetime
-                  %td= reservation.place
-                  %td= link_to fa_icon('eye'), reservation_path(reservation), class: 'btn sportify-small-button sportify-radius fs-5'
-      -# - else  
-        %h2.sportify-font You don't have any upcoming reservations
+      - elsif current_user.pending?
+        .sportify-radius.participate-reservation-highlight{ style: 'padding: 5%' }
+          %h6.sportify-font Activate Email notifications
+          Currently, Sportify doesn't have the authorization to notify you via email.
+          %br
+          Check your email for MailGun authorization and follow the activation steps provided by MailGun.
+          %br
+          Once you complete this process, you will be notified if someone leaves your reservation or someone closes one.
+          %br
         %br
-        = link_to fa_icon('plus', text: 'Create a Reservation'), new_reservation_path, class: 'btn sportify-primary-button sportify-wide-button sportify-radius sportify-font fs-4'
     - else
       %h1.sportify-font Welcome to Sportify!
       %br

@@ -25,6 +25,37 @@ namespace :db do
         reservation.save
       end
 
-    end    
+    end
+  end
+
+  namespace :export do
+    task location_data: :environment do
+      arenas_filepath = File.join(Rails.root, 'db', 'json_data', 'arenas.json')
+      fields_filepath = File.join(Rails.root, 'db', 'json_data', 'fields.json')
+
+      arenas = Arena.all.as_json
+      fields = Field.all.as_json
+
+      puts arenas_filepath
+      File.open(arenas_filepath, 'w') do |f|
+        f.write(JSON.pretty_generate(arenas))
+      end
+      File.open(fields_filepath, 'w') do |f|
+        f.write(JSON.pretty_generate(fields))
+      end
+    end
+  end
+
+  namespace :import do
+    task location_data: :environment do
+      arenas_filepath = File.join(Rails.root, 'db', 'json_data', 'arenas.json')
+      fields_filepath = File.join(Rails.root, 'db', 'json_data', 'fields.json')
+
+      arenas = JSON.parse(File.read(arenas_filepath))
+      fields = JSON.parse(File.read(fields_filepath))
+
+      arenas.each { |arena| Arena.create!(arena) }
+      fields.each { |field| Field.create!(field) }
+    end
   end
 end
