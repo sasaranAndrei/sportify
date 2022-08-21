@@ -60,6 +60,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'amazing_print', '~> 1.4'
   gem 'bullet', '~> 7.0', '>= 7.0.1'
   gem 'letter_opener', '~> 1.7'
   gem 'listen', '~> 3.3'

@@ -73,6 +73,7 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    amazing_print (1.4.0)
     arbre (1.5.0)
       activesupport (>= 3.0.0, < 7.1)
       ruby2_keywords (>= 0.0.2, < 1.0)
@@ -409,6 +410,7 @@ PLATFORMS
 DEPENDENCIES
   active_record_union
   activeadmin (~> 2.13, >= 2.13.1)
+  amazing_print (~> 1.4)
   aws-sdk-s3
   bootsnap (>= 1.4.4)
   bootstrap (~> 5.1.3)

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # BUSINESS LOGIC
   resources :sports
-  resources :arenas, only: %i[ update index show ]
+  resources :arenas
   resources :fields
   resources :reservations do
     get :join_requests, on: :member
@@ -52,6 +52,7 @@ Rails.application.routes.draw do
     put 'update_user'
     get 'download_arenas'
     get 'download_fields'
+    # resources :arenas
   end
 
   get '/admin', to: 'sportify_admins#show'
