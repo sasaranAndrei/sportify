@@ -31,7 +31,7 @@ module ReservationsHelper
       timetable[date] = {}
 
       Reservation::WORKING_HOURS.each do |hour|
-        timetable[date][hour] = field.occupied_on?(date, hour) 
+        timetable[date][hour] = field.occupied_on?(date, hour)
       end
     end
 

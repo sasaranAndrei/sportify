@@ -43,8 +43,10 @@ class ReservationsController < ApplicationController
 
   def new
     return redirect_to arenas_path, notice: 'Please select an Arena before creating a Reservation' if params[:arena_id].blank? # TODO: move this to method
-
+    
     @arena = Arena.find(params[:arena_id])
+    return redirect_to arenas_path, notice: "Sorry but this Arena doesn't have any fields attached yet" if @arena.fields.empty?
+    
     # @scheduler = ArenaSchedulerService.call(arena: @arena, start_date: Date.today)
     @selected_field = params[:field_id].present? ? Field.find(params[:field_id]) : @arena.fields.first
     @field_timetable = display_timetable_for(@selected_field, params[:initial_date])
