@@ -48,6 +48,8 @@ namespace :db do
 
   namespace :import do
     task location_data: :environment do
+      # TODO: clean db before
+      
       arenas_filepath = File.join(Rails.root, 'db', 'json_data', 'arenas.json')
       fields_filepath = File.join(Rails.root, 'db', 'json_data', 'fields.json')
 
