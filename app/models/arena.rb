@@ -7,7 +7,7 @@ class Arena < ApplicationRecord
   validates :location, presence: true
   # TechQuestion4? - create some PhoneNumberValidator ? # ulterior am descoperit ca exista un 'phone' gem
   validates :phone_number, presence: true,
-                           format: { with: Regex::ROMANIAN_PHONE_NUMBER },
+                           format: { with: Regex::ROMANIAN_PHONE_NUMBER }
                           #  uniqueness: true
                           # nu fiindca la sc4, lic5 si sportiv e acelasi numar
 
