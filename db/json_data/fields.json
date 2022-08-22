@@ -1,0 +1,262 @@
+[
+  {
+    "id": 1,
+    "arena_id": 1,
+    "sport_id": 1,
+    "label": "Teren Fotbal 1",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-06-12T14:30:57.019Z",
+    "updated_at": "2022-06-12T14:30:57.019Z"
+  },
+  {
+    "id": 20,
+    "arena_id": 15,
+    "sport_id": 1,
+    "label": "Teren Fotbal 1",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-08-22T18:14:46.320Z",
+    "updated_at": "2022-08-22T18:14:46.320Z"
+  },
+  {
+    "id": 3,
+    "arena_id": 2,
+    "sport_id": 1,
+    "label": "Teren Fotbal 1",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-06-12T14:36:23.725Z",
+    "updated_at": "2022-06-12T14:36:23.725Z"
+  },
+  {
+    "id": 4,
+    "arena_id": 2,
+    "sport_id": 1,
+    "label": "Teren Fotbal 2",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-06-12T14:36:36.347Z",
+    "updated_at": "2022-06-12T14:36:36.347Z"
+  },
+  {
+    "id": 5,
+    "arena_id": 3,
+    "sport_id": 1,
+    "label": "Teren Fotbal 1",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-06-12T14:36:47.235Z",
+    "updated_at": "2022-06-12T14:36:47.235Z"
+  },
+  {
+    "id": 6,
+    "arena_id": 3,
+    "sport_id": 1,
+    "label": "Teren Fotbal 2",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-06-12T14:36:53.596Z",
+    "updated_at": "2022-06-12T14:36:53.596Z"
+  },
+  {
+    "id": 7,
+    "arena_id": 2,
+    "sport_id": 1,
+    "label": "Teren Fotbal 3",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-07-02T09:15:42.934Z",
+    "updated_at": "2022-07-02T09:15:42.934Z"
+  },
+  {
+    "id": 8,
+    "arena_id": 3,
+    "sport_id": 1,
+    "label": "Teren Fotbal 3",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-07-02T09:17:35.222Z",
+    "updated_at": "2022-07-02T09:17:35.222Z"
+  },
+  {
+    "id": 9,
+    "arena_id": 3,
+    "sport_id": 1,
+    "label": "Teren Fotbal 4",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-07-02T09:17:47.305Z",
+    "updated_at": "2022-07-02T09:17:47.305Z"
+  },
+  {
+    "id": 10,
+    "arena_id": 4,
+    "sport_id": 1,
+    "label": "Teren Fotbal",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-07-02T09:21:50.662Z",
+    "updated_at": "2022-07-02T09:21:50.662Z"
+  },
+  {
+    "id": 11,
+    "arena_id": 5,
+    "sport_id": 1,
+    "label": "Teren Fotbal 1",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-07-03T08:25:00.713Z",
+    "updated_at": "2022-07-03T08:25:00.713Z"
+  },
+  {
+    "id": 12,
+    "arena_id": 5,
+    "sport_id": 1,
+    "label": "Teren Fotbal 2",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-07-03T08:25:42.770Z",
+    "updated_at": "2022-07-03T08:25:42.770Z"
+  },
+  {
+    "id": 13,
+    "arena_id": 5,
+    "sport_id": 1,
+    "label": "Teren Fotbal 3",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-07-03T08:26:00.442Z",
+    "updated_at": "2022-07-03T08:26:00.442Z"
+  },
+  {
+    "id": 14,
+    "arena_id": 6,
+    "sport_id": 1,
+    "label": "Teren Fotbal",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-07-03T08:27:39.669Z",
+    "updated_at": "2022-07-03T08:27:39.669Z"
+  },
+  {
+    "id": 15,
+    "arena_id": 7,
+    "sport_id": 1,
+    "label": "Teren Fotbal",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-07-03T08:29:15.723Z",
+    "updated_at": "2022-07-03T08:29:15.723Z"
+  },
+  {
+    "id": 16,
+    "arena_id": 8,
+    "sport_id": 1,
+    "label": "Teren Fotbal 1",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-07-03T08:29:48.549Z",
+    "updated_at": "2022-07-03T08:29:48.549Z"
+  },
+  {
+    "id": 17,
+    "arena_id": 8,
+    "sport_id": 1,
+    "label": "Teren Fotbal 2",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-07-03T08:30:16.978Z",
+    "updated_at": "2022-07-03T08:30:16.978Z"
+  },
+  {
+    "id": 18,
+    "arena_id": 8,
+    "sport_id": 1,
+    "label": "Teren Fotbal 3",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-07-03T08:30:34.362Z",
+    "updated_at": "2022-07-03T08:30:34.362Z"
+  },
+  {
+    "id": 19,
+    "arena_id": 8,
+    "sport_id": 1,
+    "label": "Teren Fotbal 4",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-07-03T08:30:40.407Z",
+    "updated_at": "2022-07-03T08:30:40.407Z"
+  },
+  {
+    "id": 21,
+    "arena_id": 15,
+    "sport_id": 1,
+    "label": "Teren Fotbal 2",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-08-22T18:15:30.713Z",
+    "updated_at": "2022-08-22T18:15:30.713Z"
+  },
+  {
+    "id": 22,
+    "arena_id": 9,
+    "sport_id": 1,
+    "label": "Teren Fotbal",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-08-22T18:16:10.827Z",
+    "updated_at": "2022-08-22T18:16:10.827Z"
+  },
+  {
+    "id": 23,
+    "arena_id": 10,
+    "sport_id": 1,
+    "label": "Teren Fotbal",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-08-22T18:16:25.527Z",
+    "updated_at": "2022-08-22T18:16:25.527Z"
+  },
+  {
+    "id": 24,
+    "arena_id": 11,
+    "sport_id": 1,
+    "label": "Teren Fotbal",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-08-22T18:16:50.340Z",
+    "updated_at": "2022-08-22T18:16:50.340Z"
+  },
+  {
+    "id": 25,
+    "arena_id": 12,
+    "sport_id": 1,
+    "label": "Teren Fotbal",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-08-22T18:17:15.403Z",
+    "updated_at": "2022-08-22T18:17:15.403Z"
+  },
+  {
+    "id": 26,
+    "arena_id": 13,
+    "sport_id": 1,
+    "label": "Teren Fotbal",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-08-22T18:17:26.982Z",
+    "updated_at": "2022-08-22T18:17:26.982Z"
+  },
+  {
+    "id": 27,
+    "arena_id": 14,
+    "sport_id": 1,
+    "label": "Teren Fotbal",
+    "min_players": 10,
+    "max_players": 12,
+    "created_at": "2022-08-22T18:17:46.121Z",
+    "updated_at": "2022-08-22T18:17:46.121Z"
+  }
+]

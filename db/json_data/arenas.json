@@ -1,0 +1,152 @@
+[
+  {
+    "id": 4,
+    "title": "Teren Soporului",
+    "location": "str. Soporului nr. 5, Cluj-Napoca",
+    "phone_number": "0744107794",
+    "created_at": "2022-06-29T14:19:03.402Z",
+    "updated_at": "2022-06-29T14:24:08.457Z",
+    "latitude": "46.76736",
+    "longitude": "23.63506"
+  },
+  {
+    "id": 5,
+    "title": "Baza Sportiva Napoca",
+    "location": "aleea Detunata, Cluj-Napoca",
+    "phone_number": "0722571200",
+    "created_at": "2022-06-29T14:23:53.164Z",
+    "updated_at": "2022-06-29T14:25:25.437Z",
+    "latitude": "46.76392",
+    "longitude": "23.62628"
+  },
+  {
+    "id": 8,
+    "title": "Club Transilvania",
+    "location": "bd. 1 Decembrie 1918, nr. 41, Cluj-Napoca",
+    "phone_number": "0730690896",
+    "created_at": "2022-06-29T14:33:32.590Z",
+    "updated_at": "2022-06-29T14:38:05.835Z",
+    "latitude": "46.76241",
+    "longitude": "23.54722"
+  },
+  {
+    "id": 1,
+    "title": "Wonderland Cluj",
+    "location": "Feleacu, nr. 5 A-E",
+    "phone_number": "0740966337",
+    "created_at": "2022-06-12T14:30:08.904Z",
+    "updated_at": "2022-06-29T14:42:47.352Z",
+    "latitude": "46.72209",
+    "longitude": "23.58956"
+  },
+  {
+    "id": 2,
+    "title": "Baza Sportiva Gheorgheni",
+    "location": "str. Alexandru Vaida Voevod nr. FN, Cluj-Napoca",
+    "phone_number": "0729039322",
+    "created_at": "2022-06-12T14:30:08.999Z",
+    "updated_at": "2022-06-29T14:43:43.860Z",
+    "latitude": "46.77108",
+    "longitude": "23.63603"
+  },
+  {
+    "id": 3,
+    "title": "Baza Sportiva Unirea",
+    "location": "str. Aleea Clabucet nr. FN, Cluj-Napoca",
+    "phone_number": "0754052000",
+    "created_at": "2022-06-12T14:30:09.007Z",
+    "updated_at": "2022-06-29T14:44:43.786Z",
+    "latitude": "46.74975",
+    "longitude": "23.54223"
+  },
+  {
+    "id": 9,
+    "title": "Scoala nr. 3 \"Dimitrie Cantemir\"",
+    "location": "str. Bogdan Voda, nr. 4, Baia Mare",
+    "phone_number": "0741543476",
+    "created_at": "2022-08-22T16:20:17.079Z",
+    "updated_at": "2022-08-22T16:20:17.079Z",
+    "latitude": "47.64765",
+    "longitude": "23.559"
+  },
+  {
+    "id": 6,
+    "title": "Teren Campus Observator",
+    "location": "str. Ceahlau, nr. 70, Cluj-Napoca",
+    "phone_number": "0744178201",
+    "created_at": "2022-06-29T14:29:09.408Z",
+    "updated_at": "2022-07-03T08:26:39.900Z",
+    "latitude": "46.75573",
+    "longitude": "23.58881"
+  },
+  {
+    "id": 7,
+    "title": "Baza Sportiva La Terenuri Manastur",
+    "location": "str. Marisel, nr. 1, Cluj-Napoca",
+    "phone_number": "0744179201",
+    "created_at": "2022-06-29T14:31:39.073Z",
+    "updated_at": "2022-07-03T08:28:38.112Z",
+    "latitude": "46.74898",
+    "longitude": "23.55464"
+  },
+  {
+    "id": 10,
+    "title": "Scoala nr. 4 \"Avram Iancu\"",
+    "location": "str. Victoriei, nr. 84, Baia Mare",
+    "phone_number": "0745555860",
+    "created_at": "2022-08-22T16:32:06.069Z",
+    "updated_at": "2022-08-22T16:32:06.092Z",
+    "latitude": "47.65973",
+    "longitude": "23.56232"
+  },
+  {
+    "id": 11,
+    "title": "Colegiul National \"Mihai Eminescu\"",
+    "location": "str. Culturii, nr. 7, Baia Mare",
+    "phone_number": "0746480233",
+    "created_at": "2022-08-22T17:16:39.568Z",
+    "updated_at": "2022-08-22T17:16:39.586Z",
+    "latitude": "47.65534",
+    "longitude": "23.5724"
+  },
+  {
+    "id": 12,
+    "title": "Colegiul Tehnic \"Anghel Saligny\"",
+    "location": "str. Progresului, nr. 43, Baia Mare",
+    "phone_number": "0745555860",
+    "created_at": "2022-08-22T17:18:34.503Z",
+    "updated_at": "2022-08-22T17:18:34.511Z",
+    "latitude": "47.65192",
+    "longitude": "23.57285"
+  },
+  {
+    "id": 13,
+    "title": "Liceul cu Program Sportiv",
+    "location": "bd. Republicii, nr. 33, Baia Mare",
+    "phone_number": "0745555860",
+    "created_at": "2022-08-22T17:20:37.558Z",
+    "updated_at": "2022-08-22T17:20:37.566Z",
+    "latitude": "47.64704",
+    "longitude": "23.56442"
+  },
+  {
+    "id": 14,
+    "title": "Teren Cristal",
+    "location": "bd. Bucuresti, nr. 57, Baia Mare",
+    "phone_number": "0751158402",
+    "created_at": "2022-08-22T17:30:27.339Z",
+    "updated_at": "2022-08-22T17:30:27.348Z",
+    "latitude": "47.64534",
+    "longitude": "23.52988"
+  },
+  {
+    "id": 15,
+    "title": "Pensiunea Anima (langa Topaz)",
+    "location": "str. Electrolizei, nr. 1/G, Baia Mare",
+    "phone_number": "0748927986",
+    "created_at": "2022-08-22T17:39:59.916Z",
+    "updated_at": "2022-08-22T17:39:59.925Z",
+    "latitude": "47.65969",
+    "longitude": "23.599"
+  }
+]
