@@ -1,5 +1,10 @@
-const MAP_CENTER_LATITUDE = 46.75550;
-const MAP_CENTER_LONGITUDE = 23.59950;
+
+const CLUJ_NAPOCA_MAP_CENTER_LATITUDE = 46.75550;
+const CLUJ_NAPOCA_MAP_CENTER_LONGITUDE = 23.59950;
+
+const BAIA_MARE_MAP_CENTER_LATITUDE = 47.65321;
+const BAIA_MARE_MAP_CENTER_LONGITUDE = 23.56061;
+
 var selectedArenaTitle = -1; // no arena selected yet
 
 $(document).on('turbolinks:load', function () {
@@ -39,7 +44,7 @@ function drawMap(arenas) {
   
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
-    center: new google.maps.LatLng(MAP_CENTER_LATITUDE, MAP_CENTER_LONGITUDE),
+    center: new google.maps.LatLng(BAIA_MARE_MAP_CENTER_LATITUDE, BAIA_MARE_MAP_CENTER_LONGITUDE),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
   
