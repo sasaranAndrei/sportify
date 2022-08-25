@@ -56,7 +56,7 @@ namespace :db do
       arenas = JSON.parse(File.read(arenas_filepath))
       fields = JSON.parse(File.read(fields_filepath))
 
-      # arenas.each { |arena| Arena.create!(arena) }
+      arenas.each { |arena| Arena.create!(arena) }
       fields.each { |field| Field.create!(field) }
     end
   end

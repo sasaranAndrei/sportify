@@ -52,7 +52,7 @@ Rails.application.routes.draw do
     put 'update_user'
     get 'download_arenas'
     get 'download_fields'
-    # resources :arenas
+    resources :arenas
   end
 
   get '/admin', to: 'sportify_admins#show'
