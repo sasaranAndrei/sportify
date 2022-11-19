@@ -1,9 +1,0 @@
-0000000000000000000000000000000000000000 e6e14c70676187b4e1f21be15c612df2ff897274 Andrei Sasaran <sasaranandreipaul@gmail.com> 1656232683 +0300	branch: Created from HEAD
-e6e14c70676187b4e1f21be15c612df2ff897274 be3294e7423b121e5c1d63219222c1c12b3fd9f7 Andrei Sasaran <sasaranandreipaul@gmail.com> 1656233137 +0300	commit: Install rspec & Delete unitTest
-be3294e7423b121e5c1d63219222c1c12b3fd9f7 393117d09ab4ace86bdc450755ad48d21b3b2247 Andrei Sasaran <sasaranandreipaul@gmail.com> 1656237553 +0300	commit: Add more testing-purpose gems
-393117d09ab4ace86bdc450755ad48d21b3b2247 d6087a81bc6537d5b0b70e550c19b3fb4d332d7c Andrei Sasaran <sasaranandreipaul@gmail.com> 1656260333 +0300	commit: WIP
-d6087a81bc6537d5b0b70e550c19b3fb4d332d7c 8474c940de8069c96de2ebc2022d9da24809732b Andrei Sasaran <sasaranandreipaul@gmail.com> 1656262879 +0300	commit: Add some tests for reservation
-8474c940de8069c96de2ebc2022d9da24809732b cea8d28ca1a944b940d9d2747fe7b86d085e17ea Andrei Sasaran <sasaranandreipaul@gmail.com> 1656312376 +0300	commit: Add specs for #has_passed?
-cea8d28ca1a944b940d9d2747fe7b86d085e17ea c0615efd1a676556f3bd5b875e8d38a6fc933fae Andrei Sasaran <sasaranandreipaul@gmail.com> 1656314010 +0300	commit: Add more configuration
-c0615efd1a676556f3bd5b875e8d38a6fc933fae e7b543aaf49db268dee5a883708d04b0155cbb4b Andrei Sasaran <sasaranandreipaul@gmail.com> 1656315071 +0300	commit: Add specs for #days_before_booking_date
-e7b543aaf49db268dee5a883708d04b0155cbb4b b0dbaf8c6ec1d62fdd5099fc47a6ec273b002c05 Andrei Sasaran <sasaranandreipaul@gmail.com> 1656321544 +0300	commit: Finish specs
