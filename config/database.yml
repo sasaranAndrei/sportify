@@ -13,6 +13,7 @@ test:
 
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: sportify_production
   username: sportify
   password: <%= ENV['SPORTIFY_DATABASE_PASSWORD'] %>

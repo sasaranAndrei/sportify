@@ -1,0 +1,17 @@
+databases:
+  - name: sportify_production
+    ipAllowList: []
+
+services:
+  - type: web
+    name: sportify_web
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: sportify_production
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
